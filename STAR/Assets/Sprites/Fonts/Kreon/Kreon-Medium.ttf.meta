@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 2c70244b70b1a874db1e533cb49772ff
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kreon
+  fontNames:
+  - Kreon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 181715e1726a4894a9be91782202a987, type: 3}
+  - {fileID: 12800000, guid: 70023c2a6b68aba4e854d890e9756425, type: 3}
+  - {fileID: 12800000, guid: 223cbc3c1b531df4fb32ec4a69fcb649, type: 3}
+  - {fileID: 12800000, guid: 3572331fbd089db4f97d77eab3696b1d, type: 3}
+  - {fileID: 12800000, guid: c98e0cdff0ca2c9438cb9a89df76096b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
