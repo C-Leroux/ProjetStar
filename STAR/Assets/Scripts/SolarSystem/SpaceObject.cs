@@ -10,6 +10,8 @@ namespace Assets.Scripts
     {
         private List<SpaceObject> neighbors = new List<SpaceObject>();
         public int Rank { get; set; } = -1;
+        public bool Placed { get; set; } = false;
+        public bool Drawn { get; set; } = false;
 
         // Use this for initialization
         void Start()

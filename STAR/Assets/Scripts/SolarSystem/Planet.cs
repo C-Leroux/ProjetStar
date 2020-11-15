@@ -66,13 +66,10 @@ namespace Assets.Scripts
 
         public void SetSprite()
         {
-            string strbiome = "";
-
+            // Load the correct sprite based on the biome
+            string strbiome = "forest";
             switch(biome)
             {
-                case Biome.forest:
-                    strbiome = "forest";
-                    break;
                 case Biome.ice:
                     strbiome = "ice";
                     break;
@@ -84,7 +81,22 @@ namespace Assets.Scripts
                     break;
             }
 
-            render.sprite = Resources.Load<Sprite>("Sprites/Solar_system/planet_" + strbiome + ".png");
+            string path = "Sprites/Solar_system/planet_" + strbiome;
+            render.sprite = Resources.Load<Sprite>(path);
+            render.sortingLayerName = "Sprites";
+
+            // Set the correct size
+            float scale = 0.3f;
+            switch(size)
+            {
+                case Size.medium:
+                    scale = 0.5f;
+                    break;
+                case Size.big:
+                    scale = 0.7f;
+                    break;
+            }
+            gameObject.transform.localScale = new Vector3(scale, scale, 0);
         }
     }
 }
