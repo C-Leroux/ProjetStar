@@ -30,15 +30,10 @@ namespace Assets.Scripts
         static private Array valuesSize  = Enum.GetValues(typeof(Size));
         static private System.Random random = new System.Random();
 
+
         void Awake()
         {
             render = gameObject.AddComponent<SpriteRenderer>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void Init(Biome b, Size s)
@@ -52,8 +47,6 @@ namespace Assets.Scripts
             GameObject obj = new GameObject("Planet");
             Planet planet = obj.AddComponent<Planet>();
             planet.Init(biome, size);
-
-            planet.SetSprite();
 
             return planet;
         }
@@ -86,17 +79,20 @@ namespace Assets.Scripts
             render.sortingLayerName = "Sprites";
 
             // Set the correct size
-            float scale = 0.3f;
+            float scale = 0.1f;
             switch(size)
             {
                 case Size.medium:
-                    scale = 0.5f;
+                    scale = 0.07f;
                     break;
                 case Size.big:
-                    scale = 0.7f;
+                    scale = 0.13f;
                     break;
             }
             gameObject.transform.localScale = new Vector3(scale, scale, 0);
+            initialScale = transform.localScale;
+            hoverScale = transform.localScale * scaleMult;
+            gameObject.AddComponent<BoxCollider2D>();
         }
     }
 }

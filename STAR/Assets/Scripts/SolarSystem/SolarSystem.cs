@@ -18,7 +18,7 @@ namespace Assets.Scripts
         public StartPoint start_point;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             // Here should be called the random generator for the planets of the solar system. For now, planets are created manually.
             // There are two generators : one for the solar system and its composition, and one for each planet individually.
@@ -69,6 +69,7 @@ namespace Assets.Scripts
             solar_system.Add(new_planet);
             new_planet.transform.parent = gameObject.transform;
             new_planet.transform.position = new Vector3(0, 0, 0);
+            new_planet.SetSprite();
         }
 
         // Generate a planet with a random biome and a random size
