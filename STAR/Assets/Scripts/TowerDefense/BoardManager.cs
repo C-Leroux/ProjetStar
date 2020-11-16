@@ -124,7 +124,7 @@ namespace Assets.Scripts
             //Debug.Log("Text: " + board[y, x]);
             if (board[y, x] < 10)
             {
-                Vector3 position = new Vector3(x * 2.56f, -y * 2.56f, 1f);
+                Vector3 position = new Vector3(x * 2.56f, -y * 2.56f, -1f);
                 GameObject tileChoice = treeTiles[Random.Range(typeTree, typeTree + 2)];
                 Instantiate(tileChoice, position, Quaternion.identity);
                 if (planet.biome != Planet.Biome.fire)
