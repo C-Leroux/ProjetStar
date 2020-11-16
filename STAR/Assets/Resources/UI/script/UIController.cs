@@ -28,8 +28,7 @@ public class UIController : MonoBehaviour
 
     public void loadMission()
     {
-        //SceneManager.LoadScene("systèmeSolaire");
-        //Ajouter le bon nom, ou l'indice de la scène quand elle sera faite
+        SceneManager.LoadScene("SolarSystem");
         Debug.Log("chargement de la partie");
     }
 
@@ -43,7 +42,7 @@ public class UIController : MonoBehaviour
     }
     public void createMission()
     {
-        //SceneManager.LoadScene("systèmeSolaire");
+        SceneManager.LoadScene("SolarSystem");
         Debug.Log("création de la partie");
     }
     
