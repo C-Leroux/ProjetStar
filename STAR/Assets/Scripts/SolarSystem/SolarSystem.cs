@@ -17,14 +17,18 @@ namespace Assets.Scripts
         // The starting point of the player in the solar system.
         public StartPoint start_point;
 
-        // Start is called before the first frame update
         void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+            solar_system = new List<Planet>();
+            rank_list = new List<int>() { 0, 0, 0, 0, 0, 0, 0 };
+        }
+
+        public void SetSolarSystem()
         {
             // Here should be called the random generator for the planets of the solar system. For now, planets are created manually.
             // There are two generators : one for the solar system and its composition, and one for each planet individually.
 
-            solar_system = new List<Planet>();
-            rank_list = new List<int>() { 0, 0, 0, 0, 0, 0, 0 };
             for (int i = 0; i < 15; ++i)
             {
                 AddRandomPlanet();
@@ -56,12 +60,6 @@ namespace Assets.Scripts
             AddPath(solar_system[13], solar_system[14]);
 
             Render();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         private void AddPlanet(Planet new_planet)

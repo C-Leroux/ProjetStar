@@ -22,8 +22,8 @@ namespace Assets.Scripts
             big
         }
 
-        public Biome biome;
-        public Size size;
+        public Biome biome { get; set; }
+        public Size  size { get; set; }
         private SpriteRenderer render;
 
         static private Array valuesBiome = Enum.GetValues(typeof(Biome));

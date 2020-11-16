@@ -1,26 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+namespace Assets.Scripts
 {
-    public BoardManager boardScript;
-
-    private int level = 1;
-
-    void Awake()
+    public class GameManager : MonoBehaviour
     {
-        InitGame();
-    }
+        private static GameManager instance;
 
-    void InitGame()
-    {
-        boardScript.SetupScene(level);
-    }
+        public SolarSystem solarSystem;
+        private BoardManager boardScript;
+        private AsyncOperation asyncLoadLevel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private int level = 1;
+
+
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+                Destroy(gameObject);
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(transform.gameObject);
+            }
+        }
+
+        private void Start()
+        {
+            InitSolarSystem();
+        }
+
+        public static GameManager Instance()
+        {
+            return instance;
+        }
+
+        void InitSolarSystem()
+        {
+            solarSystem.SetSolarSystem();
+        }
+
+        void InitBoard(Planet planet)
+        {
+            boardScript.SetupScene(level, planet);
+        }
+
+        IEnumerator LoadPlateau(SpaceObject destination)
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync("Plateau", LoadSceneMode.Single);
+            while (!asyncLoadLevel.isDone)
+            {
+                print("Loading the Scene");
+                yield return null;
+            }
+            boardScript = BoardManager.Instance();
+            InitBoard((Planet)destination);
+        }
+
+        public void TravelTo(SpaceObject destination)
+        {
+            solarSystem.gameObject.SetActive(false);
+            // For marchands (or other SpaceObject types) : Find the type of the SpaceObject and execute the right portion of code
+            StartCoroutine("LoadPlateau", destination);
+        }
     }
 }

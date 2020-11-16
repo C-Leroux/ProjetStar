@@ -37,6 +37,7 @@ namespace Assets.Scripts
                 if (transform.localPosition == position.transform.localPosition)
                 {
                     traveling = false;
+                    GameManager.Instance().TravelTo(position);
                 }
             }
         }
@@ -49,10 +50,13 @@ namespace Assets.Scripts
         // The ship travel from its current position to the destination.
         public void Travel(SpaceObject destination)
         {
-            CleanReachablePlanets();
-            position = destination;
-            FindReachablePlanets();
-            traveling = true;
+            if (!traveling)
+            {
+                CleanReachablePlanets();
+                position = destination;
+                FindReachablePlanets();
+                traveling = true;
+            }
         }
 
         private void ModifyReachablePlanets(bool b)
