@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SolarSystem.unity
     guid: ec1c34233614d5748b9e322f3664acbb
+  - enabled: 1
+    path: Assets/Scenes/Plateau.unity
+    guid: b8bcff9a657cbb344909947e9fc0bfbf
   m_configObjects: {}
