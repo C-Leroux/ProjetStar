@@ -188,7 +188,7 @@ public class BoardManager : MonoBehaviour
             case "fire":
                 multiplicator = 2;
                 break;
-            case "sand":
+            case "desert":
                 multiplicator = 3;
                 typeFoliage = 4;
                 break;
