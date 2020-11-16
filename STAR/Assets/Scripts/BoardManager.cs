@@ -178,7 +178,7 @@ public class BoardManager : MonoBehaviour
         timePassing = 0;
         timerIsRunning = false;
         round.text = "Round " + "1"  +" / " + "4";
-        type = "fire";
+        type = "ice";
         switch (type)
         {
             case "ice":
