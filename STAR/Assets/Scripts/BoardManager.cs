@@ -40,6 +40,7 @@ public class BoardManager : MonoBehaviour
     private int multiplicator;
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
+    private Text manche;
 
     void InitialiseList()
     {
@@ -149,7 +150,7 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    void ManuelSetup()
+    void ManualSetup()
     {
         int x = 2;
         int y = 2;
@@ -252,13 +253,13 @@ public class BoardManager : MonoBehaviour
     void InitiateBoard()
     {
         boardHolder = new GameObject("Board").transform;
-        type = "forest";
+        type = "fire";
         switch (type)
         {
             case "ice":
                 multiplicator = 1;
                 break;
-            case "lava":
+            case "fire":
                 multiplicator = 2;
                 break;
             case "sand":
@@ -282,7 +283,7 @@ public class BoardManager : MonoBehaviour
         ////LayoutObjectAtRandom(objectTiles, objectCount.minimum, objectCount.maximum);
         //LayoutObjectAtRandom(treeTiles, foliageTiles, treeCount.minimum, treeCount.maximum);
         //TownSetup();
-        ManuelSetup();
+        ManualSetup();
         LayoutTree(1, 2);
         LayoutTree(9, 1);
         LayoutTree(12, 6);

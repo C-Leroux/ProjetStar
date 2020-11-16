@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5653492508309663631}
   - component: {fileID: 5237605792585252750}
   m_Layer: 0
-  m_Name: Foliage1
+  m_Name: FoliageForest1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 547452737486062164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.697477, y: 34.939648, z: -25.649498}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.2}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

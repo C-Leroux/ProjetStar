@@ -62,3 +62,6 @@ TagManager:
   - name: Spaceship
     uniqueID: 1870115045
     locked: 0
+  - name: Turret
+    uniqueID: 311256543
+    locked: 0
