@@ -41,6 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: Background
     uniqueID: 667251605
     locked: 0
@@ -49,4 +50,29 @@ TagManager:
     locked: 0
   - name: Sprites
     uniqueID: 1943153725
+=======
+  - name: Floor
+    uniqueID: 3279516221
+    locked: 0
+  - name: Decoration_object
+    uniqueID: 2054780143
+    locked: 0
+  - name: Village
+    uniqueID: 1795511129
+    locked: 0
+  - name: Path
+    uniqueID: 1158702565
+    locked: 0
+  - name: Tree
+    uniqueID: 3487861403
+    locked: 0
+  - name: Foliage
+    uniqueID: 2384535931
+    locked: 0
+  - name: Spaceship
+    uniqueID: 1870115045
+    locked: 0
+  - name: Turret
+    uniqueID: 311256543
+>>>>>>> generer-plateau
     locked: 0
