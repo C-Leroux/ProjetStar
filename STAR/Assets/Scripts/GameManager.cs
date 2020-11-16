@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        boardScript = GetComponent<BoardManager>();
         InitGame();
     }
 
