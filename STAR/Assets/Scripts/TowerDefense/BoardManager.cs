@@ -22,9 +22,6 @@ namespace Assets.Scripts
             }
         }
 
-        //Temporaire :
-        public Turret turret;
-
         private static BoardManager instance;
 
         public int columns = 16;

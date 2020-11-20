@@ -9,6 +9,7 @@ public class TurretBehaviour : MonoBehaviour
     private ProjectileBehaviour projectileTemplate;
     private Projectile projectileToSpawn;
     private float range;
+    private int cost;
     private Transform turretPosition;
     private float attack_speed;
     private float scale;
@@ -20,11 +21,12 @@ public class TurretBehaviour : MonoBehaviour
 
     public void init (Turret turret)
     {
+        this.cost = turret.cost;
         this.projectileTemplate = turret.projectileTemplate;
         this.projectileToSpawn = turret.projectileToSpawn;
         this.range = turret.range;
         this.turretPosition = this.transform;
-        this.attack_speed = turret.attack_speed;
+        this.attack_speed = 1/turret.attack_speed;
         this.readyTime = turret.readyTime;
         this.scale = turret.scale;
         this.GetComponent<SpriteRenderer>().sprite = turret.sprite;
@@ -51,10 +53,15 @@ public class TurretBehaviour : MonoBehaviour
 
     private void getEnnemiInRange()
     {
+        //Collider2D[] allTargetInRange = Physics2D.OverlapCircleAll(transform.position, range);
         target = Physics2D.OverlapCircle(transform.position, range);
-        target = target.gameObject.tag != "Ennemi" ? null : target;
+        try { target = target.gameObject.tag != "Ennemi" ? null : target; }
+        catch (System.Exception e)
+        {
+            //La tourelle n'a pas de cible à portée
+        }
+        
     }
-
 
     private void followTarget()
     {
@@ -73,7 +80,7 @@ public class TurretBehaviour : MonoBehaviour
         bullet.transform.position = turretPosition.position;
         ProjectileBehaviour behaviour = bullet.GetComponent<ProjectileBehaviour>();
         behaviour.init(projectileToSpawn);
-        behaviour.initFire(target.transform);
+        behaviour.initFire(target);
     }
 
 

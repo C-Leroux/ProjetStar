@@ -9,5 +9,7 @@ public class Projectile : ScriptableObject
 {
     public string projectileName;
     public string turretLinkedName;
+    public float damage;
     public Sprite sprite;
+    public testEnnemiScript ennemi;
 }

@@ -8,6 +8,7 @@ using UnityEngine;
 public class Turret : ScriptableObject
 {
     public new string name;
+    public int cost;
     public float scale;
     public float range;
     public float attack_speed;

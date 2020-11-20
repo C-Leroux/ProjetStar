@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2222f042efa747e438ffcf7c0d8651a0, type: 3}
-  m_Name: Cryomancienne
+  m_Name: Survolteuse
   m_EditorClassIdentifier: 
-  name: Cryomancienne
+  name: Survolteuse
   cost: 0
   scale: 2
-  range: 5
-  attack_speed: 0.8
-  sprite: {fileID: 21300000, guid: ef8e356ce254e484284f64c66fdb1d33, type: 3}
+  range: 8
+  attack_speed: 6
+  sprite: {fileID: 21300000, guid: d7b77310780634e438d11d6f5bcc95b0, type: 3}
   readyTime: 0.25
   projectileTemplate: {fileID: 7606367354733108959, guid: 05cf9fb5141ef004db75a7c9ce455944,
     type: 3}
-  projectileToSpawn: {fileID: 11400000, guid: 2f83e6d86607d1e4198b73953b36f44e, type: 2}
+  projectileToSpawn: {fileID: 11400000, guid: e6dffa904cb016443bec5827ed1b9ebe, type: 2}

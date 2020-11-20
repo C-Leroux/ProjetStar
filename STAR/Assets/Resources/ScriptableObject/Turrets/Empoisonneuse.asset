@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Empoisonneuse
   m_EditorClassIdentifier: 
   name: Empoisonneuse
+  cost: 0
   scale: 2
   range: 5
   attack_speed: 1
@@ -20,4 +21,4 @@ MonoBehaviour:
   readyTime: 0.25
   projectileTemplate: {fileID: 7606367354733108959, guid: 05cf9fb5141ef004db75a7c9ce455944,
     type: 3}
-  projectileToSpawn: {fileID: 11400000, guid: 66b7b46943582ff48a10b47cba883472, type: 2}
+  projectileToSpawn: {fileID: 11400000, guid: 1482100a850246e4caf23c9f61b045be, type: 2}
