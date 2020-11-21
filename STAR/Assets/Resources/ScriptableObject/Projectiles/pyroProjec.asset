@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ff254d4d9f60f4290a012fab272ae4, type: 3}
   m_Name: pyroProjec
   m_EditorClassIdentifier: 
+  particlesMaterial: {fileID: 2100000, guid: 72c59abbe71df3242b59f0b374f39f8d, type: 2}
   projectileName: pyroProjec
   turretLinkedName: Pyromancienne
   damage: 3

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ff254d4d9f60f4290a012fab272ae4, type: 3}
   m_Name: STARProjectile
   m_EditorClassIdentifier: 
+  particlesMaterial: {fileID: 2100000, guid: 7f02a93f9b0d0fa458f901fb55915d0e, type: 2}
   projectileName: STAR
   turretLinkedName: STAR
   damage: 1

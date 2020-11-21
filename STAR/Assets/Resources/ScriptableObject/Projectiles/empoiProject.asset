@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ff254d4d9f60f4290a012fab272ae4, type: 3}
   m_Name: empoiProject
   m_EditorClassIdentifier: 
+  particlesMaterial: {fileID: 2100000, guid: 1c7be4eeb9b533e4a95de2ecbb321112, type: 2}
   projectileName: empoiProjec
   turretLinkedName: Empoisonneuse
   damage: 0.5

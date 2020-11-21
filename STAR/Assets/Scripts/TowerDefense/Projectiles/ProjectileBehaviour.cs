@@ -6,7 +6,6 @@ public class ProjectileBehaviour : MonoBehaviour
 {
     private string projectileName;
     private string turretLinkedName;
-    private Sprite sprite;
     private float damage;
     private int explosionRange;
     private float poisonnedTime;
@@ -24,7 +23,6 @@ public class ProjectileBehaviour : MonoBehaviour
         poisonnedTime = 4;//TIME EMPOISONNEUSE
         explosionRange =1;//RANGE GRENADIERE EXPLOSION
         stunTime = 1f; //TIME STUN
-
         this.ennemi = projectile.ennemi;
         this.damage = projectile.damage;
         this.projectileName = projectile.projectileName;
@@ -55,8 +53,11 @@ public class ProjectileBehaviour : MonoBehaviour
                     Collider2D[] targets = getEnnemisInExplosionRange();//La tourelle tire sur une cible, et affecte des dégats dans la zone de l'explosion
                     for (int i = 0; i < targets.Length; i++)
                     {
-                        dealDamageTo(targets[i], this.damage);
-                        Debug.Log("DAMAGE TAKEN FROM GRENADIERE");
+                        if (targets[i].tag == "Ennemi")
+                        {
+                            dealDamageTo(targets[i], this.damage);
+                            Debug.Log("DAMAGE TAKEN FROM GRENADIERE");
+                        }
                     }
                     GameObject.Destroy(this.gameObject);
                     break;

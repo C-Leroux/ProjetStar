@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ff254d4d9f60f4290a012fab272ae4, type: 3}
   m_Name: survolProjec
   m_EditorClassIdentifier: 
+  particlesMaterial: {fileID: 2100000, guid: 4fd7a88f916a85c4a99e8dc27d1cb18d, type: 2}
   projectileName: survoltProjec
   turretLinkedName: Survolteuse
   damage: 0.2
