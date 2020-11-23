@@ -16,4 +16,4 @@ MonoBehaviour:
   turretLinkedName: Grenadiere
   damage: 2
   sprite: {fileID: 21300000, guid: 9598c7b03bfa145448551cb817770b21, type: 3}
-  ennemi: {fileID: 7949458626157925264, guid: ea007a8968193cb48a6555f7cf757e6d, type: 3}
+  scale: 2.5
