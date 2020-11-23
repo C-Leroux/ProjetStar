@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -9,14 +10,16 @@ namespace Assets.Scripts
         private EnemyData enemyData;
         private Wave wave;
         private int targetIndex = 0;
-        private int hp;
-
+        private float hp;
+        private bool poisonned;
+        private bool stun;
         private static List<Vector3> path;
 
         // Use this for initialization
         void Start()
         {
-
+            poisonned = false;
+            stun = false;
         }
 
         // Update is called once per frame
@@ -26,11 +29,81 @@ namespace Assets.Scripts
                 return;
             if (CanAttackBase())
                 AttackBase();
-            else
+            if (!stun)
+            {
                 Walk();
+            }
+        //Changing Color sprite according to ennemi state
+        changeSpriteColor();    
+
+    }
+        //Poisonned Methods
+        public bool getPoisonned()
+        {
+            return poisonned;
+        }
+        public void setPoisonnedTrue(float damage, float poisonnedTime) //La cible est empoisonnée
+        {
+            poisonned = true;
+            StartCoroutine(WaitBeforeUnPoisonned(poisonnedTime));
+            StartCoroutine(WaitBeforeDealDamagePoisonned(damage, poisonnedTime));
+        }
+        IEnumerator WaitBeforeUnPoisonned(float poisonnedTime) //On lance de décompte, une fois le poisonnedTime écoulé, la cilbe n'est plus empoisonnée
+        {
+            yield return new WaitForSeconds(poisonnedTime);
+            poisonned = false;
         }
 
-        public void LoadData(EnemyData data)
+        IEnumerator WaitBeforeDealDamagePoisonned(float damage, float poisonnedTime)
+        {
+            for (int i = 0; i < poisonnedTime; i++)
+            {
+                TakeDamages(damage);
+                Debug.Log("DAMAGE TAKEN FROM EMPOISONNEUSE EACH SECOND");
+                yield return new WaitForSeconds(1f); //On attend une seconde, puis on fait les dégats du poisson
+            }
+        }
+
+
+        //Stun Methods
+        public bool getStun()
+        {
+            return stun;
+        }
+        public void setStunTrue(float stunTime) //La cible est étourdie
+        {
+            stun = true;
+            StartCoroutine(WaitBeforeUnStun(stunTime));
+        }
+
+        IEnumerator WaitBeforeUnStun(float stunTime) //On lance de décompte, une fois le stunTime écoulé, la cilbe n'est plus étourdie
+        {
+            yield return new WaitForSeconds(stunTime);
+            stun = false;
+        }
+
+        public void changeSpriteColor()
+        {
+            if (stun && !poisonned)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+            if (!stun && poisonned)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            if (stun && poisonned)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.cyan;
+            }
+            if (!stun && !poisonned)
+            {
+                this.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+
+    
+    public void LoadData(EnemyData data)
         {
             enemyData = data;
             hp = data.MaxHP;
@@ -60,7 +133,7 @@ namespace Assets.Scripts
 
         }
 
-        private void TakeDamages(int damages)
+        public void TakeDamages(float damages)
         {
             hp -= damages;
             if (hp < 0)

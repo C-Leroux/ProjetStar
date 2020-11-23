@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,5 +12,5 @@ public class Projectile : ScriptableObject
     public string turretLinkedName;
     public float damage;
     public Sprite sprite;
-    public testEnnemiScript ennemi;
+    public Enemy ennemi;
 }

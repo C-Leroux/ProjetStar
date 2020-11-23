@@ -44,6 +44,7 @@ namespace Assets.Scripts
             SpriteRenderer sprite = enemy_go.AddComponent<SpriteRenderer>();
             sprite.sprite = Resources.Load<Sprite>("Sprites/Monsters/Elementals/monster_earth_elemental");
             enemy_go.AddComponent<BoxCollider2D>();
+            enemy_go.tag = "Ennemi";
             enemy_go.transform.parent = transform;
             enemy_go.transform.localPosition = spawnPoint;
             enemy_go.transform.localScale *= 5;

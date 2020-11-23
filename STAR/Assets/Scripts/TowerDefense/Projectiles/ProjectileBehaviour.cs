@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class ProjectileBehaviour : MonoBehaviour
     private int explosionRange;
     private float poisonnedTime;
     private float stunTime;
-    private testEnnemiScript ennemi; 
+    private Enemy ennemi; 
     //testEnnemiScript temporaire à remplacer avec la classe ennemi, ici on vient rechercher la methode looseLife notamment 
 
 
@@ -72,13 +73,13 @@ public class ProjectileBehaviour : MonoBehaviour
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Cryomancienne":
-                    collision.GetComponent<testEnnemiScript>().setStunTrue(stunTime);//La tourelle stun l'ennemi, et lui inflige des dégats
+                    collision.GetComponent<Enemy>().setStunTrue(stunTime);//La tourelle stun l'ennemi, et lui inflige des dégats
                     dealDamageTo(collision, this.damage);
                     Debug.Log("DAMAGE TAKEN FROM Cryomancienne");
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Empoisonneuse"://La tourelle empoisonne l'ennemi sur 4 secondes, attention les damages indiqué pour ce project sont les damage par secondes
-                    collision.GetComponent<testEnnemiScript>().setPoisonnedTrue(this.damage ,poisonnedTime); //La cible est empoisonnée
+                    collision.GetComponent<Enemy>().setPoisonnedTrue(this.damage ,poisonnedTime); //La cible est empoisonnée
                     //Damage per second de l'empoisonnement
                     GameObject.Destroy(this.gameObject);
                     break;
@@ -95,7 +96,7 @@ public class ProjectileBehaviour : MonoBehaviour
 
     public void dealDamageTo(Collider2D collision, float damage)
     {
-        collision.GetComponent<testEnnemiScript>().looseLife(damage);
+        collision.GetComponent<Enemy>().TakeDamages(damage);
     }
    
     

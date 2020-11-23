@@ -11,14 +11,14 @@ namespace Assets.Scripts
         [SerializeField]
         private Sprite sprite;
         [SerializeField]
-        private int maxHP;
+        private float maxHP;
         [SerializeField]
         private int speed;
         [SerializeField]
         private int atkDamage;
         [SerializeField]
         private int atkRange;
-
+        
         public string EnemyName
         {
             get
@@ -35,7 +35,7 @@ namespace Assets.Scripts
             }
         }
 
-        public int MaxHP
+        public float MaxHP
         {
             get
                 {
