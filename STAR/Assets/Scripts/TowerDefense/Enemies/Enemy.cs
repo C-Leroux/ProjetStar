@@ -28,11 +28,6 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (hp < 0)
-            {
-                Destroy(gameObject);
-                return;
-            }
             if (!wave)
                 return;
             if (CanAttackBase())
@@ -145,7 +140,10 @@ namespace Assets.Scripts
         {
             hp -= damages;
             if (hp < 0)
+            {
                 wave.Despawn();
+                Destroy(gameObject);
+            }
         }
 
         public static void SetPath(List<Vector3> newpath)
