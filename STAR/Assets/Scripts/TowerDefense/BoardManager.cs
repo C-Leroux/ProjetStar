@@ -36,50 +36,47 @@ namespace Assets.Scripts
         public GameObject[] foliageTiles;
         public int[,] board;
         public GameObject[] pathTiles;
+        public GameObject test_vert;
+        public Board m_board;
         private float timePassing;
+        private float checkTime;
         private bool timerIsRunning;
         public Text timeText;
+        public Text moneyText;
+        public Text defeat;
+        public Text victory;
+        public Text healthbarText;
+        public Image healthbar;
+        public Image background;
+        public Base m_base;
         private Planet planet;
+        private int m_round;
+        private int m_roundMax;
+        private int money;
+        private int limitMoney;
         private int typeFloor;
         private int typePath;
         private int typeTree;
         private int typeFoliage;
         private int multiplicator;
-        private Transform boardHolder;
         private List<Vector3> gridPositions = new List<Vector3>();
+
 
         private void Awake()
         {
             if (instance != null && instance != this)
+            {
                 Destroy(gameObject);
+            }
             else
+            {
                 instance = this;
+            }
         }
 
         public static BoardManager Instance()
         {
             return instance;
-        }
-
-        void InitialiseList()
-        {
-            gridPositions.Clear();
-
-            for (int x = 0; x < columns - 1; x++)
-            {
-                for (int y = 0; y < rows - 1; y++)
-                {
-                    gridPositions.Add(new Vector3(x * 2f, y * 2f, 0f));
-                }
-            }
-        }
-
-        void TownSetup()
-        {
-            GameObject toInstantiate = spaceship;
-            Vector3 scaleChange = new Vector3(3f, 3f, 0);
-            toInstantiate.transform.localScale = scaleChange;
-            GameObject instance = Instantiate(toInstantiate, new Vector3(((columns / 2) - 1) * 2f, 1f * 2f, 0f), Quaternion.identity) as GameObject;
         }
 
         Vector3 RandomPosition()
@@ -119,105 +116,6 @@ namespace Assets.Scripts
             }
         }
 
-        void LayoutTree(int x, int y)
-        {
-            //Debug.Log("Text: " + board[y, x]);
-            if (board[y, x] < 10)
-            {
-                Vector3 position = new Vector3(x * 2.56f, -y * 2.56f, -1f);
-                GameObject tileChoice = treeTiles[Random.Range(typeTree, typeTree + 2)];
-                Instantiate(tileChoice, position, Quaternion.identity);
-                if (planet.biome != Planet.Biome.fire)
-                {
-                    position.y++;
-                    position.z = position.z - y * 0.1f;
-                    GameObject tileChoice2 = foliageTiles[Random.Range(typeFoliage, typeFoliage + 1)];
-                    Vector3 scaleChange = new Vector3(0.6f, 0.6f, 1f);
-                    tileChoice2.transform.localScale = scaleChange;
-                    Instantiate(tileChoice2, position, Quaternion.identity);
-                }
-            }
-
-        }
-
-        void ManualSetup()
-        {
-            board = new int[,]
-            {
-            { 2 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 0 , 8 , 7 , 0 , 2 , 3 , 3 , 1 , 1 , 1 },
-            { 2 , 0 , 12, 11, 11, 11, 11, 11, 13, 9 , 6 , 5 , 3 , 4 , 2 , 1 , 1 , 2 },
-            { 2 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 9 , 7 , 4 , 2 , 3 , 2 , 2 , 1 , 2 },
-            { 2 , 3 , 4 , 4 , 5 , 6 , 7 , 0 , 10, 0 , 4 , 3 , 1 , 0 , 0 , 1 , 2 , 3 },
-            { 2 , 0 , 0 , 3 , 6 , 7 , 8 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 0 , 2 , 3 , 4 },
-            { 4 , 2 , 1 , 2 , 9 , 8 , 8 , 0 , 12, 11, 11, 11, 11, 13, 0 , 1 , 1 , 0 },
-            { 3 , 1 , 1 , 1 , 9 , 9 , 9 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 1 , 1 , 0 },
-            { 2 , 3 , 2 , 1 , 9 , 8 , 9 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 2 , 0 , 0 },
-            { 1 , 1 , 0 , 0 , 8 , 7 , 8 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 2 , 0 , 0 },
-            { 1 , 2 , 4 , 5 , 7 , 6 , 7 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 2 , 2 , 1 },
-            { 1 , 0 , 3 , 4 , 5 , 4 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 3 , 3 , 2 },
-            { 0 , 0 , 1 , 5 , 4 , 3 , 0 , 0 , 0 , 15, 11, 11, 11, 14, 0 , 4 , 5 , 4 },
-            { 0 , 0 , 2 , 3 , 2 , 2 , 0 , 0 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 5 , 6 , 7 }
-            };
-
-            AddToBoard2(board);
-        }
-
-        void AddToBoard(GameObject objectToLoad, int x, int y, int z)
-        {
-            GameObject instance = Instantiate(objectToLoad, new Vector3(x * 2.56f, y * 2.56f, z * 1f), Quaternion.identity) as GameObject;
-            instance.transform.SetParent(boardHolder);
-        }
-
-        void AddToBoard2(int[,] board)
-        {
-            GameObject objectToLoad = floorTiles[0 + typeFloor];
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    if (board[i, j] < 10)
-                    {
-                        objectToLoad = floorTiles[board[i, j] + typeFloor];
-                    }
-                    else
-                    {
-                        objectToLoad = pathTiles[board[i, j] + typePath - 10];
-                    }
-                    GameObject instance = Instantiate(objectToLoad, new Vector3(j * 2.56f, -i * 2.56f, 0 * 1f), Quaternion.identity) as GameObject;
-                    instance.transform.SetParent(boardHolder);
-                }
-            }
-        }
-
-        void InitiateBoard()
-        {
-            boardHolder = new GameObject("Board").transform;
-            timePassing = 0;
-            timerIsRunning = false;
-            round.text = "Round " + "1" + " / " + "4";
-            switch (planet.biome)
-            {
-                case Planet.Biome.ice:
-                    multiplicator = 1;
-                    typeFoliage = 2;
-                    break;
-                case Planet.Biome.fire:
-                    multiplicator = 2;
-                    break;
-                case Planet.Biome.desert:
-                    multiplicator = 3;
-                    typeFoliage = 4;
-                    break;
-                default:
-                    multiplicator = 0;
-                    typeFoliage = 0;
-                    break;
-            }
-            typeFloor = (floorTiles.Length / 4) * multiplicator;
-            typePath = (pathTiles.Length / 4) * multiplicator;
-            typeTree = (treeTiles.Length / 4) * multiplicator;
-        }
-
         public void ManageTime()
         {
             if (timerIsRunning)
@@ -243,50 +141,124 @@ namespace Assets.Scripts
         public void SetupScene(int level, Planet newplanet)
         {
             planet = newplanet;
-            InitiateBoard();
-            //BoardSetup();
-            //InitialiseList();
-            ////LayoutObjectAtRandom(objectTiles, objectCount.minimum, objectCount.maximum);
-            //LayoutObjectAtRandom(treeTiles, foliageTiles, treeCount.minimum, treeCount.maximum);
-            //TownSetup();
-            ManualSetup();
-            LayoutTree(1, 2);
-            LayoutTree(9, 1);
-            LayoutTree(12, 6);
-            LayoutTree(11, 6);
-            LayoutTree(10, 6);
-            LayoutTree(7, 6);
-            LayoutTree(9, 8);
-            LayoutTree(10, 9);
-            LayoutTree(11, 7);
-            LayoutTree(3, 8);
-            LayoutTree(12, 1);
             ManageTime();
+            InitiateBoard();
+        }
+
+        public int GetMoney()
+        {
+            return money;
+
         }
 
         public int[,] GetBoard()
         {
-            return board;
+            return m_board.GetBoard();
+        }
+        public void SetMoney(int cost)
+        {
+            money -= cost;
+            moneyText.text = ("" + money);
         }
 
+        void InitiateBoard()
+        {
+            //m_board = new Board(18,12, planet);
+            m_board.InitBoardAlone(planet);
+            m_board.InitialiseList2();
+            m_board.LayoutTree(1, 2);
+            m_board.LayoutTree(9, 1);
+            m_board.LayoutTree(12, 6);
+            m_board.LayoutTree(11, 6);
+            m_board.LayoutTree(10, 6);
+            m_board.LayoutTree(7, 6);
+            m_board.LayoutTree(9, 8);
+            m_board.LayoutTree(10, 9);
+            m_board.LayoutTree(11, 7);
+            m_board.LayoutTree(3, 8);
+            m_board.LayoutTree(12, 1);
+            m_board.AffObject();
+        }
         // Start is called before the first frame update
         void Start()
         {
-
+            timePassing = 0;
+            round.text = "Round " + m_round + " / " + m_roundMax;
+            background.enabled = false;
+            defeat.gameObject.SetActive(false);
+            victory.gameObject.SetActive(false);
+            m_base = new Base(healthbar, healthbarText);
+            checkTime = 0;
+            limitMoney = 10000;//2147483647
+            money = 0;
+            m_round = 1;
+            m_roundMax = 4;
+            timerIsRunning = false;
         }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log("mouseDown = " + Input.mousePosition.x + "  || " + Input.mousePosition.y);
+                // Debug.Log("x = " + Input.mousePosition.x / 2.56f + " Y = " + Input.mousePosition.y / 2.56f);
+                //Instantiate(test_vert, new Vector3(Input.mousePosition.x / 2.56f, (Input.mousePosition.y / -2.56f) , -2f), Quaternion.identity);
+            }
+
             if (Input.GetKeyDown("space"))
             {
                 ManageTime();
             }
+            else if (Input.GetKeyDown("a"))
+            {
+                m_base.ReceiveAttack(500);
+            }
+            else if(Input.GetKeyDown("z"))
+            {
+                m_board.TestPlacement();
+            }
+            else if(Input.GetKeyDown("e"))
+            {
+                m_board.TestPlacement2();
+            }
+            else if(Input.GetKeyDown("r"))
+            {
+                m_round++;
+            }else if(Input.GetKeyDown("t"))
+            {
+                money += 500;
+               if( money > limitMoney)
+               {
+                    money = limitMoney;
+               }
+            }
 
-            if (timerIsRunning)
+            if (timerIsRunning && m_base.IsAlive() && m_round <= m_roundMax)
             {
                 timePassing += Time.deltaTime;
+                if(checkTime < timePassing)
+                {
+                    checkTime++;
+                    if(money < limitMoney)
+                    {
+                        money++;
+                    }
+                    moneyText.text = (""+ money);
+                    round.text = "Round " + m_round + " / " + m_roundMax;
+                    //Debug.Log("PV: " + m_base.GetLp());
+                }
                 DisplayTime(timePassing);
+            }
+            else if(!m_base.IsAlive())
+            {
+                background.enabled = true;
+                defeat.gameObject.SetActive(true);
+                            }
+            else if(m_round >= m_roundMax)
+            {
+                background.enabled = true;
+                victory.gameObject.SetActive(true);
             }
         }
     }
