@@ -12,5 +12,6 @@ public class Projectile : ScriptableObject
     public string turretLinkedName;
     public float damage;
     public Sprite sprite;
+    public float scale;
     public Enemy ennemi;
 }

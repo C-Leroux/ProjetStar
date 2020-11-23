@@ -8,6 +8,7 @@ public class ProjectileBehaviour : MonoBehaviour
     private string projectileName;
     private string turretLinkedName;
     private float damage;
+    private float scale;
     private int explosionRange;
     private float poisonnedTime;
     private float stunTime;
@@ -25,10 +26,12 @@ public class ProjectileBehaviour : MonoBehaviour
         explosionRange =1;//RANGE GRENADIERE EXPLOSION
         stunTime = 1f; //TIME STUN
         this.ennemi = projectile.ennemi;
+        this.scale = projectile.scale;
         this.damage = projectile.damage;
         this.projectileName = projectile.projectileName;
         this.turretLinkedName = projectile.turretLinkedName;
         this.GetComponent<SpriteRenderer>().sprite = projectile.sprite;
+        this.transform.localScale = new Vector3(scale, scale, scale);
     }
     public void initFire(Collider2D target)
     {

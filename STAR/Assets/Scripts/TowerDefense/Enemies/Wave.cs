@@ -42,7 +42,10 @@ namespace Assets.Scripts
             GameObject enemy_go = new GameObject("Enemy");
             Enemy enemy = enemy_go.AddComponent<Enemy>();
             enemy_go.AddComponent<BoxCollider2D>();
+            enemy_go.AddComponent<Rigidbody2D>();
+            enemy_go.GetComponent<Rigidbody2D>().isKinematic = true;
             enemy_go.tag = "Ennemi";
+            enemy_go.GetComponent<BoxCollider2D>().isTrigger = true;
             enemy_go.transform.parent = transform;
             enemy_go.transform.localPosition = spawnPoint;
             enemy_go.transform.localScale *= 5;
