@@ -25,8 +25,11 @@ namespace Assets.Scripts
                     if (hitData && Input.GetMouseButtonDown(0))
                     {
                         selectedObject = hitData.transform.gameObject;
-                        Vector3 vec = selectedObject.transform.position;
-                        board.afficheTourelle(vec.x, vec.y);
+                        if (selectedObject.tag == "Place")
+                        {
+                            Vector3 vec = selectedObject.transform.position;
+                            board.afficheTourelle(vec.x, vec.y);
+                        }
                     }
                 }
             }
