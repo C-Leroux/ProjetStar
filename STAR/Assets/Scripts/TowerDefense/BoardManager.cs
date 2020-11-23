@@ -264,6 +264,11 @@ namespace Assets.Scripts
             ManageTime();
         }
 
+        public int[,] GetBoard()
+        {
+            return board;
+        }
+
         // Start is called before the first frame update
         void Start()
         {

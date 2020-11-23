@@ -11,6 +11,7 @@ namespace Assets.Scripts
 
         public SolarSystem solarSystem;
         private BoardManager boardScript;
+        private TDManager tdManager;
         private AsyncOperation asyncLoadLevel;
 
         private int level = 1;
@@ -44,19 +45,26 @@ namespace Assets.Scripts
 
         void InitBoard(Planet planet)
         {
+            boardScript = BoardManager.Instance();
             boardScript.SetupScene(level, planet);
+        }
+
+        void InitTD(int[,] board, Planet destination)
+        {
+            tdManager = TDManager.Instance();
+            tdManager.Init(board, destination);
         }
 
         IEnumerator LoadPlateau(SpaceObject destination)
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("Plateau", LoadSceneMode.Single);
+            asyncLoadLevel = SceneManager.LoadSceneAsync("Test-Plateau", LoadSceneMode.Single);
             while (!asyncLoadLevel.isDone)
             {
                 print("Loading the Scene");
                 yield return null;
             }
-            boardScript = BoardManager.Instance();
             InitBoard((Planet)destination);
+            InitTD(boardScript.GetBoard(), (Planet)destination);
         }
 
         public void TravelTo(SpaceObject destination)
