@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Foliage
   - Trunk
+  - Ennemi
   layers:
   - Default
   - TransparentFX

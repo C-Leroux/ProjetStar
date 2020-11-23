@@ -25,7 +25,8 @@ public class ProjectileBehaviour : MonoBehaviour
         poisonnedTime = 4;//TIME EMPOISONNEUSE
         explosionRange =1;//RANGE GRENADIERE EXPLOSION
         stunTime = 1f; //TIME STUN
-        //this.ennemi = projectile.ennemi;
+        this.ennemi = projectile.ennemi;
+        this.scale = projectile.scale;
         this.damage = projectile.damage;
         this.projectileName = projectile.projectileName;
         this.turretLinkedName = projectile.turretLinkedName;

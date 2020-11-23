@@ -13,6 +13,5 @@ public class Projectile : ScriptableObject
     public float damage;
     public Sprite sprite;
     public float scale;
-
-    //public Enemy ennemi;
+    public Enemy ennemi;
 }
