@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6507634418718185244}
   - component: {fileID: 6671318456001808157}
   m_Layer: 0
-  m_Name: Trunk1
-  m_TagString: Untagged
+  m_Name: TrunkForest1
+  m_TagString: Trunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -807105893
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7e23e7c58461546ff9b5799364311816, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
