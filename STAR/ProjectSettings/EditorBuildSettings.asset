@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
+    path: Assets/Resources/UI/Scenes/Intro.unity
     guid: 6165d1a293ff22741a26e2d47c4327b7
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Resources/UI/Scenes/MainMenu.unity
     guid: d5b87863313d23a4cae423727285461e
   - enabled: 1
-    path: Assets/Scenes/SolarSystem.unity
+    path: Assets/Resources/UI/Scenes/SolarSystem.unity
     guid: ec1c34233614d5748b9e322f3664acbb
   - enabled: 1
     path: Assets/Scenes/Plateau.unity
-    guid: b8bcff9a657cbb344909947e9fc0bfbf
+    guid: 77b1f880c90a05a4a82190a5f03a2501
   m_configObjects: {}

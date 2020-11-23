@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Aphelion_Mage
   m_EditorClassIdentifier: 
   enemyName: Aphelion Mage
-  sprite: {fileID: 0}
+  sprite: {fileID: 7245166181453720530, guid: a16b2d1c92bd2f74da28d4515c189f7a, type: 3}
   maxHP: 3
   speed: 5
   atkDamage: 3

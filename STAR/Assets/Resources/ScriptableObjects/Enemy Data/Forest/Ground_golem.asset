@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ground_golem
   m_EditorClassIdentifier: 
   enemyName: Ground Golem
-  sprite: {fileID: 0}
+  sprite: {fileID: -126365259254613671, guid: 9a0e519ecb145e74ca620d6266701da0, type: 3}
   maxHP: 12
   speed: 4
   atkDamage: 4

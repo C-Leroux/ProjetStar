@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Elemental
   m_EditorClassIdentifier: 
   enemyName: Elemental
-  sprite: {fileID: 0}
+  sprite: {fileID: 1745789476859966450, guid: 11c09455dae96854d8eb2badd05354ec, type: 3}
   maxHP: 6
   speed: 8
   atkDamage: 3

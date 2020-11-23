@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ice_Golem
   m_EditorClassIdentifier: 
   enemyName: Ice_Golem
-  sprite: {fileID: 0}
+  sprite: {fileID: -7188448761109683344, guid: de21d857b45033f45969c424c64c5651, type: 3}
   maxHP: 8
   speed: 4
   atkDamage: 4

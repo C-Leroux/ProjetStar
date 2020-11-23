@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Aphelion_Warrior
   m_EditorClassIdentifier: 
   enemyName: Aphelion Warrior
-  sprite: {fileID: 0}
+  sprite: {fileID: -9151913152592260384, guid: df75218b0c082f242837d1a14f3e3ebd, type: 3}
   maxHP: 5
   speed: 7
   atkDamage: 1

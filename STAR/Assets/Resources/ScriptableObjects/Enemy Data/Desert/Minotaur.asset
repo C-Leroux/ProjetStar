@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minotaur
   m_EditorClassIdentifier: 
   enemyName: Minotaur
-  sprite: {fileID: 0}
+  sprite: {fileID: -3941432212523338681, guid: 4c66edc441ba22440bfbf346c575843f, type: 3}
   maxHP: 6
   speed: 10
   atkDamage: 4

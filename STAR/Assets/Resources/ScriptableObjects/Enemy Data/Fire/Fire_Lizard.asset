@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire_Lizard
   m_EditorClassIdentifier: 
   enemyName: Fire Lizard
-  sprite: {fileID: 0}
+  sprite: {fileID: 6045058915671466076, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
   maxHP: 5
   speed: 5
   atkDamage: 8
