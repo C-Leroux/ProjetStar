@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 9a0e519ecb145e74ca620d6266701da0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3574260330894320781
+    second: monster_earth_golem_0
+  - first:
+      213: -126365259254613671
+    second: monster_earth_golem_1
+  - first:
+      213: 4738434960674752820
+    second: monster_earth_golem_2
+  - first:
+      213: 4977488327441740457
+    second: monster_earth_golem_3
+  - first:
+      213: 7494018352445861626
+    second: monster_earth_golem_4
+  - first:
+      213: -3480903604860101551
+    second: monster_earth_golem_5
+  - first:
+      213: -8388384002571712005
+    second: monster_earth_golem_6
+  - first:
+      213: 4324605074753321003
+    second: monster_earth_golem_7
+  - first:
+      213: -7740387121331452874
+    second: monster_earth_golem_8
+  - first:
+      213: -4117851867854934845
+    second: monster_earth_golem_9
+  - first:
+      213: -3597919477232739228
+    second: monster_earth_golem_10
+  - first:
+      213: 6473539844590646839
+    second: monster_earth_golem_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +107,273 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_earth_golem_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 150
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b16429a2da56ec0800000000000000
+      internalID: -3574260330894320781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 150
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959bd2a577f0f3ef0800000000000000
+      internalID: -126365259254613671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 150
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4398f4ecd7d42c140800000000000000
+      internalID: 4738434960674752820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 100
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a271de0347931540800000000000000
+      internalID: 4977488327441740457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 100
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe2bcd8cf9100860800000000000000
+      internalID: 7494018352445861626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_5
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 100
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cdfee2d9851bfc0800000000000000
+      internalID: -3480903604860101551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 50
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9c4277139769b80800000000000000
+      internalID: -8388384002571712005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_7
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 50
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28f58a1765140c30800000000000000
+      internalID: 4324605074753321003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_8
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 50
+        width: 25
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634c7096cee949490800000000000000
+      internalID: -7740387121331452874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_9
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cce3d22b837ad6c0800000000000000
+      internalID: -4117851867854934845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c551d4c4f911ec0800000000000000
+      internalID: -3597919477232739228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_golem_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736b92cb032a6d950800000000000000
+      internalID: 6473539844590646839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

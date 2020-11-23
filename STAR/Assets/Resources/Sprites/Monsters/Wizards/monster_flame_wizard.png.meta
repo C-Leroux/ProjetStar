@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: a16b2d1c92bd2f74da28d4515c189f7a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 289832164072461199
+    second: monster_flame_wizard_0
+  - first:
+      213: 7245166181453720530
+    second: monster_flame_wizard_1
+  - first:
+      213: -8225465393190937299
+    second: monster_flame_wizard_2
+  - first:
+      213: 3270934203035568163
+    second: monster_flame_wizard_3
+  - first:
+      213: 2442720130172828676
+    second: monster_flame_wizard_4
+  - first:
+      213: -1739326650204913926
+    second: monster_flame_wizard_5
+  - first:
+      213: 1345280897199303143
+    second: monster_flame_wizard_6
+  - first:
+      213: -7484512233458267158
+    second: monster_flame_wizard_7
+  - first:
+      213: -5566317957574837529
+    second: monster_flame_wizard_8
+  - first:
+      213: -4740224131995527854
+    second: monster_flame_wizard_9
+  - first:
+      213: -3996804136278520192
+    second: monster_flame_wizard_10
+  - first:
+      213: 2728008906302527698
+    second: monster_flame_wizard_11
+  - first:
+      213: 4021219398230990311
+    second: monster_flame_wizard_12
+  - first:
+      213: 1790765533349527908
+    second: monster_flame_wizard_13
+  - first:
+      213: -5276804268633432761
+    second: monster_flame_wizard_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +85,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +116,336 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_flame_wizard_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 234
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83950051d0b50400800000000000000
+      internalID: 289832164072461199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 234
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbe83861400c8460800000000000000
+      internalID: 7245166181453720530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 234
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2dd5962ec649dd80800000000000000
+      internalID: -8225465393190937299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 198
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3284c97d351b46d20800000000000000
+      internalID: 3270934203035568163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 198
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cb5ac240946e120800000000000000
+      internalID: 2442720130172828676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_5
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 198
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe7a2280abacd7e0800000000000000
+      internalID: -1739326650204913926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 162
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9eea039d56ba210800000000000000
+      internalID: 1345280897199303143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 162
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb87af37cba12890800000000000000
+      internalID: -7484512233458267158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_8
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 162
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eabfd72f4770c2b0800000000000000
+      internalID: -5566317957574837529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 126
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2551ca84447573eb0800000000000000
+      internalID: -4740224131995527854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 126
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e8e4460df7888c0800000000000000
+      internalID: -3996804136278520192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 126
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8934c85a5dbd520800000000000000
+      internalID: 2728008906302527698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 90
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edd773ccbd3ec730800000000000000
+      internalID: 4021219398230990311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 54
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461cf43c3c31ad810800000000000000
+      internalID: 1790765533349527908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_flame_wizard_14
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 18
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74dd6d2b97605c6b0800000000000000
+      internalID: -5276804268633432761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

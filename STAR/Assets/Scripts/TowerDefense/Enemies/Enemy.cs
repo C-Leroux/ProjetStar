@@ -20,6 +20,9 @@ namespace Assets.Scripts
         {
             poisonned = false;
             stun = false;
+
+            SpriteRenderer sprite = gameObject.AddComponent<SpriteRenderer>();
+            sprite.sprite = enemyData.Sprite;
         }
 
         // Update is called once per frame
@@ -139,6 +142,7 @@ namespace Assets.Scripts
             if (hp < 0)
             {
                 wave.Despawn();
+                Destroy(this);
             }
         }
 

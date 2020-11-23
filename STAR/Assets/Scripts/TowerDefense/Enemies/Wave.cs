@@ -41,8 +41,6 @@ namespace Assets.Scripts
         {
             GameObject enemy_go = new GameObject("Enemy");
             Enemy enemy = enemy_go.AddComponent<Enemy>();
-            SpriteRenderer sprite = enemy_go.AddComponent<SpriteRenderer>();
-            sprite.sprite = Resources.Load<Sprite>("Sprites/Monsters/Elementals/monster_earth_elemental");
             enemy_go.AddComponent<BoxCollider2D>();
             enemy_go.tag = "Ennemi";
             enemy_go.transform.parent = transform;
