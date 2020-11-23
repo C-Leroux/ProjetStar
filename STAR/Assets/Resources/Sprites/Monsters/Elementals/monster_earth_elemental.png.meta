@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 11c09455dae96854d8eb2badd05354ec
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2389222860651740081
+    second: monster_earth_elemental_0
+  - first:
+      213: 1745789476859966450
+    second: monster_earth_elemental_1
+  - first:
+      213: -2991097119217781
+    second: monster_earth_elemental_2
+  - first:
+      213: 2302903442861970333
+    second: monster_earth_elemental_3
+  - first:
+      213: -4439350987757359882
+    second: monster_earth_elemental_4
+  - first:
+      213: 5207163306547944760
+    second: monster_earth_elemental_5
+  - first:
+      213: -5373387177555622741
+    second: monster_earth_elemental_6
+  - first:
+      213: -1380070916309892882
+    second: monster_earth_elemental_7
+  - first:
+      213: 1480086864156074811
+    second: monster_earth_elemental_8
+  - first:
+      213: -835337421727774129
+    second: monster_earth_elemental_9
+  - first:
+      213: -8600278020228496981
+    second: monster_earth_elemental_10
+  - first:
+      213: -4811135199225408408
+    second: monster_earth_elemental_11
+  - first:
+      213: 6056964066971117853
+    second: monster_earth_elemental_12
+  - first:
+      213: -8863590972665185483
+    second: monster_earth_elemental_13
+  - first:
+      213: 5088310054084725465
+    second: monster_earth_elemental_14
+  - first:
+      213: -3808945651520999718
+    second: monster_earth_elemental_15
+  - first:
+      213: -646544120258249237
+    second: monster_earth_elemental_16
+  - first:
+      213: -7400238848164633814
+    second: monster_earth_elemental_17
+  - first:
+      213: -5375642986270045178
+    second: monster_earth_elemental_18
+  - first:
+      213: -4077689986771072929
+    second: monster_earth_elemental_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +100,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +131,357 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_earth_elemental_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 448
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f444c958776c7ded0800000000000000
+      internalID: -2389222860651740081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 448
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f37ad4974a4a3810800000000000000
+      internalID: 1745789476859966450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 448
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8768beec9f55fff0800000000000000
+      internalID: -2991097119217781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 384
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93dfcfda7e85ff10800000000000000
+      internalID: 2302903442861970333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 384
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc617d1cc14462c0800000000000000
+      internalID: -4439350987757359882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 384
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d1d36407f834840800000000000000
+      internalID: 5207163306547944760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 320
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba48829d4d4ed65b0800000000000000
+      internalID: -5373387177555622741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 320
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0408440d009dce0800000000000000
+      internalID: -1380070916309892882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_8
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 320
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33aebe39235a8410800000000000000
+      internalID: 1480086864156074811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_9
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 256
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a435e6a094864f0800000000000000
+      internalID: -835337421727774129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_10
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 256
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba14ea2f4bca5a880800000000000000
+      internalID: -8600278020228496981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_11
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 256
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8649acbd60a6b3db0800000000000000
+      internalID: -4811135199225408408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_13
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 192
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bbeefb8f23ef480800000000000000
+      internalID: -8863590972665185483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_15
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 128
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade62505c18e32bc0800000000000000
+      internalID: -3808945651520999718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 64
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23e91ac9f11d4990800000000000000
+      internalID: -7400238848164633814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_elemental_19
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58c752cf822967c0800000000000000
+      internalID: -4077689986771072929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
