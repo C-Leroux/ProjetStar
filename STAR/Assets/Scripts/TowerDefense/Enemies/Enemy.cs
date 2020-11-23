@@ -29,14 +29,14 @@ namespace Assets.Scripts
                 return;
             if (CanAttackBase())
                 AttackBase();
-            if (!stun)
+            else if (!stun)
             {
                 Walk();
             }
-        //Changing Color sprite according to ennemi state
-        changeSpriteColor();    
+            //Changing Color sprite according to ennemi state
+            changeSpriteColor();    
 
-    }
+        }
         //Poisonned Methods
         public bool getPoisonned()
         {
@@ -117,7 +117,7 @@ namespace Assets.Scripts
         private void Walk()
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[targetIndex], SpeedFormula() * Time.deltaTime);
-            if (transform.localPosition == path[targetIndex])
+            if (transform.localPosition == path[targetIndex] && targetIndex + 1 < path.Count)
             {
                 ++targetIndex;
             }
@@ -149,7 +149,7 @@ namespace Assets.Scripts
 
         private float RangeFormula()
         {
-            return (enemyData.AtkRange / 2f) + 2f;
+            return (enemyData.AtkRange / 2f) + 2.5f;
         }
 
         private float SpeedFormula()
