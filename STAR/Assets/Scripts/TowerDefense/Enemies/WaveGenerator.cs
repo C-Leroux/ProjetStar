@@ -75,7 +75,18 @@ namespace Assets.Scripts
             }
             wave.Init(queue, spawnPoint);
             ++currentWave;
+            Debug.Log(currentWave);
             return wave;
+        }
+
+        public int GetCurrentWave()
+        {
+            return currentWave;
+        }
+
+        public int GetNbWaves()
+        {
+            return nbWaves;
         }
     }
 }

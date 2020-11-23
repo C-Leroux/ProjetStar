@@ -28,7 +28,7 @@ namespace Assets.Scripts
         public int rows = 12;
         public Count objectCount = new Count(1, 3);
         public Count treeCount = new Count(1, 3);
-        public Text round;
+        //public Text round;
         public GameObject spaceship;
         public GameObject[] floorTiles;
         public GameObject[] objectTiles;
@@ -183,7 +183,7 @@ namespace Assets.Scripts
         void Start()
         {
             timePassing = 0;
-            round.text = "Round " + m_round + " / " + m_roundMax;
+            //round.text = "Round " + m_round + " / " + m_roundMax;
             background.enabled = false;
             defeat.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
@@ -194,6 +194,7 @@ namespace Assets.Scripts
             m_round = 1;
             m_roundMax = 4;
             timerIsRunning = false;
+            TDManager.Instance();
         }
 
     // Update is called once per frame
@@ -234,7 +235,7 @@ namespace Assets.Scripts
                }
             }
 
-            if (timerIsRunning && m_base.IsAlive() && m_round <= m_roundMax)
+            if (timerIsRunning && m_base.IsAlive() && !TDManager.Instance().IsWaveEnd())
             {
                 timePassing += Time.deltaTime;
                 if(checkTime < timePassing)
@@ -245,7 +246,7 @@ namespace Assets.Scripts
                         money++;
                     }
                     moneyText.text = (""+ money);
-                    round.text = "Round " + m_round + " / " + m_roundMax;
+                    //round.text = "Round " + m_round + " / " + m_roundMax;
                     //Debug.Log("PV: " + m_base.GetLp());
                 }
                 DisplayTime(timePassing);
@@ -254,8 +255,8 @@ namespace Assets.Scripts
             {
                 background.enabled = true;
                 defeat.gameObject.SetActive(true);
-                            }
-            else if(m_round >= m_roundMax)
+            }
+            else if(TDManager.Instance().IsWaveEnd())
             {
                 background.enabled = true;
                 victory.gameObject.SetActive(true);

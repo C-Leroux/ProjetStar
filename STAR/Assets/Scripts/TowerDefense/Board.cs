@@ -229,8 +229,6 @@ namespace Assets.Scripts
             {
                 int totalMoney = boardManage.GetMoney();
                 int cost = turetDisp.getCout(textTurret);
-                Debug.Log("x" + x);
-                Debug.Log("y" + y);
                 if (totalMoney < cost)
                 {
                     Debug.Log("Pas assez d'argent");

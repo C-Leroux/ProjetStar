@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -7,6 +8,7 @@ namespace Assets.Scripts
     {
         private static TDManager instance;
 
+        public Text waveText;
         private int[,] board;
         private float tileSize = 2.56f;
         private float padding = 0.64f;
@@ -16,6 +18,7 @@ namespace Assets.Scripts
         private WaveGenerator wg;
         private Wave wave;
         private Planet planet;
+        private int waveMax;
 
         private bool isActive = false;
 
@@ -42,6 +45,10 @@ namespace Assets.Scripts
                 if (wave == null || wave.IsCleared())
                 {
                     Destroy(wave);
+                    if ((wg.GetCurrentWave() + 1) <= wg.GetNbWaves())
+                    {
+                        waveText.text = "Round " + (wg.GetCurrentWave() + 1) + " / " + wg.GetNbWaves();
+                    }
                     wave = wg.GenerateWave();
                 }
             }
@@ -61,6 +68,7 @@ namespace Assets.Scripts
             startPoint = new Vector3(2 * tileSize, -(-1) * tileSize + padding, -0.5f); // HARDCODED
             wg = new WaveGenerator(planet, startPoint);
             isActive = true;
+            waveText.text = "Round " + (wg.GetCurrentWave()+1) + " / " + wg.GetNbWaves();
         }
 
         public (int, int) GetStartPoint()
@@ -181,6 +189,19 @@ namespace Assets.Scripts
         private void AddTarget(int i, int j)
         {
             path.Add(new Vector3(j * tileSize, -i * tileSize + padding, -0.5f));
+        }
+
+        //TEST
+        public bool IsWaveEnd()
+        {
+            if(wg != null)
+            {
+                if (wg.GetCurrentWave() > wg.GetNbWaves())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

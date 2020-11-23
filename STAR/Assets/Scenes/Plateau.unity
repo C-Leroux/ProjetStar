@@ -2133,7 +2133,6 @@ MonoBehaviour:
   treeCount:
     minimum: 1
     maximum: 3
-  round: {fileID: 810332591}
   spaceship: {fileID: 8258857367555600930, guid: b9c835f61981d684db2775983529c858,
     type: 3}
   floorTiles:
@@ -2259,6 +2258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d740fa721968af4ab36cdc202b3cb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveText: {fileID: 810332591}
 --- !u!1 &1340774099
 GameObject:
   m_ObjectHideFlags: 0
