@@ -29,7 +29,7 @@ namespace Assets.Scripts
         private Transform boardHolder;
         private string textTurret;
         private BoardManager boardManage;
-
+        private bool isSelectionTurretModeActivate;
 
         public Board(int x, int y)
         {
@@ -137,7 +137,29 @@ namespace Assets.Scripts
             }
         }
 
-        public void TestPlacement()
+
+
+        public void setSelectionTurretMode()
+        {
+            isSelectionTurretModeActivate = !isSelectionTurretModeActivate;
+            Debug.Log(isSelectionTurretModeActivate);
+        }
+
+        public bool getSelectionTurretMode()
+        {
+            return isSelectionTurretModeActivate;
+        }
+
+        public string getCurrentTurretName()
+        {
+            return textTurret;
+        }
+        public Sprite getCurrentTurretSprite(string turretName)
+        {
+            return turetDisp.getSprite(turretName);
+        }
+        
+        public void TestPlacement() //Debut du mode posage de tourelle
         {
             if (gridPositions3.Count <= 0)
             {
@@ -157,7 +179,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void TestPlacement2()
+        public void TestPlacement2() //Fin du mode posage de tourelle
         {
             for (int i = 0; i < gridPositions3.Count; i++)
             {
@@ -265,7 +287,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
-
+            isSelectionTurretModeActivate = false;
         }
 
         // Update is called once per frame

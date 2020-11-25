@@ -17,7 +17,7 @@ namespace Assets.Scripts
         public Sprite getSprite(string Name)
         {
             Sprite turretSprite=null;
-            switch (name)
+            switch (Name)
             {
                 case "STAR": //TOURELLE DE LA STAR
                     turretSprite = turrets[0].sprite;

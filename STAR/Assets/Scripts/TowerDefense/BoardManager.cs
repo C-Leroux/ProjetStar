@@ -60,6 +60,7 @@ namespace Assets.Scripts
         private int typeFoliage;
         private int multiplicator;
         private List<Vector3> gridPositions = new List<Vector3>();
+        private bool isGridSelectionCreated;
 
 
         private void Awake()
@@ -195,18 +196,26 @@ namespace Assets.Scripts
             m_roundMax = 4;
             timerIsRunning = false;
             TDManager.Instance();
+            
+
         }
 
     // Update is called once per frame
     void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                //Debug.Log("mouseDown = " + Input.mousePosition.x + "  || " + Input.mousePosition.y);
-                // Debug.Log("x = " + Input.mousePosition.x / 2.56f + " Y = " + Input.mousePosition.y / 2.56f);
-                //Instantiate(test_vert, new Vector3(Input.mousePosition.x / 2.56f, (Input.mousePosition.y / -2.56f) , -2f), Quaternion.identity);
+            //IsSelectionTurretMode = true -> On selectionne des tourelles, sinon on ne selectionne pas
+            if (m_board.getSelectionTurretMode() && !isGridSelectionCreated) //Au Premier clic sur un bouton de tourelle, le mode selection tourelle est activé
+            {             
+                m_board.TestPlacement();
+                isGridSelectionCreated = true;
+               
+                
             }
-
+            if (!m_board.getSelectionTurretMode() && isGridSelectionCreated)//Au deuxième clic sur le même bouton de tourelle, le mode selection tourelle est désactivé
+            {
+                m_board.TestPlacement2();
+                isGridSelectionCreated = false;
+            }
             if (Input.GetKeyDown("space"))
             {
                 ManageTime();
