@@ -8,41 +8,63 @@ namespace Assets.Scripts
     {
         public Turret[] turrets;
         public TurretBehaviour turretTemplate;
-        private int xPosition;
-        private int yPosition;
         // Start is called before the first frame update
         void Start()
         {
 
         }
 
-        public int getCout(string name)
+        public Sprite getSprite(string Name)
         {
-            GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
-            TurretBehaviour behaviour = obj.GetComponent<TurretBehaviour>();
-            int cost = 100;
+            Sprite turretSprite=null;
             switch (name)
             {
                 case "STAR": //TOURELLE DE LA STAR
-                    cost = behaviour.getCout(turrets[0]);
+                    turretSprite = turrets[0].sprite;
                     break;
                 case "Grenadiere": //GRENADIERE
-                    cost = behaviour.getCout(turrets[1]);
+                    turretSprite = turrets[1].sprite;
                     break;
                 case "Cryomancienne": //CRYOMANCIENNE
-                    cost = behaviour.getCout(turrets[2]);
+                    turretSprite = turrets[2].sprite;
                     break;
                 case "Empoisonneuse": //EMPOISONNEUSE
-                    cost = behaviour.getCout(turrets[3]);
+                    turretSprite = turrets[3].sprite;
                     break;
                 case "Pyromancienne": //PYROMANCIENNE
-                    cost = behaviour.getCout(turrets[4]);
+                    turretSprite = turrets[4].sprite;
                     break;
                 case "Survolteuse": //SURVOLTEUSE
-                    cost = behaviour.getCout(turrets[5]);
+                    turretSprite = turrets[5].sprite;
                     break;
             }
-            Destroy(obj);
+            return turretSprite;
+        }
+
+        public int getCout(string name)
+        {
+            int cost = 0;
+            switch (name)
+            {
+                case "STAR": //TOURELLE DE LA STAR
+                    cost = turrets[0].cost;
+                    break;
+                case "Grenadiere": //GRENADIERE
+                    cost = turrets[1].cost;
+                    break;
+                case "Cryomancienne": //CRYOMANCIENNE
+                    cost = turrets[2].cost;
+                    break;
+                case "Empoisonneuse": //EMPOISONNEUSE
+                    cost = turrets[3].cost;
+                    break;
+                case "Pyromancienne": //PYROMANCIENNE
+                    cost = turrets[4].cost;
+                    break;
+                case "Survolteuse": //SURVOLTEUSE
+                    cost = turrets[5].cost;
+                    break;
+            }
             return cost;
         }
 

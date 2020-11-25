@@ -150,6 +150,7 @@ namespace Assets.Scripts
                             GameObject gO = Instantiate(test_vert, gridPositions2[y, x], Quaternion.identity);
                             gridPositions3.Add(gO);
                             //gridCase[x, y].AddObject(gO, false);
+                                                    
                         }
                     }
                 }

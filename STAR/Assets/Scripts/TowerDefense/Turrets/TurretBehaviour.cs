@@ -36,12 +36,6 @@ namespace Assets.Scripts
 
         }
 
-        public int getCout(Turret turret)
-        {
-            this.cost = turret.cost;
-            return cost;
-        }
-
         // Start is called before the first frame update
         void Start()
         {

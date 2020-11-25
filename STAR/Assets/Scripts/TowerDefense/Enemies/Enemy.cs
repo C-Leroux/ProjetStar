@@ -37,7 +37,7 @@ namespace Assets.Scripts
                 Walk();
             }
             //Changing Color sprite according to ennemi state
-            changeSpriteColor();    
+            changeSpriteColor();
 
         }
         //Poisonned Methods
@@ -105,8 +105,8 @@ namespace Assets.Scripts
             }
         }
 
-    
-    public void LoadData(EnemyData data)
+
+        public void LoadData(EnemyData data)
         {
             enemyData = data;
             hp = data.MaxHP;
@@ -160,5 +160,7 @@ namespace Assets.Scripts
         {
             return (enemyData.Speed / 2);
         }
+
+
     }
 }
