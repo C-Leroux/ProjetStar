@@ -401,7 +401,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
-          m_MethodName: TestPlacement
+          m_MethodName: BeginningPoseTurret
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1067,7 +1067,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
-          m_MethodName: TestPlacement
+          m_MethodName: BeginningPoseTurret
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1589,7 +1589,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
-          m_MethodName: TestPlacement
+          m_MethodName: BeginningPoseTurret
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2037,7 +2037,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
-          m_MethodName: TestPlacement
+          m_MethodName: BeginningPoseTurret
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2127,12 +2127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 16
   rows: 12
-  objectCount:
-    minimum: 1
-    maximum: 3
-  treeCount:
-    minimum: 1
-    maximum: 3
   spaceship: {fileID: 8258857367555600930, guid: b9c835f61981d684db2775983529c858,
     type: 3}
   floorTiles:
@@ -2315,7 +2309,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
-          m_MethodName: TestPlacement
+          m_MethodName: BeginningPoseTurret
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3108,7 +3102,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
-          m_MethodName: TestPlacement
+          m_MethodName: BeginningPoseTurret
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

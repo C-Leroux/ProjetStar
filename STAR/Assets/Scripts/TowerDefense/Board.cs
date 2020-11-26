@@ -159,7 +159,7 @@ namespace Assets.Scripts
             return turetDisp.getSprite(turretName);
         }
         
-        public void TestPlacement() //Debut du mode posage de tourelle
+        public void BeginningPoseTurret() //Debut du mode posage de tourelle
         {
             if (gridPositions3.Count <= 0)
             {
@@ -179,7 +179,7 @@ namespace Assets.Scripts
             }
         }
 
-        public void TestPlacement2() //Fin du mode posage de tourelle
+        public void EndingPoseTurret() //Fin du mode posage de tourelle
         {
             for (int i = 0; i < gridPositions3.Count; i++)
             {
@@ -258,6 +258,8 @@ namespace Assets.Scripts
                 }
                 else
                 {
+                    Debug.Log("x :" + x);
+                    Debug.Log("y :" + y);
                    /* for (int i = 0; i < columns; i++)
                     {
                         for (int j = 0; j < rows; j++)

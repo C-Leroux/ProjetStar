@@ -9,26 +9,8 @@ namespace Assets.Scripts
 {
     public class BoardManager : MonoBehaviour
     {
-        [Serializable]
-        public class Count
-        {
-            public int minimum;
-            public int maximum;
-
-            public Count(int min, int max)
-            {
-                minimum = min;
-                maximum = max;
-            }
-        }
-
         private static BoardManager instance;
 
-        public int columns = 16;
-        public int rows = 12;
-        public Count objectCount = new Count(1, 3);
-        public Count treeCount = new Count(1, 3);
-        //public Text round;
         public GameObject spaceship;
         public GameObject[] floorTiles;
         public GameObject[] objectTiles;
@@ -80,43 +62,7 @@ namespace Assets.Scripts
             return instance;
         }
 
-        Vector3 RandomPosition()
-        {
-            int randomIndex = Random.Range(0, gridPositions.Count);
-            Vector3 randomPosition = gridPositions[randomIndex];
-            gridPositions.RemoveAt(randomIndex);
-            return randomPosition;
-        }
-
-        void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
-        {
-            int objectCount = Random.Range(minimum, maximum + 1);
-            for (int i = 0; i < objectCount; i++)
-            {
-                Vector3 randomPosition = RandomPosition();
-                GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-                Instantiate(tileChoice, randomPosition, Quaternion.identity);
-            }
-        }
-
-        void LayoutObjectAtRandom(GameObject[] tileArray, GameObject[] tileArray2, int minimum, int maximum)
-        {
-            int objectCount = Random.Range(minimum, maximum + 1);
-            for (int i = 0; i < objectCount; i++)
-            {
-                Vector3 randomPosition = RandomPosition();
-                GameObject tileChoice2 = tileArray2[Random.Range(0, tileArray2.Length)];
-                Vector3 scaleChange = new Vector3(0.6f, 0.6f, 0.2f);
-                tileChoice2.transform.localScale = scaleChange;
-                Instantiate(tileChoice2, randomPosition, Quaternion.identity);
-                randomPosition.y--;
-                randomPosition.z = randomPosition.z + 0.1f;
-                GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-                Instantiate(tileChoice, randomPosition, Quaternion.identity);
-
-            }
-        }
-
+        //Gère l'arret et la reprise du temps
         public void ManageTime()
         {
             if (timerIsRunning)
@@ -129,6 +75,7 @@ namespace Assets.Scripts
             }
         }
 
+        //Affichage du temps
         public void DisplayTime(float timeToDisplay)
         {
             timeToDisplay += 1;
@@ -138,6 +85,7 @@ namespace Assets.Scripts
 
             timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+
 
         public void SetupScene(int level, Planet newplanet)
         {
@@ -149,13 +97,13 @@ namespace Assets.Scripts
         public int GetMoney()
         {
             return money;
-
         }
 
         public int[,] GetBoard()
         {
             return m_board.GetBoard();
         }
+
         public void SetMoney(int cost)
         {
             money -= cost;
@@ -164,7 +112,6 @@ namespace Assets.Scripts
 
         void InitiateBoard()
         {
-            //m_board = new Board(18,12, planet);
             m_board.InitBoardAlone(planet);
             m_board.InitialiseList2();
             m_board.LayoutTree(1, 2);
@@ -180,11 +127,11 @@ namespace Assets.Scripts
             m_board.LayoutTree(12, 1);
             m_board.AffObject();
         }
+
         // Start is called before the first frame update
         void Start()
         {
             timePassing = 0;
-            //round.text = "Round " + m_round + " / " + m_roundMax;
             background.enabled = false;
             defeat.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
@@ -206,16 +153,15 @@ namespace Assets.Scripts
             //IsSelectionTurretMode = true -> On selectionne des tourelles, sinon on ne selectionne pas
             if (m_board.getSelectionTurretMode() && !isGridSelectionCreated) //Au Premier clic sur un bouton de tourelle, le mode selection tourelle est activé
             {             
-                m_board.TestPlacement();
-                isGridSelectionCreated = true;
-               
-                
+                m_board.BeginningPoseTurret();
+                isGridSelectionCreated = true; 
             }
             if (!m_board.getSelectionTurretMode() && isGridSelectionCreated)//Au deuxième clic sur le même bouton de tourelle, le mode selection tourelle est désactivé
             {
-                m_board.TestPlacement2();
+                m_board.EndingPoseTurret();
                 isGridSelectionCreated = false;
             }
+            //DEBUG
             if (Input.GetKeyDown("space"))
             {
                 ManageTime();
@@ -226,16 +172,17 @@ namespace Assets.Scripts
             }
             else if(Input.GetKeyDown("z"))
             {
-                m_board.TestPlacement();
+                m_board.BeginningPoseTurret();
             }
             else if(Input.GetKeyDown("e"))
             {
-                m_board.TestPlacement2();
+                m_board.EndingPoseTurret();
             }
             else if(Input.GetKeyDown("r"))
             {
                 m_round++;
-            }else if(Input.GetKeyDown("t"))
+            }
+            else if(Input.GetKeyDown("t"))
             {
                 money += 500;
                if( money > limitMoney)
@@ -244,6 +191,8 @@ namespace Assets.Scripts
                }
             }
 
+
+            //Si la condition de victoire et defaite n'est pas atteinte
             if (timerIsRunning && m_base.IsAlive() && !TDManager.Instance().IsWaveEnd())
             {
                 timePassing += Time.deltaTime;
@@ -255,16 +204,16 @@ namespace Assets.Scripts
                         money++;
                     }
                     moneyText.text = (""+ money);
-                    //round.text = "Round " + m_round + " / " + m_roundMax;
-                    //Debug.Log("PV: " + m_base.GetLp());
                 }
                 DisplayTime(timePassing);
             }
+            //Défaite
             else if(!m_base.IsAlive())
             {
                 background.enabled = true;
                 defeat.gameObject.SetActive(true);
             }
+            //Victoire
             else if(TDManager.Instance().IsWaveEnd())
             {
                 background.enabled = true;
