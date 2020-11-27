@@ -139,28 +139,30 @@ namespace Assets.Scripts
 
 
 
-        public void setSelectionTurretMode()
+        public void SetSelectionTurretMode()
         {
             isSelectionTurretModeActivate = !isSelectionTurretModeActivate;
             Debug.Log(isSelectionTurretModeActivate);
         }
 
-        public bool getSelectionTurretMode()
+        public bool GetSelectionTurretMode()
         {
             return isSelectionTurretModeActivate;
         }
 
-        public string getCurrentTurretName()
+        public string GetCurrentTurretName()
         {
             return textTurret;
         }
-        public Sprite getCurrentTurretSprite(string turretName)
+
+        public Sprite GetCurrentTurretSprite(string turretName)
         {
             return turetDisp.getSprite(turretName);
         }
         
         public void BeginningPoseTurret() //Debut du mode posage de tourelle
         {
+            Debug.Log("uejn");
             if (gridPositions3.Count <= 0)
             {
                 for (int x = 0; x < columns; x++)
@@ -234,19 +236,19 @@ namespace Assets.Scripts
             this.planet = planet;
         }
 
-        public void setStringTourelle(string text)
+        public void SetStringTourelle(string text)
         {
             this.textTurret = text;
         }
 
-        public void afficheTourelle()
+        public void DisplayTurret()
         {
             if (textTurret != "")
             {
                 turetDisp.createTurret(textTurret);
             }
         }
-        public void afficheTourelle(float x, float y)
+        public void DisplayTurret(float x, float y)
         {
             if (textTurret != "")
             {
@@ -297,5 +299,6 @@ namespace Assets.Scripts
         {
 
         }
+
     }
 }

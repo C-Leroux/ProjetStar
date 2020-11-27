@@ -151,12 +151,12 @@ namespace Assets.Scripts
     void Update()
         {
             //IsSelectionTurretMode = true -> On selectionne des tourelles, sinon on ne selectionne pas
-            if (m_board.getSelectionTurretMode() && !isGridSelectionCreated) //Au Premier clic sur un bouton de tourelle, le mode selection tourelle est activé
+            if (m_board.GetSelectionTurretMode() && !isGridSelectionCreated) //Au Premier clic sur un bouton de tourelle, le mode selection tourelle est activé
             {             
                 m_board.BeginningPoseTurret();
                 isGridSelectionCreated = true; 
             }
-            if (!m_board.getSelectionTurretMode() && isGridSelectionCreated)//Au deuxième clic sur le même bouton de tourelle, le mode selection tourelle est désactivé
+            if (!m_board.GetSelectionTurretMode() && isGridSelectionCreated)//Au deuxième clic sur le même bouton de tourelle, le mode selection tourelle est désactivé
             {
                 m_board.EndingPoseTurret();
                 isGridSelectionCreated = false;

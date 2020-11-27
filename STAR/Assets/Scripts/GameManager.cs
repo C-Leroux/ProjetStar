@@ -57,7 +57,7 @@ namespace Assets.Scripts
 
         IEnumerator LoadPlateau(SpaceObject destination)
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("plateau Sprint3Nico", LoadSceneMode.Single);
+            asyncLoadLevel = SceneManager.LoadSceneAsync("Plateau", LoadSceneMode.Single);
             while (!asyncLoadLevel.isDone)
             {
                 print("Loading the Scene");

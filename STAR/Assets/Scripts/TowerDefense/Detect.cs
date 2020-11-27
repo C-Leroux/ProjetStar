@@ -28,7 +28,7 @@ namespace Assets.Scripts
                         if (selectedObject.tag == "Place")
                         {
                             Vector3 vec = selectedObject.transform.position;
-                            board.afficheTourelle(vec.x, vec.y);
+                            board.DisplayTurret(vec.x, vec.y);
                         }
                     }
                 }

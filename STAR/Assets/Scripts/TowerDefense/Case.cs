@@ -8,6 +8,9 @@ namespace Assets.Scripts
     {
         private bool isClickable;
         private List<GameObject> listObject;
+        private GameObject m_terrain;
+        private GameObject m_object;
+        private Turret m_turret;
         private int x;
         private int y;
         private bool isDepart;
@@ -24,16 +27,37 @@ namespace Assets.Scripts
             isVillage = false;
             this.boardHolder = boardHolder;
         }
-
+        
         public void AddObject(GameObject new_object)
         {
             listObject.Add(new_object);
+            switch(new_object.tag)
+            {
+                case "Path":
+                    isClickable = false;
+                    SetTerrain(new_object);
+                    break;
+
+                case "Floor":
+                    SetTerrain(new_object);
+                    break;
+            }
+
+        }
+
+        public void SetTerrain(GameObject terrain)
+        {
+            this.m_terrain = terrain;
         }
 
         public void AddObject(GameObject new_object, bool isClickable)
         {
             this.isClickable = isClickable;
             listObject.Add(new_object);
+            if (new_object.tag == "Floor")
+            {
+                SetTerrain(new_object);
+            }
         }
 
         public void PrintAllObject()
@@ -92,7 +116,7 @@ namespace Assets.Scripts
 
         public float GetX()
         {
-            return x*2.56f;
+            return x * 2.56f;
         }
 
         public float GetY()

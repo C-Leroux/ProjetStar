@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2997299726800670395}
   m_Layer: 0
   m_Name: FloorIce09
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1015451075
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f8cbe09568ba24bc8a1c093a87021e8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

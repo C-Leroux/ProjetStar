@@ -8,6 +8,8 @@ TagManager:
   - Trunk
   - Ennemi
   - Place
+  - Floor
+  - Path
   layers:
   - Default
   - TransparentFX
