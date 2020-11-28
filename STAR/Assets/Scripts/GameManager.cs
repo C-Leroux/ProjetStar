@@ -65,6 +65,7 @@ namespace Assets.Scripts
             }
             InitBoard((Planet)destination);
             InitTD(boardScript.GetBoard(), (Planet)destination);
+            print("Scene loaded");
         }
 
         public void TravelTo(SpaceObject destination)
