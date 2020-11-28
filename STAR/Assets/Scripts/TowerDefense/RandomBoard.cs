@@ -30,7 +30,7 @@ namespace Assets.Scripts
         private bool isComplete = false;
         private int nbTiles = 0;        // Number of tiles that composed the current path
 
-        public RandomBoard(int width = 12, int height = 18, int seed = 0, int difficulty = 0)
+        public RandomBoard(int width = 12, int height = 18, int difficulty = 0, int seed = 0)
         {
             this.width = width;
             this.height = height;
@@ -50,9 +50,9 @@ namespace Assets.Scripts
         {
             Random.InitState(seed);
 
-            int startValue = Random.Range(0, height + width);
+            int startValue = Random.Range(1, height + width - 2);
             (int, int) startPoint;
-            if (startValue < height)
+            if (startValue < height - 1)
             {
                 startPoint = (startValue, 0);
                 dir = Dir.right;
@@ -61,7 +61,7 @@ namespace Assets.Scripts
             }
             else
             {
-                startPoint = (0, startValue - height);
+                startPoint = (0, startValue - height + 2);
                 dir = Dir.down;
                 previousDir = Dir.down;
                 isSide = false;
@@ -84,10 +84,15 @@ namespace Assets.Scripts
 
                 if (d100 >= threshold)
                 {
-                    if (d100 < (100 + threshold) / 2)
-                        TurnLeft();
+                    if (rot == 0)
+                        TurnTowardCenter();
                     else
-                        TurnRight();
+                    {
+                        if (d100 < (100 + threshold) / 2)
+                            TurnLeft();
+                        else
+                            TurnRight();
+                    }
                 }
 
                 if (!GoStraight())
@@ -233,8 +238,42 @@ namespace Assets.Scripts
                 TurnLeft();
         }
 
+        private void TurnTowardCenter()
+        {
+            switch (dir)
+            {
+                case Dir.up:
+                    if (j < width / 2)
+                        TurnRight();
+                    else
+                        TurnLeft();
+                    break;
+                case Dir.right:
+                    if (i < height / 2)
+                        TurnRight();
+                    else
+                        TurnLeft();
+                    break;
+                case Dir.down:
+                    if (j < width / 2)
+                        TurnLeft();
+                    else
+                        TurnRight();
+                    break;
+                case Dir.left:
+                    if (i < height / 2)
+                        TurnLeft();
+                    else
+                        TurnRight();
+                    break;
+            }
+        }
+
         private int CalculateThreshold()
         {
+            if (nbTiles < 2)
+                return 100;
+
             int th = 70 + 10 * difficulty;
 
             if (rot != 0)
