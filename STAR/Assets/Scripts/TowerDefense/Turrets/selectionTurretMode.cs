@@ -14,6 +14,13 @@ public class selectionTurretMode : MonoBehaviour
 
     public void onClick()
     {
+        Debug.Log("je suis ici");
+        this.gameObject.GetComponent<Image>().enabled = !this.gameObject.GetComponent<Image>().isActiveAndEnabled;
+    }
+
+
+    public void ChangeImage()
+    {
         this.gameObject.GetComponent<Image>().enabled = !this.gameObject.GetComponent<Image>().isActiveAndEnabled;
     }
 

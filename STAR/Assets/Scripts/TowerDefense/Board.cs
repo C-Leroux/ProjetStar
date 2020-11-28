@@ -81,15 +81,16 @@ namespace Assets.Scripts
                     if (board[i, j] < 10)
                     {
                         objectToLoad = floorTiles[board[i, j] + typeFloor];
-                        verif = true;
+                        //verif = true;
                     }
                     else
                     {
                         objectToLoad = pathTiles[board[i, j] + typePath - 10];
-                        verif = false;
+                        //verif = false;
                     }
                     gridCase[j, i] = new Case(j, i, boardHolder);
-                    gridCase[j, i].AddObject(objectToLoad, verif);
+                   // gridCase[j, i].AddObject(objectToLoad, verif);
+                    gridCase[j, i].AddObject(objectToLoad);
                     if (i == 0 && board[i, j] == 10)
                     {
                         gridCase[j, i].SetDepart();
@@ -98,7 +99,8 @@ namespace Assets.Scripts
                     if (i == rows - 1 && board[i, j] == 10)
                     {
                         gridCase[j, i - 1].SetVillage();
-                        gridCase[j, i - 1].AddObject(spaceship, verif);
+                        //gridCase[j, i - 1].AddObject(spaceship, verif);
+                        gridCase[j, i - 1].AddObject(spaceship);
                     }
                 }
             }
@@ -112,7 +114,13 @@ namespace Assets.Scripts
             {
                 for (int j = 0; j < rows; j++)
                 {
-                    gridCase[i,j].PrintAllObject();
+                    if(gridCase[i, j].GetTerrain() != null)
+                    {
+                       var gO = Instantiate(gridCase[i, j].GetTerrain(), new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -0.1f), Quaternion.identity) as GameObject;
+                       gO.transform.SetParent(boardHolder);
+                    }
+                    gridCase[i, j].SetTerrain(null);
+                   // gridCase[i,j].PrintAllObject();
                 }
             }
         }
@@ -197,13 +205,15 @@ namespace Assets.Scripts
                 gridPositions2[y, x] = Vector3.zero;
                 gridPositions2[y + 1, x] = Vector3.zero;
                 GameObject tileChoice = treeTiles[Random.Range(typeTree, typeTree + 2)];
-                gridCase[x,y].AddObject(tileChoice, false);
+                //gridCase[x,y].AddObject(tileChoice, false);
+                gridCase[x,y].AddObject(tileChoice);
                 if (planet.biome != Planet.Biome.fire)
                 {
                     GameObject tileChoice2 = foliageTiles[Random.Range(typeFoliage, typeFoliage + 1)];
                     Vector3 scaleChange = new Vector3(0.6f, 0.6f, 1f);
                     tileChoice2.transform.localScale = scaleChange;
-                    gridCase[x, y -1 ].AddObject(tileChoice2, false);
+                    //gridCase[x, y -1 ].AddObject(tileChoice2, false);
+                    gridCase[x, y -1 ].AddObject(tileChoice2);
                 }
             }
 
@@ -288,7 +298,7 @@ namespace Assets.Scripts
             childOb.transform.parent = boardHolder.transform;
         }
 
-        // Start is called before the first frame update
+        /*Start is called before the first frame update
         void Start()
         {
             isSelectionTurretModeActivate = false;
@@ -298,7 +308,7 @@ namespace Assets.Scripts
         void Update()
         {
 
-        }
+        }*/
 
     }
 }

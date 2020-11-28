@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Case : MonoBehaviour
+    public class Case //: MonoBehaviour
     {
         private bool isClickable;
         private List<GameObject> listObject;
@@ -41,6 +41,16 @@ namespace Assets.Scripts
                 case "Floor":
                     SetTerrain(new_object);
                     break;
+                
+                case "Three":
+                    isClickable = false;
+                    SetObject(new_object);
+                    break;
+
+                case "Foliage":
+                    isClickable = false;
+                    SetObject(new_object);
+                    break;
             }
 
         }
@@ -50,6 +60,31 @@ namespace Assets.Scripts
             this.m_terrain = terrain;
         }
 
+        public void SetObject(GameObject new_object)
+        {
+            this.m_object = new_object;
+        } 
+        
+        public void SetTurret(Turret turret)
+        {
+            this.m_turret = turret;
+        }
+
+        public Turret GetTurret()
+        {
+            return m_turret;
+        }
+        
+        public GameObject GetObject()
+        {
+            return m_object;
+        }
+
+        public GameObject GetTerrain()
+        {
+            return m_terrain;
+        }
+        /*
         public void AddObject(GameObject new_object, bool isClickable)
         {
             this.isClickable = isClickable;
@@ -58,9 +93,9 @@ namespace Assets.Scripts
             {
                 SetTerrain(new_object);
             }
-        }
+        }*/
 
-        public void PrintAllObject()
+       /* public void PrintAllObject()
         {
             for (int i = 0; i < listObject.Count; i++)
             {
@@ -85,7 +120,7 @@ namespace Assets.Scripts
                 gO = Instantiate(m_object, new Vector3(x * 2.56f, -y * 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
             }
             gO.transform.SetParent(boardHolder);
-        }
+        }*/
 
         public bool IsClickable()
         {
