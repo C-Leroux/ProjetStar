@@ -117,7 +117,7 @@ namespace Assets.Scripts
             m_board.LayoutTree(1, 2);
             m_board.LayoutTree(9, 1);
             m_board.LayoutTree(12, 6);
-            m_board.LayoutTree(11, 6);
+            //m_board.LayoutTree(11, 6);
             m_board.LayoutTree(10, 6);
             m_board.LayoutTree(7, 6);
             m_board.LayoutTree(9, 8);

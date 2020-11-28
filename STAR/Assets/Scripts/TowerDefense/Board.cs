@@ -116,10 +116,22 @@ namespace Assets.Scripts
                 {
                     if(gridCase[i, j].GetTerrain() != null)
                     {
-                       var gO = Instantiate(gridCase[i, j].GetTerrain(), new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -0.1f), Quaternion.identity) as GameObject;
-                       gO.transform.SetParent(boardHolder);
+                       var terrain = Instantiate(gridCase[i, j].GetTerrain(), new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -0.1f), Quaternion.identity) as GameObject;
+                       terrain.transform.SetParent(boardHolder);
+                       gridCase[i, j].SetTerrain(terrain);
+                       //Destroy(gridCase[i, j].GetTerrain());//Working
                     }
-                    gridCase[i, j].SetTerrain(null);
+                    if(gridCase[i, j].GetObject() != null)
+                    {
+                        double z = -0.3;
+                        if (gridCase[i, j].GetObject().tag == "Trunk")
+                        {
+                            z = -0.2;
+                        }
+                        var new_object = Instantiate(gridCase[i, j].GetObject(), new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), (float)z), Quaternion.identity) as GameObject;
+                        new_object.transform.SetParent(boardHolder);
+                        gridCase[i, j].SetObject(new_object);
+                    }
                    // gridCase[i,j].PrintAllObject();
                 }
             }
@@ -170,7 +182,6 @@ namespace Assets.Scripts
         
         public void BeginningPoseTurret() //Debut du mode posage de tourelle
         {
-            Debug.Log("uejn");
             if (gridPositions3.Count <= 0)
             {
                 for (int x = 0; x < columns; x++)
@@ -203,7 +214,7 @@ namespace Assets.Scripts
             if (!gridPositions2[y, x].Equals(Vector3.zero))
             {
                 gridPositions2[y, x] = Vector3.zero;
-                gridPositions2[y + 1, x] = Vector3.zero;
+                gridPositions2[y - 1, x] = Vector3.zero;
                 GameObject tileChoice = treeTiles[Random.Range(typeTree, typeTree + 2)];
                 //gridCase[x,y].AddObject(tileChoice, false);
                 gridCase[x,y].AddObject(tileChoice);
@@ -293,10 +304,6 @@ namespace Assets.Scripts
             return board;
         }
 
-        void Parent(GameObject childOb)
-        {
-            childOb.transform.parent = boardHolder.transform;
-        }
 
         /*Start is called before the first frame update
         void Start()

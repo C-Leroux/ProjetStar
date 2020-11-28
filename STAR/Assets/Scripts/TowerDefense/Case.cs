@@ -42,12 +42,13 @@ namespace Assets.Scripts
                     SetTerrain(new_object);
                     break;
                 
-                case "Three":
+                case "Trunk":
                     isClickable = false;
                     SetObject(new_object);
                     break;
 
                 case "Foliage":
+                    Debug.Log("foliage" + x + " " + y);
                     isClickable = false;
                     SetObject(new_object);
                     break;
