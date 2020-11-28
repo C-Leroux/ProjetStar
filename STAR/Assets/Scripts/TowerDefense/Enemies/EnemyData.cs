@@ -18,7 +18,9 @@ namespace Assets.Scripts
         private int atkDamage;
         [SerializeField]
         private int atkRange;
-        
+        [SerializeField]
+        private int droppedMoney;
+
         public string EnemyName
         {
             get
@@ -64,6 +66,14 @@ namespace Assets.Scripts
             get
             {
                 return atkRange;
+            }
+        }
+        
+        public int DroppedMoney
+        {
+            get
+            {
+                return droppedMoney;
             }
         }
     }

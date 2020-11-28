@@ -16,5 +16,4 @@ public class Turret : ScriptableObject
     public float readyTime;
     public ProjectileBehaviour projectileTemplate;
     public Projectile projectileToSpawn;
-
 }

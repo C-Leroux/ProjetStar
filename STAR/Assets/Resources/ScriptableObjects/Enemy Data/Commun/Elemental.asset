@@ -18,3 +18,4 @@ MonoBehaviour:
   speed: 8
   atkDamage: 3
   atkRange: 5
+  droppedMoney: 3

@@ -4,13 +4,15 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Case //: MonoBehaviour
+    public class Case
     {
         private bool isClickable;
         private List<GameObject> listObject;
         private GameObject m_terrain;
         private GameObject m_object;
         private Turret m_turret;
+        private GameObject m_turretObject;
+        private TurretBehaviour m_turretBehaviour;
         private int x;
         private int y;
         private bool isDepart;
@@ -48,7 +50,11 @@ namespace Assets.Scripts
                     break;
 
                 case "Foliage":
-                    Debug.Log("foliage" + x + " " + y);
+                    isClickable = false;
+                    SetObject(new_object);
+                    break;
+
+                case "Object":
                     isClickable = false;
                     SetObject(new_object);
                     break;
@@ -76,6 +82,26 @@ namespace Assets.Scripts
             return m_turret;
         }
         
+        public void SetTurretObject(GameObject turretObject)
+        {
+            this.m_turretObject = turretObject;
+        }
+        
+        public void SetTurretBehaviour(TurretBehaviour turretBehaviour)
+        {
+            this.m_turretBehaviour = turretBehaviour;
+        }
+
+        public TurretBehaviour GetTurretBehaviour()
+        {
+            return m_turretBehaviour;
+        }
+
+        public GameObject GetTurretObject()
+        {
+            return m_turretObject;
+        }
+        
         public GameObject GetObject()
         {
             return m_object;
@@ -85,43 +111,6 @@ namespace Assets.Scripts
         {
             return m_terrain;
         }
-        /*
-        public void AddObject(GameObject new_object, bool isClickable)
-        {
-            this.isClickable = isClickable;
-            listObject.Add(new_object);
-            if (new_object.tag == "Floor")
-            {
-                SetTerrain(new_object);
-            }
-        }*/
-
-       /* public void PrintAllObject()
-        {
-            for (int i = 0; i < listObject.Count; i++)
-            {
-                PrintObject(listObject[i], i);
-            }
-        }
-
-        public void PrintObject(GameObject m_object, int z)
-        {
-            GameObject gO;
-            if (m_object.tag == "Foliage")
-            {
-                z++;
-                gO = Instantiate(m_object, new Vector3(x * 2.56f, -(y + 1 )* 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
-            }
-            else if(m_object.tag == "Trunk")
-            {
-                gO = Instantiate(m_object, new Vector3(x * 2.56f, -(float)(y + 0.8 ) * 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
-            }
-            else
-            {
-                gO = Instantiate(m_object, new Vector3(x * 2.56f, -y * 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
-            }
-            gO.transform.SetParent(boardHolder);
-        }*/
 
         public bool IsClickable()
         {
@@ -158,18 +147,6 @@ namespace Assets.Scripts
         public float GetY()
         {
             return y * 2.56f;
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

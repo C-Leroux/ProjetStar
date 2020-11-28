@@ -75,7 +75,6 @@ namespace Assets.Scripts
             }
             wave.Init(queue, spawnPoint);
             ++currentWave;
-            Debug.Log(currentWave);
             return wave;
         }
 

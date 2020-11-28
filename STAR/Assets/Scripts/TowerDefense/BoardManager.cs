@@ -33,9 +33,6 @@ namespace Assets.Scripts
         public Base m_base;
         private Planet planet;
         private int m_round;
-        private int m_roundMax;
-        private int money;
-        private int limitMoney;
         private int typeFloor;
         private int typePath;
         private int typeTree;
@@ -94,20 +91,9 @@ namespace Assets.Scripts
             InitiateBoard();
         }
 
-        public int GetMoney()
-        {
-            return money;
-        }
-
         public int[,] GetBoard()
         {
             return m_board.GetBoard();
-        }
-
-        public void SetMoney(int cost)
-        {
-            money -= cost;
-            moneyText.text = ("" + money);
         }
 
         void InitiateBoard()
@@ -135,16 +121,13 @@ namespace Assets.Scripts
             background.enabled = false;
             defeat.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
-            m_base = new Base(healthbar, healthbarText);
+            Base.Instance.SetHealthbar(healthbar);
+            Base.Instance.SetHealthbarText(healthbarText);
+            Money.Instance.AddMoneyText(moneyText);
+            Money.Instance.LaunchBoard();
             checkTime = 0;
-            limitMoney = 10000;//2147483647
-            money = 0;
             m_round = 1;
-            m_roundMax = 4;
             timerIsRunning = false;
-            TDManager.Instance();
-            
-
         }
 
     // Update is called once per frame
@@ -168,7 +151,8 @@ namespace Assets.Scripts
             }
             else if (Input.GetKeyDown("a"))
             {
-                m_base.ReceiveAttack(500);
+                //m_base.ReceiveAttack(500);
+                Base.Instance.ReceiveAttack(500);
             }
             else if(Input.GetKeyDown("z"))
             {
@@ -184,31 +168,22 @@ namespace Assets.Scripts
             }
             else if(Input.GetKeyDown("t"))
             {
-                money += 500;
-               if( money > limitMoney)
-               {
-                    money = limitMoney;
-               }
+                Money.Instance.AddMoney(500);
             }
 
-
             //Si la condition de victoire et defaite n'est pas atteinte
-            if (timerIsRunning && m_base.IsAlive() && !TDManager.Instance().IsWaveEnd())
+            if (timerIsRunning && Base.Instance.IsAlive() && !TDManager.Instance().IsWaveEnd())
             {
                 timePassing += Time.deltaTime;
                 if(checkTime < timePassing)
                 {
                     checkTime++;
-                    if(money < limitMoney)
-                    {
-                        money++;
-                    }
-                    moneyText.text = (""+ money);
+                    Money.Instance.UpdateMoneySecond();
                 }
                 DisplayTime(timePassing);
             }
             //Défaite
-            else if(!m_base.IsAlive())
+            else if(!Base.Instance.IsAlive())
             {
                 background.enabled = true;
                 defeat.gameObject.SetActive(true);

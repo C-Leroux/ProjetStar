@@ -142,6 +142,7 @@ namespace Assets.Scripts
             if (hp < 0)
             {
                 wave.Despawn();
+                Money.Instance.AddMoney(enemyData.DroppedMoney);
                 Destroy(gameObject);
             }
         }

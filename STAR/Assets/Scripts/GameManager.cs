@@ -60,7 +60,6 @@ namespace Assets.Scripts
             asyncLoadLevel = SceneManager.LoadSceneAsync("Plateau", LoadSceneMode.Single);
             while (!asyncLoadLevel.isDone)
             {
-                print("Loading the Scene");
                 yield return null;
             }
             InitBoard((Planet)destination);
