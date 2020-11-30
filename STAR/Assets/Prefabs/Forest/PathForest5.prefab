@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6860641280004489929}
   - component: {fileID: 2292820149680937991}
   m_Layer: 0
-  m_Name: Path5
-  m_TagString: Untagged
+  m_Name: PathForest5
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1158702565
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 612c073b8c2cb448e8287e36a4a27207, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

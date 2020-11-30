@@ -19,7 +19,6 @@ public class selectionTurretMode : MonoBehaviour
         switch (name)
         {
             case "STAR": //TOURELLE DE LA STAR
-                Debug.Log("set to STAR to : " + !this.backgroundUI[0].GetComponent<Image>().isActiveAndEnabled);
                 backgroundUI[0].GetComponent<Image>().enabled = !backgroundUI[0].GetComponent<Image>().isActiveAndEnabled;
                 backgroundUI[1].GetComponent<Image>().enabled = true;
                 backgroundUI[2].GetComponent<Image>().enabled = true;
@@ -68,6 +67,13 @@ public class selectionTurretMode : MonoBehaviour
                 backgroundUI[0].GetComponent<Image>().enabled = true; 
                 break;
         }
+
+    }
+
+
+    public void ChangeImage()
+    {
+        this.gameObject.GetComponent<Image>().enabled = !this.gameObject.GetComponent<Image>().isActiveAndEnabled;
     }
         
     

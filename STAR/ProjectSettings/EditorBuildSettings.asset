@@ -6,18 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/UI/Scenes/Intro.unity
-    guid: 6165d1a293ff22741a26e2d47c4327b7
+    path: Assets/Scenes/Intro.unity
+    guid: fae13172122d82b4ba0952c2d9582139
   - enabled: 1
-    path: Assets/Resources/UI/Scenes/MainMenu.unity
-    guid: d5b87863313d23a4cae423727285461e
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6b2bc81e80d2f9e47bf0281737b9b6da
   - enabled: 1
-    path: Assets/Resources/UI/Scenes/SolarSystem.unity
-    guid: ec1c34233614d5748b9e322f3664acbb
+    path: Assets/Scenes/SolarSystem.unity
+    guid: 4c72c8e1d833b6943a1b8c4b94cf9fcb
   - enabled: 1
     path: Assets/Scenes/Plateau.unity
-    guid: 77b1f880c90a05a4a82190a5f03a2501
-  - enabled: 1
-    path: Assets/Scenes/Plateau sprint3Nico.unity
     guid: 2425f8e5cd6c2cd4094120ff836d8965
+  - enabled: 1
+    path: Assets/Scenes/VictoryChoice.unity
+    guid: 4c878dd0078c6b74a99a9bbc82918bdc
+  - enabled: 1
+    path: Assets/Scenes/VilleMarchande.unity
+    guid: 83df0166e86bfbb478e876bf8f168f11
+  - enabled: 1
+    path: Assets/Scenes/Empty.unity
+    guid: 0592bac9aa370164fb2ba152271ee5fc
   m_configObjects: {}

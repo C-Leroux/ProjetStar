@@ -70,7 +70,7 @@ public class ProjectileBehaviour : MonoBehaviour
             {
                 case "STAR":
                     dealDamageTo(collision, this.damage); //La tourelle tire sur une cible sans effet excepté les dégats
-                    Debug.Log("DAMAGE TAKEN FROM STAR");
+                    //Debug.Log("DAMAGE TAKEN FROM STAR");
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Grenadiere":
@@ -80,25 +80,25 @@ public class ProjectileBehaviour : MonoBehaviour
                         if (targets[i].tag == "Ennemi")
                         {
                             dealDamageTo(targets[i], this.damage);
-                            Debug.Log("DAMAGE TAKEN FROM GRENADIERE");
+                            //Debug.Log("DAMAGE TAKEN FROM GRENADIERE");
                         }
                     }
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Pyromancienne":
                     dealDamageTo(collision, this.damage);//La tourelle tire lentement mais faut beaucoup de dégats. Plus de travail sur l'animation                
-                    Debug.Log("DAMAGE TAKEN FROM Pyromancienne");
+                    //Debug.Log("DAMAGE TAKEN FROM Pyromancienne");
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Survolteuse":
                     dealDamageTo(collision, this.damage);//Je ne sais pas comment faire l'effet pour l'instant
-                    Debug.Log("DAMAGE TAKEN FROM Survolteuse");
+                    //Debug.Log("DAMAGE TAKEN FROM Survolteuse");
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Cryomancienne":
                     collision.GetComponent<Enemy>().setStunTrue(stunTime);//La tourelle stun l'ennemi, et lui inflige des dégats
                     dealDamageTo(collision, this.damage);
-                    Debug.Log("DAMAGE TAKEN FROM Cryomancienne");
+                    //Debug.Log("DAMAGE TAKEN FROM Cryomancienne");
                     GameObject.Destroy(this.gameObject);
                     break;
                 case "Empoisonneuse"://La tourelle empoisonne l'ennemi sur 4 secondes, attention les damages indiqué pour ce project sont les damage par secondes

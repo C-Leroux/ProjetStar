@@ -19,34 +19,6 @@ namespace Assets.Scripts
             return this.GetComponent<Turret>().name;
         }
 
-      
-        public int getCout(string name)
-        {
-            int cost = 0;
-            switch (name)
-            {
-                case "STAR": //TOURELLE DE LA STAR
-                    cost = turrets[0].cost;
-                    break;
-                case "Grenadiere": //GRENADIERE
-                    cost = turrets[1].cost;
-                    break;
-                case "Cryomancienne": //CRYOMANCIENNE
-                    cost = turrets[2].cost;
-                    break;
-                case "Empoisonneuse": //EMPOISONNEUSE
-                    cost = turrets[3].cost;
-                    break;
-                case "Pyromancienne": //PYROMANCIENNE
-                    cost = turrets[4].cost;
-                    break;
-                case "Survolteuse": //SURVOLTEUSE
-                    cost = turrets[5].cost;
-                    break;
-            }
-            return cost;
-        }
-
         public void createTurret(string name) //Name est a rentrer dans l'appel de la fonction dans le UI bouton
         {
             //Entrée correspondant à la fin du drag and drop 
@@ -109,6 +81,38 @@ namespace Assets.Scripts
                     behaviour.init(turrets[5]);
                     break;
             }
+        }
+
+        public Turret GetTurret(string name)
+        {
+            Turret new_turret = null;
+            switch (name)
+            {
+                case "STAR": //TOURELLE DE LA STAR
+                    new_turret = turrets[0];
+                    break;
+                case "Grenadiere": //GRENADIERE
+                    new_turret = turrets[1];
+                    break;
+                case "Cryomancienne": //CRYOMANCIENNE
+                    new_turret = turrets[2];
+                    break;
+                case "Empoisonneuse": //EMPOISONNEUSE
+                    new_turret = turrets[3];
+                    break;
+                case "Pyromancienne": //PYROMANCIENNE
+                    new_turret = turrets[4];
+                    break;
+                case "Survolteuse": //SURVOLTEUSE
+                    new_turret = turrets[5];
+                    break;
+            }
+            return new_turret;
+        }
+
+        public TurretBehaviour GetTurretBehaviour()
+        {
+            return turretTemplate;
         }
 
         // Update is called once per frame

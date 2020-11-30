@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -11,6 +12,7 @@ namespace Assets.Scripts
 
         public SolarSystem solarSystem;
         private BoardManager boardScript;
+        private ChoiceManager choiceScript;
         private TDManager tdManager;
         private AsyncOperation asyncLoadLevel;
 
@@ -49,6 +51,12 @@ namespace Assets.Scripts
             boardScript.SetupScene(level, planet);
         }
 
+        void InitChoice(Planet planet)
+        {
+            choiceScript = ChoiceManager.Instance;
+            choiceScript.SetupChoice(planet);
+        }
+
         void InitTD(int[,] board, Planet destination)
         {
             tdManager = TDManager.Instance();
@@ -57,15 +65,46 @@ namespace Assets.Scripts
 
         IEnumerator LoadPlateau(SpaceObject destination)
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("plateau Sprint3Nico", LoadSceneMode.Single);
+            asyncLoadLevel = SceneManager.LoadSceneAsync("Plateau", LoadSceneMode.Single);
             while (!asyncLoadLevel.isDone)
             {
-                print("Loading the Scene");
                 yield return null;
             }
             InitBoard((Planet)destination);
             InitTD(boardScript.GetBoard(), (Planet)destination);
             print("Scene loaded");
+        }
+
+        IEnumerator LoadChoice(SpaceObject destination)
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync("VictoryChoice", LoadSceneMode.Single);
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }
+            InitChoice((Planet)destination);
+        }
+        
+        
+        IEnumerator LoadSolarSystem()
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }
+            solarSystem.gameObject.SetActive(true);
+        }
+
+        public void Victory(SpaceObject destination)
+        {
+            StartCoroutine("LoadChoice", destination);
+        }
+
+        public void ReturnToSolarSystem()
+        {
+            solarSystem.gameObject.SetActive(true);
+            StartCoroutine("LoadSolarSystem");
         }
 
         public void TravelTo(SpaceObject destination)

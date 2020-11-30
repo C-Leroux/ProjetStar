@@ -65,7 +65,6 @@ namespace Assets.Scripts
             for (int i = 0; i < poisonnedTime; i++)
             {
                 TakeDamages(damage);
-                Debug.Log("DAMAGE TAKEN FROM EMPOISONNEUSE EACH SECOND");
                 yield return new WaitForSeconds(1f); //On attend une seconde, puis on fait les dégats du poisson
             }
         }
@@ -268,6 +267,7 @@ namespace Assets.Scripts
             if (hp < 0)
             {
                 wave.Despawn();
+                Money.Instance.AddMoney(enemyData.DroppedMoney);
                 Destroy(gameObject);
             }
         }
