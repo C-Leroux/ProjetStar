@@ -47,6 +47,10 @@ namespace Assets.Scripts
 
         public void UpdateMoney()
         {
+            if (currentMoney > maxMonney)
+            {
+                currentMoney = maxMonney;
+            }
             moneyText.text = ("" + currentMoney);
         }
 
@@ -86,10 +90,6 @@ namespace Assets.Scripts
         public void AddMoney(int money)
         {
             currentMoney += money;
-            if(currentMoney > maxMonney)
-            {
-                currentMoney = maxMonney;
-            }
             UpdateMoney();
         }
 

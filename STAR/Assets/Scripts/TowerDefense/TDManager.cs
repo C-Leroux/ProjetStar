@@ -19,6 +19,7 @@ namespace Assets.Scripts
         private Wave wave;
         private Planet planet;
         private int waveMax;
+        private bool debug = false;// debug
 
         private bool isActive = false;
 
@@ -196,12 +197,21 @@ namespace Assets.Scripts
         {
             if(wg != null)
             {
+                if (debug)
+                {
+                    return true;
+                }
                 if (wg.GetCurrentWave() > wg.GetNbWaves())
                 {
                     return true;
                 }
             }
             return false;
+        }
+
+        public void EndWave()
+        {
+            debug = true;
         }
     }
 }

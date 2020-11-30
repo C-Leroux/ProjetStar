@@ -32,7 +32,6 @@ namespace Assets.Scripts
         public Image background;
         public Base m_base;
         private Planet planet;
-        private int m_round;
         private int typeFloor;
         private int typePath;
         private int typeTree;
@@ -121,12 +120,12 @@ namespace Assets.Scripts
             background.enabled = false;
             defeat.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
+            Base.Instance.ResetLp();
             Base.Instance.SetHealthbar(healthbar);
             Base.Instance.SetHealthbarText(healthbarText);
             Money.Instance.AddMoneyText(moneyText);
             Money.Instance.LaunchBoard();
             checkTime = 0;
-            m_round = 1;
             timerIsRunning = false;
         }
 
@@ -164,7 +163,7 @@ namespace Assets.Scripts
             }
             else if(Input.GetKeyDown("r"))
             {
-                m_round++;
+                TDManager.Instance().EndWave();
             }
             else if(Input.GetKeyDown("t"))
             {
@@ -193,6 +192,7 @@ namespace Assets.Scripts
             {
                 background.enabled = true;
                 victory.gameObject.SetActive(true);
+                GameManager.Instance().Victory(planet);
             }
         }
     }

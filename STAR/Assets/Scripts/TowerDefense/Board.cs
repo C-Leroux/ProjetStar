@@ -158,7 +158,7 @@ namespace Assets.Scripts
         public void SetSelectionTurretMode()
         {
             isSelectionTurretModeActivate = !isSelectionTurretModeActivate;
-            Debug.Log(isSelectionTurretModeActivate);
+            //Debug.Log(isSelectionTurretModeActivate);
         }
 
         public bool GetSelectionTurretMode()
@@ -294,7 +294,6 @@ namespace Assets.Scripts
                             if ((gridCase[i, j].GetX() == x) && (gridCase[i, j].GetY() == -y))
                             {
                                 gridCase[i, j].SetTurret(new_turret);
-                                Debug.Log("ICI");
                                 GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
                                 obj.transform.position = new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -1);
                                 TurretBehaviour behaviour = obj.GetComponent<TurretBehaviour>();

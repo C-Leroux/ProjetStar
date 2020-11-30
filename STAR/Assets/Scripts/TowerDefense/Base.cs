@@ -75,5 +75,10 @@ namespace Assets.Scripts
         {
             this.lpMax += addLP;
         }
+
+        public void ResetLp()
+        {
+            lp = lpMax;
+        }
     }
 }
