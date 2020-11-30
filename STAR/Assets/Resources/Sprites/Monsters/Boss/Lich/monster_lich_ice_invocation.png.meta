@@ -1,7 +1,91 @@
 fileFormatVersion: 2
 guid: 42697b005df3415439dfba2d0bafb0b1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6462879938585887703
+    second: monster_lich_ice_invocation_0
+  - first:
+      213: -2565294804265436368
+    second: monster_lich_ice_invocation_1
+  - first:
+      213: 7442670709852693847
+    second: monster_lich_ice_invocation_2
+  - first:
+      213: 4472448289011487422
+    second: monster_lich_ice_invocation_3
+  - first:
+      213: -4570315546780137038
+    second: monster_lich_ice_invocation_0
+  - first:
+      213: 8952992529056363123
+    second: monster_lich_ice_invocation_1
+  - first:
+      213: -7573638049442388815
+    second: monster_lich_ice_invocation_2
+  - first:
+      213: 5648287149351940509
+    second: monster_lich_ice_invocation_3
+  - first:
+      213: -8758136981489969677
+    second: monster_lich_ice_invocation_4
+  - first:
+      213: 673008735791735524
+    second: monster_lich_ice_invocation_5
+  - first:
+      213: 7270041533746905745
+    second: monster_lich_ice_invocation_6
+  - first:
+      213: 4064436974675395369
+    second: monster_lich_ice_invocation_7
+  - first:
+      213: 637846010110543301
+    second: monster_lich_ice_invocation_8
+  - first:
+      213: -1056272867561651625
+    second: monster_lich_ice_invocation_9
+  - first:
+      213: 7843071489134799773
+    second: monster_lich_ice_invocation_10
+  - first:
+      213: 3397112619250906708
+    second: monster_lich_ice_invocation_11
+  - first:
+      213: 6362416537284658894
+    second: monster_lich_ice_invocation_12
+  - first:
+      213: 3957773256811173683
+    second: monster_lich_ice_invocation_13
+  - first:
+      213: 2128016253152908001
+    second: monster_lich_ice_invocation_14
+  - first:
+      213: 4043419189235871906
+    second: monster_lich_ice_invocation_15
+  - first:
+      213: -357388712482209797
+    second: monster_lich_ice_invocation_16
+  - first:
+      213: 7295665663596546483
+    second: monster_lich_ice_invocation_17
+  - first:
+      213: 1679164640890130230
+    second: monster_lich_ice_invocation_18
+  - first:
+      213: 8242084800087691733
+    second: monster_lich_ice_invocation_19
+  - first:
+      213: -5580943063608346950
+    second: monster_lich_ice_invocation_20
+  - first:
+      213: 7975892242566367237
+    second: monster_lich_ice_invocation_21
+  - first:
+      213: -2541242614547987955
+    second: monster_lich_ice_invocation_22
+  - first:
+      213: 282343150511991673
+    second: monster_lich_ice_invocation_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +124,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +155,117 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_lich_ice_invocation_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 197
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cf69a00fc3f46a0800000000000000
+      internalID: -6462879938585887703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_ice_invocation_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 131
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b7a9f87fd366cd0800000000000000
+      internalID: -2565294804265436368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_ice_invocation_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 68
+        width: 26
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75569f0e39da94760800000000000000
+      internalID: 7442670709852693847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_ice_invocation_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 8
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb255d6d504511e30800000000000000
+      internalID: 4472448289011487422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

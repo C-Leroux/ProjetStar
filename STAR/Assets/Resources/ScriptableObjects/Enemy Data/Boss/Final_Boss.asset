@@ -13,8 +13,21 @@ MonoBehaviour:
   m_Name: Final_Boss
   m_EditorClassIdentifier: 
   enemyName: Boss
-  sprite: {fileID: 0}
+  sprite: {fileID: 6937182654523390969, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
   maxHP: 1000
   speed: 2
   atkDamage: 4
   atkRange: 5
+  spritesToDirection:
+  - {fileID: 6937182654523390969, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: -6311118623654735888, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: 918497953796325260, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: -1806983240679616987, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: -5483917033431854421, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: 3933758704523276737, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: 5849533883045029285, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: -4929261628818845114, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: -542330610435377527, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: 8814929222624891932, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: 842352721166557629, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
+  - {fileID: 7551525015084104571, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}

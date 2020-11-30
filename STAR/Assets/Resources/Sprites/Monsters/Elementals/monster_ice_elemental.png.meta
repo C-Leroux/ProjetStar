@@ -1,7 +1,79 @@
 fileFormatVersion: 2
 guid: 3759c601b705e564fac1c3b41b07888c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 918008972073221107
+    second: monster_ice_elemental_0
+  - first:
+      213: 8426489607244508049
+    second: monster_ice_elemental_1
+  - first:
+      213: -2594155257637254945
+    second: monster_ice_elemental_2
+  - first:
+      213: 7747942386213841024
+    second: monster_ice_elemental_3
+  - first:
+      213: 5213254652730626997
+    second: monster_ice_elemental_0
+  - first:
+      213: 7814749797108549666
+    second: monster_ice_elemental_1
+  - first:
+      213: 4935168555316828060
+    second: monster_ice_elemental_2
+  - first:
+      213: 4284201205479308093
+    second: monster_ice_elemental_3
+  - first:
+      213: -1044463148640306957
+    second: monster_ice_elemental_4
+  - first:
+      213: 6340766610019696675
+    second: monster_ice_elemental_5
+  - first:
+      213: -5221294898512846912
+    second: monster_ice_elemental_6
+  - first:
+      213: 7315804508560197414
+    second: monster_ice_elemental_7
+  - first:
+      213: 5715822387565435509
+    second: monster_ice_elemental_8
+  - first:
+      213: 125810879368647723
+    second: monster_ice_elemental_9
+  - first:
+      213: 4127373834838066634
+    second: monster_ice_elemental_10
+  - first:
+      213: -3240494982801961490
+    second: monster_ice_elemental_11
+  - first:
+      213: 8256006667947407333
+    second: monster_ice_elemental_12
+  - first:
+      213: -1674507357658681374
+    second: monster_ice_elemental_13
+  - first:
+      213: -3939400910214860270
+    second: monster_ice_elemental_14
+  - first:
+      213: 5529580820869942949
+    second: monster_ice_elemental_15
+  - first:
+      213: 3930232861135395701
+    second: monster_ice_elemental_16
+  - first:
+      213: -2478674595944438956
+    second: monster_ice_elemental_17
+  - first:
+      213: 21880224119960201
+    second: monster_ice_elemental_18
+  - first:
+      213: 2495308507084554929
+    second: monster_ice_elemental_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +157,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_ice_elemental_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 449
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b359a35c73395840800000000000000
+      internalID: 5213254652730626997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_1
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 449
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22806314981937c60800000000000000
+      internalID: 7814749797108549666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 449
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97565647ad3d7440800000000000000
+      internalID: 4935168555316828060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 385
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bf4e63c4a847b30800000000000000
+      internalID: 4284201205479308093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 385
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8fe44dc425181f0800000000000000
+      internalID: -1044463148640306957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_5
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 385
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320c1e113adeef750800000000000000
+      internalID: 6340766610019696675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 321
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf159214fb3a87b0800000000000000
+      internalID: -5221294898512846912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_7
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 321
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6278ee29075f68560800000000000000
+      internalID: 7315804508560197414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_8
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 321
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a10128d2ea25f40800000000000000
+      internalID: 5715822387565435509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_9
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 257
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24d5a50458feb100800000000000000
+      internalID: 125810879368647723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_10
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 257
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5c3c092a0674930800000000000000
+      internalID: 4127373834838066634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_11
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 257
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed47a56bf27703d0800000000000000
+      internalID: -3240494982801961490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_12
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 203
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7f242825a339270800000000000000
+      internalID: 8256006667947407333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_13
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 193
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efe9fc1e64f2c8e0800000000000000
+      internalID: -1674507357658681374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_14
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 140
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212fac67ebf6459c0800000000000000
+      internalID: -3939400910214860270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_15
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 129
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae04c8a5740dbc40800000000000000
+      internalID: 5529580820869942949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_16
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 77
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bda84c6fdfa8630800000000000000
+      internalID: 3930232861135395701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 65
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45362fa669af99dd0800000000000000
+      internalID: -2478674595944438956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_18
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 12
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982b64aa2fbbd4000800000000000000
+      internalID: 21880224119960201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_elemental_19
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b209c1dddd11a220800000000000000
+      internalID: 2495308507084554929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

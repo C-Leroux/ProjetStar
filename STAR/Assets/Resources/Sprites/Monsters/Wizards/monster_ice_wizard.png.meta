@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: 8b364383d6ec8b044868656716624b35
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2327186675522851731
+    second: monster_ice_wizard_0
+  - first:
+      213: 3664311209555323171
+    second: monster_ice_wizard_1
+  - first:
+      213: 7690756018216019910
+    second: monster_ice_wizard_2
+  - first:
+      213: 1400321930253892561
+    second: monster_ice_wizard_3
+  - first:
+      213: -5869992517099284784
+    second: monster_ice_wizard_4
+  - first:
+      213: -3403935599463774926
+    second: monster_ice_wizard_5
+  - first:
+      213: -2085362640166923540
+    second: monster_ice_wizard_6
+  - first:
+      213: 6239704434392956554
+    second: monster_ice_wizard_7
+  - first:
+      213: 4174168160577265316
+    second: monster_ice_wizard_8
+  - first:
+      213: -8876968033779021750
+    second: monster_ice_wizard_9
+  - first:
+      213: 1892073975721801468
+    second: monster_ice_wizard_10
+  - first:
+      213: 5043404928904572339
+    second: monster_ice_wizard_11
+  - first:
+      213: 2723955699332705501
+    second: monster_ice_wizard_12
+  - first:
+      213: 9069657247190518575
+    second: monster_ice_wizard_13
+  - first:
+      213: -6919924829812432919
+    second: monster_ice_wizard_14
+  - first:
+      213: 8174745024433152132
+    second: monster_ice_wizard_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +88,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +119,369 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_ice_wizard_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 252
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c207f6c0c24bfd0800000000000000
+      internalID: -2327186675522851731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 252
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329e60871af3ad230800000000000000
+      internalID: 3664311209555323171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 252
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7a6f7e9dd0bba60800000000000000
+      internalID: 7690756018216019910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 216
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbf8f75061fe6310800000000000000
+      internalID: 1400321930253892561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 216
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6981008e8998ea0800000000000000
+      internalID: -5869992517099284784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_5
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 216
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235c7ab6b9ac2c0d0800000000000000
+      internalID: -3403935599463774926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 180
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2dafc3abd4f03e0800000000000000
+      internalID: -2085362640166923540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 180
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8efb6baf12e79650800000000000000
+      internalID: 6239704434392956554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_8
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 180
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae14fb83df9de930800000000000000
+      internalID: 4174168160577265316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 144
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a488a100b9caec480800000000000000
+      internalID: -8876968033779021750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 144
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6b8ab914ff14a10800000000000000
+      internalID: 1892073975721801468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 144
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdafcdcf06cdf540800000000000000
+      internalID: 5043404928904572339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_12
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 108
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc60a2c64f6dc520800000000000000
+      internalID: 2723955699332705501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 72
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b86559635eddd70800000000000000
+      internalID: 9069657247190518575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_14
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 36
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efdf96d70d77ff90800000000000000
+      internalID: -6919924829812432919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_ice_wizard_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480eabeb947827170800000000000000
+      internalID: 8174745024433152132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

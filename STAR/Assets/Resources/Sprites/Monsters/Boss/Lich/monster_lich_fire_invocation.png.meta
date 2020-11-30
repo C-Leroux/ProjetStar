@@ -1,7 +1,151 @@
 fileFormatVersion: 2
 guid: 5e077564c1481a944b066a4c93561265
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 9018466960166220469
+    second: monster_lich_fire_invocation_0
+  - first:
+      213: 8890165069922210610
+    second: monster_lich_fire_invocation_1
+  - first:
+      213: -8611663765320826370
+    second: monster_lich_fire_invocation_2
+  - first:
+      213: 7294526519128519657
+    second: monster_lich_fire_invocation_3
+  - first:
+      213: 4932455960867616355
+    second: monster_lich_fire_invocation_4
+  - first:
+      213: -4364149388332430496
+    second: monster_lich_fire_invocation_5
+  - first:
+      213: -4044500950263594756
+    second: monster_lich_fire_invocation_6
+  - first:
+      213: 4555843839818885302
+    second: monster_lich_fire_invocation_0
+  - first:
+      213: 1195078670210137814
+    second: monster_lich_fire_invocation_1
+  - first:
+      213: -8498302648994011100
+    second: monster_lich_fire_invocation_2
+  - first:
+      213: 3982800464419337804
+    second: monster_lich_fire_invocation_3
+  - first:
+      213: 5208902294302253799
+    second: monster_lich_fire_invocation_4
+  - first:
+      213: 8830494971357071422
+    second: monster_lich_fire_invocation_5
+  - first:
+      213: -154224740029742608
+    second: monster_lich_fire_invocation_6
+  - first:
+      213: -6080151244414389761
+    second: monster_lich_fire_invocation_7
+  - first:
+      213: 5615094758499629005
+    second: monster_lich_fire_invocation_8
+  - first:
+      213: 4671142190419138741
+    second: monster_lich_fire_invocation_9
+  - first:
+      213: 4785827695202514433
+    second: monster_lich_fire_invocation_10
+  - first:
+      213: -7952670576221342416
+    second: monster_lich_fire_invocation_11
+  - first:
+      213: 2664621545002079543
+    second: monster_lich_fire_invocation_12
+  - first:
+      213: -7983269141470372817
+    second: monster_lich_fire_invocation_13
+  - first:
+      213: 7193219444405872081
+    second: monster_lich_fire_invocation_14
+  - first:
+      213: -6349115832595319831
+    second: monster_lich_fire_invocation_15
+  - first:
+      213: 1052314279734830230
+    second: monster_lich_fire_invocation_16
+  - first:
+      213: 75446728181517726
+    second: monster_lich_fire_invocation_17
+  - first:
+      213: 6148672742762734855
+    second: monster_lich_fire_invocation_18
+  - first:
+      213: -42740284106457332
+    second: monster_lich_fire_invocation_19
+  - first:
+      213: -3737955544776118198
+    second: monster_lich_fire_invocation_20
+  - first:
+      213: 2588567039576739984
+    second: monster_lich_fire_invocation_21
+  - first:
+      213: 972529020536071026
+    second: monster_lich_fire_invocation_22
+  - first:
+      213: 4382803997919667335
+    second: monster_lich_fire_invocation_23
+  - first:
+      213: -35367543752560598
+    second: monster_lich_fire_invocation_7
+  - first:
+      213: -230863164200048760
+    second: monster_lich_fire_invocation_8
+  - first:
+      213: -3585297890526591991
+    second: monster_lich_fire_invocation_9
+  - first:
+      213: 5908680138064989553
+    second: monster_lich_fire_invocation_10
+  - first:
+      213: -7772511342029772282
+    second: monster_lich_fire_invocation_11
+  - first:
+      213: -4640545391011065618
+    second: monster_lich_fire_invocation_12
+  - first:
+      213: -2519550443979243649
+    second: monster_lich_fire_invocation_13
+  - first:
+      213: 4944905670323174557
+    second: monster_lich_fire_invocation_14
+  - first:
+      213: -6849934575130193181
+    second: monster_lich_fire_invocation_15
+  - first:
+      213: 3224857140926922430
+    second: monster_lich_fire_invocation_16
+  - first:
+      213: -8098961732544118875
+    second: monster_lich_fire_invocation_17
+  - first:
+      213: -995107857392089955
+    second: monster_lich_fire_invocation_18
+  - first:
+      213: -743413137884405165
+    second: monster_lich_fire_invocation_19
+  - first:
+      213: 5366855678391607982
+    second: monster_lich_fire_invocation_20
+  - first:
+      213: 4740166738938597956
+    second: monster_lich_fire_invocation_21
+  - first:
+      213: 6640413206616299572
+    second: monster_lich_fire_invocation_22
+  - first:
+      213: 8377576381424371521
+    second: monster_lich_fire_invocation_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +184,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +215,285 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 200
+        width: 15
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b86e8c95db993f30800000000000000
+      internalID: 4555843839818885302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 200
+        width: 15
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de758008b5c59010800000000000000
+      internalID: 1195078670210137814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_2
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 199
+        width: 15
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42863f444c6ff0a80800000000000000
+      internalID: -8498302648994011100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 136
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f143f28a651cddf0800000000000000
+      internalID: -154224740029742608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_7
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 136
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a20fc060869528ff0800000000000000
+      internalID: -35367543752560598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_8
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 139
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8872222ec2fcbccf0800000000000000
+      internalID: -230863164200048760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_12
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 72
+        width: 13
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee095b4bd88799fb0800000000000000
+      internalID: -4640545391011065618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_13
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 72
+        width: 14
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f70f86832c80dd0800000000000000
+      internalID: -2519550443979243649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_14
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 73
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c7d670285df9440800000000000000
+      internalID: 4944905670323174557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_18
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 6
+        width: 15
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94c1fe0daaa032f0800000000000000
+      internalID: -995107857392089955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_19
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 6
+        width: 15
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352aa0b90bddea5f0800000000000000
+      internalID: -743413137884405165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_lich_fire_invocation_20
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 7
+        width: 15
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2e15ffdc6ea7a40800000000000000
+      internalID: 5366855678391607982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

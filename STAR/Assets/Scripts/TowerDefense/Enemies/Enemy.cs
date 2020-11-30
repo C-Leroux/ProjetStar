@@ -14,15 +14,19 @@ namespace Assets.Scripts
         private bool poisonned;
         private bool stun;
         private static List<Vector3> path;
-
+        private string direction;
+        private int positionCounter;
+        private float movingSpeedWalkingAnimation;
         // Use this for initialization
         void Start()
         {
             poisonned = false;
             stun = false;
-
             SpriteRenderer sprite = gameObject.AddComponent<SpriteRenderer>();
             sprite.sprite = enemyData.Sprite;
+            direction = "right";
+            positionCounter = 0;
+            movingSpeedWalkingAnimation = 0.5f;
         }
 
         // Update is called once per frame
@@ -56,7 +60,6 @@ namespace Assets.Scripts
             yield return new WaitForSeconds(poisonnedTime);
             poisonned = false;
         }
-
         IEnumerator WaitBeforeDealDamagePoisonned(float damage, float poisonnedTime)
         {
             for (int i = 0; i < poisonnedTime; i++)
@@ -117,6 +120,49 @@ namespace Assets.Scripts
             this.wave = wave;
         }
 
+
+        private string updateEnnemiDirection(Vector2 currentPosition, Vector2 nextPosition)
+        {
+            
+            if (currentPosition.x < nextPosition.x)
+            {
+                //Sprite va vers la droite
+                this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[2];
+                return "right";
+            }
+            if (currentPosition.x > nextPosition.x)
+            {
+                //Sprite va vers la gauche
+                this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[1];
+                return "left";
+            }
+            if (currentPosition.y < nextPosition.y)
+            {
+                //Sprite va vers la haut
+                this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[3];
+                return "up";
+            }
+            if (currentPosition.y > nextPosition.y)
+            {
+                //Sprite va vers la bas
+                return "down";
+            }
+            return null;
+        }
+
+        public void setCounterPositionAfterDelay(float walkingSpeedAnimation, int couterPositionValue)
+        {
+            StartCoroutine(waitBeforeWalk(walkingSpeedAnimation, couterPositionValue));
+        }
+
+        IEnumerator waitBeforeWalk(float walkingSpeedAnimation, int couterPositionValue)
+        {
+            yield return new WaitForSeconds(walkingSpeedAnimation);
+            positionCounter = couterPositionValue;
+        }
+
+
+
         private void Walk()
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, path[targetIndex], SpeedFormula() * Time.deltaTime);
@@ -124,6 +170,86 @@ namespace Assets.Scripts
             {
                 ++targetIndex;
             }
+            Vector2 currentPosition = transform.localPosition;
+            Vector2 nextPosition = Vector3.MoveTowards(transform.localPosition, path[targetIndex], SpeedFormula() * Time.deltaTime);
+            if (currentPosition != nextPosition)
+            {
+                direction = updateEnnemiDirection(currentPosition, nextPosition);
+            
+            }
+          
+                  switch (direction)
+            {
+                case "down":
+                    switch (positionCounter)
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[0];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 1);
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[1];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 2);
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[2];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 0);
+                            break;
+                    }
+                     break;
+                case "right":
+                    switch (positionCounter)
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[6];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 1);
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[7];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 2);
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[8];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 0);
+                            break;
+                    }
+                    break;
+                case "left":
+                    switch (positionCounter)
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[3];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 1);
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[4];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 2);
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[5];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 0);
+                            break;
+                    }
+                    break;
+                case "up":
+                    switch (positionCounter)
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[9];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 1);
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[10];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 2);
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = enemyData.spritesToDirection[11];
+                            setCounterPositionAfterDelay(movingSpeedWalkingAnimation, 0);
+                            break;
+                    }
+                    break;
+            }
+
         }
 
         private bool CanAttackBase()

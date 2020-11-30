@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,25 @@ public class ProjectileBehaviour : MonoBehaviour
         this.GetComponent<SpriteRenderer>().sprite = projectile.sprite;
         this.transform.localScale = new Vector3(scale, scale, scale);
     }
+    public void updateProjectileDamageUpgraded(string name)
+    {
+        switch (name)
+        {
+           
+            case "Grenadiere1": //GRENADIERE
+                this.damage = this.damage + 1;
+                break;
+            case "Grenadiere2": //GRENADIERE
+                this.damage = this.damage + 1;
+                break;
+            case "Pyromancienne2": //PYROMANCIENNE
+                this.damage = this.damage + 1;
+                break;
+            default:
+                break;
+        }
+    }
+
     public void initFire(Collider2D target)
     {
         this.target = target;
@@ -90,6 +110,8 @@ public class ProjectileBehaviour : MonoBehaviour
         }
         
     }
+
+    
 
     public Collider2D[] getEnnemisInExplosionRange()
     {

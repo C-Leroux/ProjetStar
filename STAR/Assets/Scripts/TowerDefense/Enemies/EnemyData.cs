@@ -18,7 +18,9 @@ namespace Assets.Scripts
         private int atkDamage;
         [SerializeField]
         private int atkRange;
-        
+
+        public Sprite[] spritesToDirection;
+
         public string EnemyName
         {
             get
@@ -26,6 +28,7 @@ namespace Assets.Scripts
                 return enemyName;
             }
         }
+
 
         public Sprite Sprite
         {

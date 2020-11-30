@@ -1,7 +1,64 @@
 fileFormatVersion: 2
 guid: 65c637a983f5c06429206b88db5d959b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5680753298651544994
+    second: monster_earth_wizard_0
+  - first:
+      213: -7278084964152197311
+    second: monster_earth_wizard_1
+  - first:
+      213: 708859574366406242
+    second: monster_earth_wizard_2
+  - first:
+      213: 8080746525810447965
+    second: monster_earth_wizard_3
+  - first:
+      213: 1055115770392790474
+    second: monster_earth_wizard_0
+  - first:
+      213: 6921483933065744290
+    second: monster_earth_wizard_1
+  - first:
+      213: -448936526261156495
+    second: monster_earth_wizard_2
+  - first:
+      213: 1938655812424245437
+    second: monster_earth_wizard_3
+  - first:
+      213: 783836657929138579
+    second: monster_earth_wizard_4
+  - first:
+      213: -3281966974720022408
+    second: monster_earth_wizard_5
+  - first:
+      213: 3117911048718734785
+    second: monster_earth_wizard_6
+  - first:
+      213: 2250001509251310341
+    second: monster_earth_wizard_7
+  - first:
+      213: 1037209477634838716
+    second: monster_earth_wizard_8
+  - first:
+      213: -4549562097922598258
+    second: monster_earth_wizard_9
+  - first:
+      213: 8396906039416158493
+    second: monster_earth_wizard_10
+  - first:
+      213: 4111266574588179651
+    second: monster_earth_wizard_11
+  - first:
+      213: 985105868768426603
+    second: monster_earth_wizard_12
+  - first:
+      213: 5994404419213128786
+    second: monster_earth_wizard_13
+  - first:
+      213: -2854604245523613561
+    second: monster_earth_wizard_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +97,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +128,348 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_earth_wizard_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 234
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5cc23f33684ae00800000000000000
+      internalID: 1055115770392790474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 234
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af05fc27fc0e0060800000000000000
+      internalID: 6921483933065744290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 234
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1758181ab9e05c9f0800000000000000
+      internalID: -448936526261156495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 198
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db02b41a03d77ea10800000000000000
+      internalID: 1938655812424245437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 198
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391bbc5994fb0ea00800000000000000
+      internalID: 783836657929138579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 198
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878ef33dc6c1472d0800000000000000
+      internalID: -3281966974720022408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 162
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c55524549b054b20800000000000000
+      internalID: 3117911048718734785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 162
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503640f937c993f10800000000000000
+      internalID: 2250001509251310341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_8
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 162
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0d7184688e46e00800000000000000
+      internalID: 1037209477634838716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_9
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 126
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a1eb56065bcd0c0800000000000000
+      internalID: -4549562097922598258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 126
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d197bbbdd8dc78470800000000000000
+      internalID: 8396906039416158493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_11
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 126
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4f34bca272e0930800000000000000
+      internalID: 4111266574588179651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 90
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a381e719ccbad00800000000000000
+      internalID: 985105868768426603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_13
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 54
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254fa3f3f07603350800000000000000
+      internalID: 5994404419213128786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_earth_wizard_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 18
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7883e3320986268d0800000000000000
+      internalID: -2854604245523613561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

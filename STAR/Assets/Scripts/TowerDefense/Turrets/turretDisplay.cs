@@ -11,36 +11,15 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
-
+                        
         }
 
-        public Sprite getSprite(string Name)
+        public string getName()
         {
-            Sprite turretSprite=null;
-            switch (Name)
-            {
-                case "STAR": //TOURELLE DE LA STAR
-                    turretSprite = turrets[0].sprite;
-                    break;
-                case "Grenadiere": //GRENADIERE
-                    turretSprite = turrets[1].sprite;
-                    break;
-                case "Cryomancienne": //CRYOMANCIENNE
-                    turretSprite = turrets[2].sprite;
-                    break;
-                case "Empoisonneuse": //EMPOISONNEUSE
-                    turretSprite = turrets[3].sprite;
-                    break;
-                case "Pyromancienne": //PYROMANCIENNE
-                    turretSprite = turrets[4].sprite;
-                    break;
-                case "Survolteuse": //SURVOLTEUSE
-                    turretSprite = turrets[5].sprite;
-                    break;
-            }
-            return turretSprite;
+            return this.GetComponent<Turret>().name;
         }
 
+      
         public int getCout(string name)
         {
             int cost = 0;

@@ -18,3 +18,16 @@ MonoBehaviour:
   speed: 5
   atkDamage: 8
   atkRange: 0
+  spritesToDirection:
+  - {fileID: -5358979494354244416, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: 6045058915671466076, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: 4332483220918004715, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: -6182051109597810751, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: -2757648910476476588, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: 6171926581209494156, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: 778644728517309381, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: -4389678021668892899, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: -6323666374436533521, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: 5248556971298812316, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: -9039606136443670330, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  - {fileID: -5689277220688734660, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}

@@ -30,6 +30,15 @@ namespace Assets.Scripts
         private string textTurret;
         private BoardManager boardManage;
         private bool isSelectionTurretModeActivate;
+        private bool isStar;
+        private bool isGrena;
+        private bool isEmpoi;
+        private bool isCryo;
+        private bool isSUrvol;
+        private bool isPyro;
+
+
+
 
         public Board(int x, int y)
         {
@@ -139,9 +148,66 @@ namespace Assets.Scripts
 
 
 
-        public void setSelectionTurretMode()
+        public void setSelectionTurretMode(string name)
         {
-            isSelectionTurretModeActivate = !isSelectionTurretModeActivate;
+            switch (name)
+            {
+                case "STAR": //TOURELLE DE LA STAR
+                    isStar = !isStar;
+                    isSelectionTurretModeActivate = isStar;
+                    isGrena = false;
+                    isCryo = false;
+                    isEmpoi = false;
+                    isPyro = false;
+                    isSUrvol = false;
+                    break;
+                    
+                case "Grenadiere": //GRENADIERE
+                    isGrena = !isGrena;
+                    isSelectionTurretModeActivate = isGrena;
+                    isStar = false;
+                    isCryo = false;
+                    isEmpoi = false;
+                    isPyro = false;
+                    isSUrvol = false;
+                    break;
+                case "Cryomancienne": //CRYOMANCIENNE
+                    isCryo = !isCryo;
+                    isSelectionTurretModeActivate = isCryo;
+                    isGrena = false;
+                    isStar = false;
+                    isEmpoi = false;
+                    isPyro = false;
+                    isSUrvol = false;
+                    break;
+                case "Empoisonneuse": //EMPOISONNEUSE
+                    isEmpoi = !isEmpoi;
+                    isSelectionTurretModeActivate = isEmpoi;
+                    isGrena = false;
+                    isCryo = false;
+                    isStar = false;
+                    isPyro = false;
+                    isSUrvol = false;
+                    break;
+                case "Pyromancienne": //PYROMANCIENNE
+                    isPyro = !isPyro;
+                    isSelectionTurretModeActivate = isPyro;
+                    isGrena = false;
+                    isCryo = false;
+                    isEmpoi = false;
+                    isStar = false;
+                    isSUrvol = false;
+                    break;
+                case "Survolteuse": //SURVOLTEUSE
+                    isSUrvol = !isSUrvol;
+                    isSelectionTurretModeActivate = isSUrvol;
+                    isGrena = false;
+                    isCryo = false;
+                    isEmpoi = false;
+                    isPyro = false;
+                    isStar = false;
+                    break;
+            }        
             Debug.Log(isSelectionTurretModeActivate);
         }
 
@@ -154,10 +220,7 @@ namespace Assets.Scripts
         {
             return textTurret;
         }
-        public Sprite getCurrentTurretSprite(string turretName)
-        {
-            return turetDisp.getSprite(turretName);
-        }
+ 
         
         public void TestPlacement() //Debut du mode posage de tourelle
         {
@@ -288,6 +351,12 @@ namespace Assets.Scripts
         void Start()
         {
             isSelectionTurretModeActivate = false;
+            isStar = false;
+            isGrena = false;
+            isCryo = false;
+            isEmpoi = false;
+            isSUrvol = false;
+            isPyro = false;
         }
 
         // Update is called once per frame

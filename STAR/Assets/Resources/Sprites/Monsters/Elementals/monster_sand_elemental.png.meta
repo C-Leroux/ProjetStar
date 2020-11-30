@@ -1,7 +1,79 @@
 fileFormatVersion: 2
 guid: e633cafb9949e014b913294c12b99cf1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8961351307023285210
+    second: monster_sand_elemental_0
+  - first:
+      213: 6706095815408237505
+    second: monster_sand_elemental_1
+  - first:
+      213: 40158852253965812
+    second: monster_sand_elemental_2
+  - first:
+      213: 5697228578865400530
+    second: monster_sand_elemental_3
+  - first:
+      213: 5310281028329261188
+    second: monster_sand_elemental_0
+  - first:
+      213: -214910111186778972
+    second: monster_sand_elemental_1
+  - first:
+      213: 1873789799728745778
+    second: monster_sand_elemental_2
+  - first:
+      213: -1728800985946743809
+    second: monster_sand_elemental_3
+  - first:
+      213: 1968341771468297702
+    second: monster_sand_elemental_4
+  - first:
+      213: -2055925355983448959
+    second: monster_sand_elemental_5
+  - first:
+      213: 2793988122234917729
+    second: monster_sand_elemental_6
+  - first:
+      213: -4085526426455299562
+    second: monster_sand_elemental_7
+  - first:
+      213: 3957875399576999117
+    second: monster_sand_elemental_8
+  - first:
+      213: 6537075326073932313
+    second: monster_sand_elemental_9
+  - first:
+      213: -595032617330633949
+    second: monster_sand_elemental_10
+  - first:
+      213: 8688384871874693642
+    second: monster_sand_elemental_11
+  - first:
+      213: -1521324431919081714
+    second: monster_sand_elemental_12
+  - first:
+      213: 2155084214857590994
+    second: monster_sand_elemental_13
+  - first:
+      213: 5888941622820679172
+    second: monster_sand_elemental_14
+  - first:
+      213: -2912029974951358456
+    second: monster_sand_elemental_15
+  - first:
+      213: 1331038186899510553
+    second: monster_sand_elemental_16
+  - first:
+      213: 7570291931832509873
+    second: monster_sand_elemental_17
+  - first:
+      213: -4006661230526107821
+    second: monster_sand_elemental_18
+  - first:
+      213: -2856332330087549921
+    second: monster_sand_elemental_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -85,7 +157,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: monster_sand_elemental_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 449
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488cf0fc578e1b940800000000000000
+      internalID: 5310281028329261188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 449
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4821c746c740df0800000000000000
+      internalID: -214910111186778972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 449
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d059425e9010a10800000000000000
+      internalID: 1873789799728745778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 385
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb9c41b9a01208e0800000000000000
+      internalID: -1728800985946743809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_4
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 385
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e55ee49964f05b10800000000000000
+      internalID: 1968341771468297702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_5
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 385
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18453ef08c2e773e0800000000000000
+      internalID: -2055925355983448959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 321
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163197cd46d36c620800000000000000
+      internalID: 2793988122234917729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_7
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 321
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a29a67c5b4d47c0800000000000000
+      internalID: -4085526426455299562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_8
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 321
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc45b09c4b23de630800000000000000
+      internalID: 3957875399576999117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_9
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 257
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a8b98cf5b58ba50800000000000000
+      internalID: 6537075326073932313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 257
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3239c36bcf40eb7f0800000000000000
+      internalID: -595032617330633949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 257
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a08f70208539870800000000000000
+      internalID: 8688384871874693642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_12
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 200
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07175f4d7b23eae0800000000000000
+      internalID: -1521324431919081714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_13
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 193
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d863afdca568ed10800000000000000
+      internalID: 2155084214857590994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 135
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e2d3b7439b9b150800000000000000
+      internalID: 5888941622820679172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_15
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 129
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8001cb79a246697d0800000000000000
+      internalID: -2912029974951358456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_16
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 72
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91510a8cd2cc87210800000000000000
+      internalID: 1331038186899510553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_17
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 65
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5e1e227641f0960800000000000000
+      internalID: 7570291931832509873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_18
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 9
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f692bc6da7568c0800000000000000
+      internalID: -4006661230526107821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_sand_elemental_19
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1
+        width: 19
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f14faa811e44c58d0800000000000000
+      internalID: -2856332330087549921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
