@@ -54,7 +54,7 @@ namespace Assets.Scripts
 
             if (isChoice)
             {
-                GameManager.Instance().ReturnToSolarSystem();
+                GameManager.Instance().Merchant();
             }
         }
 
