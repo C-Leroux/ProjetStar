@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Plateau sprint3Nico.unity
     guid: 2425f8e5cd6c2cd4094120ff836d8965
+  - enabled: 1
+    path: Assets/Scenes/VictoryChoice.unity
+    guid: 4c878dd0078c6b74a99a9bbc82918bdc
+  - enabled: 1
+    path: Assets/Scenes/Empty.unity
+    guid: 0592bac9aa370164fb2ba152271ee5fc
   m_configObjects: {}

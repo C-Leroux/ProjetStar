@@ -31,3 +31,5 @@ MonoBehaviour:
   - {fileID: 5248556971298812316, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
   - {fileID: -9039606136443670330, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
   - {fileID: -5689277220688734660, guid: e3d0c5a59ed98704487721d9ad4118fe, type: 3}
+  droppedMoney: 3
+>>>>>>> Cleaning

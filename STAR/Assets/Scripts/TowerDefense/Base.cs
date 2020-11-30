@@ -5,49 +5,31 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-    public class Base : MonoBehaviour
+    public class Base
     {
-        //private static Base instance;
+        private static Base instance = null;// SINGLETON
         private int lp;
         private int lpMax;
-        private Image healthbar;
+        public Image healthbar;
         private Text healthbarText;
 
-        public Base(Image healthbar, Text healthbarText)
+        public Base()
         {
+            instance = this;
             lpMax = 1000;
             lp = 1000;
-            //Canvas canvas = GetComponent<Canvas>();
-
-            //Debug.Log(""+canvas);
-            this.healthbar = healthbar;
-            this.healthbarText = healthbarText;
-            this.healthbarText.text = (lp + " / " + lpMax);
-
         }
 
-        /*public void Awake()
+        public static Base Instance
         {
-            if (instance != null && instance != this)
+            get
             {
-                Destroy(gameObject);
+                if (instance == null)
+                {
+                    instance = new Base();
+                }
+                return instance;
             }
-            else
-            {
-                instance = this;
-            }
-        }*/
-
-        // Start is called before the first frame update
-        void Start()
-        {
-  
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void UpdateHealth()
@@ -58,19 +40,20 @@ namespace Assets.Scripts
             this.healthbarText.text = (lp + " / " + lpMax);
         }
 
-        /*public static Base Instance()
-        {
-            if (instance == null)
-            {
-                Debug.Log("ci");
-                this.instance = new Base();
-            }
-            return instance;
-        }*/
-
         public int GetLp()
         {
             return lp;
+        }
+
+        public void SetHealthbar(Image healthbar)
+        {
+            this.healthbar = healthbar;
+        }
+
+        public void SetHealthbarText(Text healthbarText)
+        {
+            this.healthbarText = healthbarText;
+            this.healthbarText.text = (lp + " / " + lpMax);
         }
 
         public bool IsAlive()
@@ -86,6 +69,16 @@ namespace Assets.Scripts
         {
             lp -= attack;
             UpdateHealth();
+        }
+
+        public void AddMaxLp(int addLP)
+        {
+            this.lpMax += addLP;
+        }
+
+        public void ResetLp()
+        {
+            lp = lpMax;
         }
     }
 }

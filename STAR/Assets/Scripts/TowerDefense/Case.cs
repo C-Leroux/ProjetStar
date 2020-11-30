@@ -4,10 +4,15 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class Case : MonoBehaviour
+    public class Case
     {
         private bool isClickable;
         private List<GameObject> listObject;
+        private GameObject m_terrain;
+        private GameObject m_object;
+        private Turret m_turret;
+        private GameObject m_turretObject;
+        private TurretBehaviour m_turretBehaviour;
         private int x;
         private int y;
         private bool isDepart;
@@ -24,43 +29,87 @@ namespace Assets.Scripts
             isVillage = false;
             this.boardHolder = boardHolder;
         }
-
+        
         public void AddObject(GameObject new_object)
         {
             listObject.Add(new_object);
+            switch(new_object.tag)
+            {
+                case "Path":
+                    isClickable = false;
+                    SetTerrain(new_object);
+                    break;
+
+                case "Floor":
+                    SetTerrain(new_object);
+                    break;
+                
+                case "Trunk":
+                    isClickable = false;
+                    SetObject(new_object);
+                    break;
+
+                case "Foliage":
+                    isClickable = false;
+                    SetObject(new_object);
+                    break;
+
+                case "Object":
+                    isClickable = false;
+                    SetObject(new_object);
+                    break;
+            }
+
         }
 
-        public void AddObject(GameObject new_object, bool isClickable)
+        public void SetTerrain(GameObject terrain)
         {
-            this.isClickable = isClickable;
-            listObject.Add(new_object);
+            this.m_terrain = terrain;
         }
 
-        public void PrintAllObject()
+        public void SetObject(GameObject new_object)
         {
-            for (int i = 0; i < listObject.Count; i++)
-            {
-                PrintObject(listObject[i], i);
-            }
+            this.m_object = new_object;
+        } 
+        
+        public void SetTurret(Turret turret)
+        {
+            this.m_turret = turret;
         }
 
-        public void PrintObject(GameObject m_object, int z)
+        public Turret GetTurret()
         {
-            GameObject gO;
-            if (m_object.tag == "Foliage")
-            {
-                z++;
-                gO = Instantiate(m_object, new Vector3(x * 2.56f, -(y + 1 )* 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
-            }
-            else if(m_object.tag == "Trunk")
-            {
-                gO = Instantiate(m_object, new Vector3(x * 2.56f, -(float)(y + 0.8 ) * 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
-            }
-            else
-            {
-                gO = Instantiate(m_object, new Vector3(x * 2.56f, -y * 2.56f, -z * 0.1f), Quaternion.identity) as GameObject;
-            }
-            gO.transform.SetParent(boardHolder);
+            return m_turret;
+        }
+        
+        public void SetTurretObject(GameObject turretObject)
+        {
+            this.m_turretObject = turretObject;
+        }
+        
+        public void SetTurretBehaviour(TurretBehaviour turretBehaviour)
+        {
+            this.m_turretBehaviour = turretBehaviour;
+        }
+
+        public TurretBehaviour GetTurretBehaviour()
+        {
+            return m_turretBehaviour;
+        }
+
+        public GameObject GetTurretObject()
+        {
+            return m_turretObject;
+        }
+        
+        public GameObject GetObject()
+        {
+            return m_object;
+        }
+
+        public GameObject GetTerrain()
+        {
+            return m_terrain;
         }
 
         public bool IsClickable()
@@ -92,24 +141,12 @@ namespace Assets.Scripts
 
         public float GetX()
         {
-            return x*2.56f;
+            return x * 2.56f;
         }
 
         public float GetY()
         {
             return y * 2.56f;
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

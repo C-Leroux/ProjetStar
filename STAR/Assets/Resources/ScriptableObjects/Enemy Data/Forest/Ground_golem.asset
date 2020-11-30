@@ -18,6 +18,7 @@ MonoBehaviour:
   speed: 4
   atkDamage: 4
   atkRange: 0
+
   spritesToDirection:
   - {fileID: -3574260330894320781, guid: 9a0e519ecb145e74ca620d6266701da0, type: 3}
   - {fileID: -126365259254613671, guid: 9a0e519ecb145e74ca620d6266701da0, type: 3}
@@ -31,3 +32,5 @@ MonoBehaviour:
   - {fileID: -4117851867854934845, guid: 9a0e519ecb145e74ca620d6266701da0, type: 3}
   - {fileID: -3597919477232739228, guid: 9a0e519ecb145e74ca620d6266701da0, type: 3}
   - {fileID: 6473539844590646839, guid: 9a0e519ecb145e74ca620d6266701da0, type: 3}
+
+  droppedMoney: 3

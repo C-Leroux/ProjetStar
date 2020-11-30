@@ -19,7 +19,12 @@ namespace Assets.Scripts
         [SerializeField]
         private int atkRange;
 
+
         public Sprite[] spritesToDirection;
+
+        [SerializeField]
+        private int droppedMoney;
+
 
         public string EnemyName
         {
@@ -67,6 +72,14 @@ namespace Assets.Scripts
             get
             {
                 return atkRange;
+            }
+        }
+        
+        public int DroppedMoney
+        {
+            get
+            {
+                return droppedMoney;
             }
         }
     }

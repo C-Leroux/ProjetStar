@@ -10,6 +10,8 @@ TagManager:
   - Place
   - turretManager
   - boardManager
+  - Floor
+  - Path
   layers:
   - Default
   - TransparentFX

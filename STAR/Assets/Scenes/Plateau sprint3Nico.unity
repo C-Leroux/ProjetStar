@@ -154,8 +154,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -321, y: -146}
   m_SizeDelta: {x: -715, y: -380}
+=======
+  m_AnchoredPosition: {x: -198.00008, y: 185.99992}
+  m_SizeDelta: {x: 0, y: 0}
+>>>>>>> Cleaning
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &28575007
 GameObject:
@@ -540,8 +545,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
+<<<<<<< HEAD
           m_MethodName: setSelectionTurretMode
           m_Mode: 5
+=======
+          m_MethodName: SetSelectionTurretMode
+          m_Mode: 1
+>>>>>>> Cleaning
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -551,7 +561,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 423180756}
-          m_MethodName: setStringTourelle
+          m_MethodName: SetStringTourelle
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1333,8 +1343,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
+<<<<<<< HEAD
           m_MethodName: setSelectionTurretMode
           m_Mode: 5
+=======
+          m_MethodName: SetSelectionTurretMode
+          m_Mode: 1
+>>>>>>> Cleaning
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1344,7 +1359,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 423180756}
-          m_MethodName: setStringTourelle
+          m_MethodName: SetStringTourelle
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1965,8 +1980,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
+<<<<<<< HEAD
           m_MethodName: setSelectionTurretMode
           m_Mode: 5
+=======
+          m_MethodName: SetSelectionTurretMode
+          m_Mode: 1
+>>>>>>> Cleaning
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1976,7 +1996,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 423180756}
-          m_MethodName: setStringTourelle
+          m_MethodName: SetStringTourelle
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2452,8 +2472,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
+<<<<<<< HEAD
           m_MethodName: setSelectionTurretMode
           m_Mode: 5
+=======
+          m_MethodName: SetSelectionTurretMode
+          m_Mode: 1
+>>>>>>> Cleaning
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2463,7 +2488,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 423180756}
-          m_MethodName: setStringTourelle
+          m_MethodName: SetStringTourelle
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2551,14 +2576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114ba8bf6d1b67a488b45f4867018148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 16
-  rows: 12
-  objectCount:
-    minimum: 1
-    maximum: 3
-  treeCount:
-    minimum: 1
-    maximum: 3
   spaceship: {fileID: 8258857367555600930, guid: b9c835f61981d684db2775983529c858,
     type: 3}
   floorTiles:
@@ -2779,8 +2796,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
+<<<<<<< HEAD
           m_MethodName: setSelectionTurretMode
           m_Mode: 5
+=======
+          m_MethodName: SetSelectionTurretMode
+          m_Mode: 1
+>>>>>>> Cleaning
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2790,7 +2812,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 423180756}
-          m_MethodName: setStringTourelle
+          m_MethodName: SetStringTourelle
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3631,8 +3653,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 423180756}
+<<<<<<< HEAD
           m_MethodName: setSelectionTurretMode
           m_Mode: 5
+=======
+          m_MethodName: SetSelectionTurretMode
+          m_Mode: 1
+>>>>>>> Cleaning
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3642,7 +3669,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 423180756}
-          m_MethodName: setStringTourelle
+          m_MethodName: SetStringTourelle
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4903615047930591002
+--- !u!1 &1554461974941164312
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4903615047930591004}
-  - component: {fileID: 4903615047930591005}
+  - component: {fileID: 1554461974941164318}
+  - component: {fileID: 1554461974941164319}
   m_Layer: 0
-  m_Name: Board
+  m_Name: Board 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4903615047930591004
+--- !u!4 &1554461974941164318
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4903615047930591002}
+  m_GameObject: {fileID: 1554461974941164312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 443.31802, y: 170.47812, z: -96.124794}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4903615047930591005
+--- !u!114 &1554461974941164319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4903615047930591002}
+  m_GameObject: {fileID: 1554461974941164312}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: affcdcba782716747acbb20c93f2e5de, type: 3}
@@ -109,10 +109,8 @@ MonoBehaviour:
   - {fileID: 6814083169554474927, guid: b03b5d4e7a59d24489751f1ec588c5b8, type: 3}
   - {fileID: 3501117951906145291, guid: e2a153055638ab24f95f6bbb45c6d651, type: 3}
   - {fileID: 3501117951906145291, guid: e2a153055638ab24f95f6bbb45c6d651, type: 3}
-  - {fileID: 519601530208612473, guid: 29c4f5b99144b77409153c3d2285d54e, type: 3}
-  - {fileID: 4623237688517334542, guid: 924be9058184f614b89844509ff1d282, type: 3}
-  - {fileID: 2604205052710464024, guid: 651b57419ccdab6468095aec1aac9511, type: 3}
-  - {fileID: 1790333519432642329, guid: 11a5cfa9f4dd0114cafe61a0d1f9400e, type: 3}
+  - {fileID: 2615373143452674315, guid: a8d1e47ff816e9b458483f34d93ffb98, type: 3}
+  - {fileID: 1592832524272073823, guid: 5651284e654773742b87673cc4e12827, type: 3}
   pathTiles:
   - {fileID: 2584023799639975694, guid: 9d64163667dcea34f8fd51ee1725555a, type: 3}
   - {fileID: 4483159260528734674, guid: 30666abc592a5ec4d95011c43c9078ac, type: 3}
@@ -139,4 +137,5 @@ MonoBehaviour:
   - {fileID: 2229100908475156565, guid: b0c8332ad98521b4aae2b829dca51e72, type: 3}
   - {fileID: 6595926655711468893, guid: 4bfbdadf988a74543b100c03f3aa75de, type: 3}
   columns: 18
-  rows: 12
+  rows: 13
+  turetDisp: {fileID: 0}
