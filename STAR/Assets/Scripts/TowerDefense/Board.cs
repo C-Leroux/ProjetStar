@@ -61,7 +61,7 @@ namespace Assets.Scripts
             textTurret = "";
             boardHolder = new GameObject("Contains").transform;
             gridCase = new Case[columns, rows];
-            board = new int[,]
+            /*board = new int[,]
                 {
                 { 2 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 0 , 8 , 7 , 0 , 2 , 3 , 3 , 1 , 1 , 1 },
                 { 2 , 0 , 12, 11, 11, 11, 11, 11, 13, 9 , 6 , 5 , 3 , 4 , 2 , 1 , 1 , 2 },
@@ -76,7 +76,10 @@ namespace Assets.Scripts
                 { 1 , 0 , 3 , 4 , 5 , 4 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 3 , 3 , 2 },
                 { 0 , 0 , 1 , 5 , 4 , 3 , 0 , 0 , 0 , 15, 11, 11, 11, 14, 0 , 4 , 5 , 4 },
                 { 0 , 0 , 2 , 3 , 2 , 2 , 0 , 0 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 5 , 6 , 7 }
-                };
+                };*/
+            RandomBoard randomBoard = new RandomBoard(columns, rows);
+            board = randomBoard.RandomMat();
+            PrintBoard();
             typeFloor = (floorTiles.Length / 4) * multiplicator;
             typePath = (pathTiles.Length / 4) * multiplicator;
             typeTree = (treeTiles.Length / 4) * multiplicator;
@@ -112,6 +115,17 @@ namespace Assets.Scripts
                 }
             }
 
+        }
+
+        public void PrintBoard()
+        {
+            for (int i = 0; i < rows; ++i)
+            {
+                string str = "{";
+                for (int j = 0; j < columns; ++j)
+                    str += board[i, j] + ", ";
+                print(str +"}");
+            }    
         }
 
 

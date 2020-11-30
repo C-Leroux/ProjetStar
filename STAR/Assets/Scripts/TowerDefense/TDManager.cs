@@ -65,7 +65,6 @@ namespace Assets.Scripts
             GetPath();
             Enemy.SetPath(path);
             this.planet = planet;
-            startPoint = new Vector3(2 * tileSize, -(-1) * tileSize + padding, -0.5f); // HARDCODED
             wg = new WaveGenerator(planet, startPoint);
             isActive = true;
             waveText.text = "Round " + (wg.GetCurrentWave()+1) + " / " + wg.GetNbWaves();
@@ -73,12 +72,26 @@ namespace Assets.Scripts
 
         public (int, int) GetStartPoint()
         {
-            return (-1,2); // HARDCODED
-        }
-
-        public (int, int) GetEndPoint()
-        {
-            return (12, 9); // HARDCODED
+            int x = -1;
+            int y = -1;
+            for (int i = 0; i < board.GetLength(0); ++i)
+            {
+                if (board[i, 0] >= 10 && board[i, 0] <= 15)
+                {
+                    x = i;
+                    y = -1;
+                }
+            }
+            for (int j = 0; j < board.GetLength(1); ++j)
+            {
+                if (board[0, j] >= 10 && board[0, j] <= 15)
+                {
+                    x = -1;
+                    y = j;
+                }
+            }
+            startPoint = new Vector3(y * tileSize, -x * tileSize + padding, -0.5f);
+            return (x, y);
         }
 
         public void GetPath()
