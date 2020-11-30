@@ -338,7 +338,7 @@ namespace Assets.Scripts
                 else if (diff == 0)
                     th = 100;
                 else
-                    th = 70 - (cpt * 5);
+                    th = 70 - (cpt * 5) + offpathLeft;
             }
             else
             {
@@ -347,7 +347,7 @@ namespace Assets.Scripts
                 else if (diff == 0)
                     th = 0;
                 else
-                    th = 80 - (cpt * 5);
+                    th = 80 - (cpt * 5) - offpathLeft;
             }
 
             return th;
