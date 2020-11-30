@@ -13,7 +13,7 @@ public class MoneyForMerchant
     public MoneyForMerchant()
     {
         instance = this;
-        departMoney = 0;
+        departMoney = 500;
         currentMoney = 0;
     }
 

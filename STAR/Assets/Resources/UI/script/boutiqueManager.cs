@@ -30,6 +30,8 @@ public class boutiqueManager : MonoBehaviour
     private GameObject iconPopUp;
     [SerializeField]
     private GameObject textPopUp;
+    [SerializeField]
+    private GameObject goldDisplay;
 
 
     int currentSelectedItemPrice;
@@ -38,8 +40,13 @@ public class boutiqueManager : MonoBehaviour
     void Start()
     {
         boutiqueLoadData();
+        updateGoldDisplay();
     }
 
+    private void updateGoldDisplay()
+    {
+        goldDisplay.GetComponent<TMP_Text>().text = MoneyForMerchant.Instance.GetMoney().ToString() + " pieces d'or";
+    }
 
     private void popUpLoadData(int index)
     {
@@ -75,12 +82,21 @@ public class boutiqueManager : MonoBehaviour
         }
     }
 
-
+    private bool checkIfAbleToBuy()
+    {
+        return MoneyForMerchant.Instance.GetMoney() >= currentSelectedItemPrice;
+    }
 
     public void onClickBuyItemButton()
     {
-        //à Remplir
-        Debug.Log("item acheté au prix de  : " + currentSelectedItemPrice);
+        if (checkIfAbleToBuy())
+        {
+            MoneyForMerchant.Instance.RemoveMoney(currentSelectedItemPrice);
+        }
+        else
+        {
+            Debug.Log("pas assez d'argent");
+        }
     }
 
 
@@ -108,6 +124,6 @@ public class boutiqueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        updateGoldDisplay();
     }
 }
