@@ -31,6 +31,4 @@ MonoBehaviour:
   - {fileID: -5559585991958802090, guid: e49b14667f069984bb24b0037b2676dd, type: 3}
   - {fileID: 7029859237822837210, guid: e49b14667f069984bb24b0037b2676dd, type: 3}
   - {fileID: -2089756027587579594, guid: e49b14667f069984bb24b0037b2676dd, type: 3}
-
   droppedMoney: 3
-

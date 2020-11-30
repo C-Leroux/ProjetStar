@@ -391,7 +391,7 @@ namespace Assets.Scripts
         }
 
 
-        /*Start is called before the first frame update
+        //Start is called before the first frame update
         void Start()
         {
             isSelectionTurretModeActivate = false;
@@ -407,7 +407,7 @@ namespace Assets.Scripts
         void Update()
         {
 
-        }*/
+        }
 
     }
 }
