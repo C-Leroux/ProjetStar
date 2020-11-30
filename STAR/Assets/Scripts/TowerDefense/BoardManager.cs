@@ -39,6 +39,7 @@ namespace Assets.Scripts
         private int multiplicator;
         private List<Vector3> gridPositions = new List<Vector3>();
         private bool isGridSelectionCreated;
+        private bool isUpdate;
 
 
         private void Awake()
@@ -127,6 +128,7 @@ namespace Assets.Scripts
             Money.Instance.LaunchBoard();
             checkTime = 0;
             timerIsRunning = false;
+            isUpdate = true;
         }
 
     // Update is called once per frame
@@ -171,7 +173,7 @@ namespace Assets.Scripts
             }
 
             //Si la condition de victoire et defaite n'est pas atteinte
-            if (timerIsRunning && Base.Instance.IsAlive() && !TDManager.Instance().IsWaveEnd())
+            if (timerIsRunning && Base.Instance.IsAlive() && !TDManager.Instance().IsWaveEnd() && isUpdate)
             {
                 timePassing += Time.deltaTime;
                 if(checkTime < timePassing)
@@ -182,14 +184,15 @@ namespace Assets.Scripts
                 DisplayTime(timePassing);
             }
             //Défaite
-            else if(!Base.Instance.IsAlive())
+            else if(!Base.Instance.IsAlive() && isUpdate)
             {
                 background.enabled = true;
                 defeat.gameObject.SetActive(true);
             }
             //Victoire
-            else if(TDManager.Instance().IsWaveEnd())
+            else if(TDManager.Instance().IsWaveEnd() && isUpdate)
             {
+                isUpdate = false;
                 background.enabled = true;
                 victory.gameObject.SetActive(true);
                 MoneyForMerchant.Instance.AddMoney(150);

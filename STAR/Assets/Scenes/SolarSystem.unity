@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solarSystem: {fileID: 1887876798}
-  moneyForMerchantText: {fileID: 578534501}
 --- !u!4 &566716729
 Transform:
   m_ObjectHideFlags: 0
@@ -299,6 +298,7 @@ GameObject:
   - component: {fileID: 748281499}
   - component: {fileID: 748281498}
   - component: {fileID: 748281497}
+  - component: {fileID: 748281501}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -386,6 +386,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &748281501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748281496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0129b422eadf9459e5d43d7653030a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoneyText: {fileID: 578534501}
 --- !u!1 &1066929999
 GameObject:
   m_ObjectHideFlags: 0
