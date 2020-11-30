@@ -192,6 +192,7 @@ namespace Assets.Scripts
             {
                 background.enabled = true;
                 victory.gameObject.SetActive(true);
+                MoneyForMerchant.Instance.AddMoney(150);
                 GameManager.Instance().Victory(planet);
             }
         }
