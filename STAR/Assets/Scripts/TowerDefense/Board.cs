@@ -104,10 +104,20 @@ namespace Assets.Scripts
                     {
                         gridCase[j, i].SetDepart();
                     }
-                    if (i == rows - 1 && board[i, j] == 10)
+                    if (j == 0 && board[i, j] == 11)
                     {
-                        gridCase[j, i - 1].SetVillage();
-                        gridCase[j, i - 1].AddObject(spaceship);
+                        gridCase[j, i].SetDepart();
+                    }
+                    if (i == rows - 1 && (board[i, j] == 10 || board[i, j] == 15 || board[i, j] == 13))
+                    {
+                        gridCase[j, i].SetVillage();
+                        gridCase[j, i].AddObject(spaceship);
+                    }
+
+                    if (j == columns - 1 && (board[i, j] == 11 || board[i, j] == 12 || board[i, j] == 15))
+                    {
+                        gridCase[j, i].SetVillage();
+                        gridCase[j, i].AddObject(spaceship);
                     }
                 }
             }
