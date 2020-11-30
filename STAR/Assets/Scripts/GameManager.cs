@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -10,6 +11,7 @@ namespace Assets.Scripts
         private static GameManager instance;
 
         public SolarSystem solarSystem;
+        public Text moneyForMerchantText;
         private BoardManager boardScript;
         private ChoiceManager choiceScript;
         private TDManager tdManager;
@@ -31,6 +33,8 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            MoneyForMerchant.Instance.SetMoneyText(moneyForMerchantText);
+            MoneyForMerchant.Instance.UpdateMoney();
             InitSolarSystem();
         }
 

@@ -55,4 +55,9 @@ public class MoneyForMerchant
         departMoney += moneyDepart;
         currentMoney = departMoney;
     }
+
+    public void UpdateMoney()
+    {
+        moneyText.text = ("" + currentMoney);
+    }
 }
