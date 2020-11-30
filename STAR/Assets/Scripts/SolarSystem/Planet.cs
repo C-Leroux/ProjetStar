@@ -82,7 +82,7 @@ namespace Assets.Scripts
             float scale = 0.1f;
             switch(size)
             {
-                case Size.medium:
+                case Size.small:
                     scale = 0.07f;
                     break;
                 case Size.big:

@@ -76,7 +76,7 @@ namespace Assets.Scripts
             int y = -1;
             for (int i = 0; i < board.GetLength(0); ++i)
             {
-                if (board[i, 0] >= 10 && board[i, 0] <= 15)
+                if (board[i, 0] == 11)
                 {
                     x = i;
                     y = -1;
@@ -84,7 +84,7 @@ namespace Assets.Scripts
             }
             for (int j = 0; j < board.GetLength(1); ++j)
             {
-                if (board[0, j] >= 10 && board[0, j] <= 15)
+                if (board[0, j] == 10)
                 {
                     x = -1;
                     y = j;

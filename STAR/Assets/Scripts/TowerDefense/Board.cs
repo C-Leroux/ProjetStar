@@ -77,7 +77,7 @@ namespace Assets.Scripts
                 { 0 , 0 , 1 , 5 , 4 , 3 , 0 , 0 , 0 , 15, 11, 11, 11, 14, 0 , 4 , 5 , 4 },
                 { 0 , 0 , 2 , 3 , 2 , 2 , 0 , 0 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 5 , 6 , 7 }
                 };*/
-            RandomBoard randomBoard = new RandomBoard(columns, rows);
+            RandomBoard randomBoard = new RandomBoard(planet, columns, rows);
             board = randomBoard.RandomMat();
             PrintBoard();
             typeFloor = (floorTiles.Length / 4) * multiplicator;

@@ -14,6 +14,7 @@ namespace Assets.Scripts
             left
         }
 
+        private Planet planet;
         private int seed;
         private int difficulty;         // 0 = easy, 1 = medium, 2 = hard
         private int height;
@@ -28,10 +29,15 @@ namespace Assets.Scripts
         private bool[,] boardBool;
         private int[,] board;
         private bool isComplete = false;
-        private int nbTiles = 0;        // Number of tiles that composed the current path
+        private int nbTiles;             // Size of the path
+        private int currentTiles = 0;    // Number of tiles that composed the current path
+        private int nbOffpath;           // Number of tiles that do not make progress toward the goal
+        private int currentOffpath = 0;
+        private int cpt = 0;
 
-        public RandomBoard(int width = 12, int height = 18, int difficulty = 0, int seed = 0)
+        public RandomBoard(Planet planet, int width = 12, int height = 18, int difficulty = 0, int seed = 0)
         {
+            this.planet = planet;
             this.width = width;
             this.height = height;
             if (seed != 0)
@@ -39,6 +45,19 @@ namespace Assets.Scripts
             else
                 this.seed = System.Environment.TickCount;
             this.difficulty = difficulty;
+
+            switch (planet.size)
+            {
+                case Planet.Size.small:
+                    nbTiles = 20 - planet.Rank;
+                    break;
+                case Planet.Size.medium:
+                    nbTiles = 30 - planet.Rank * 2;
+                    break;
+                default:
+                    nbTiles = 40 - planet.Rank * 3;
+                    break;
+            }
         }
 
         public void SetSeed(int seed)
@@ -50,27 +69,8 @@ namespace Assets.Scripts
         {
             Random.InitState(seed);
 
-            int startValue = Random.Range(1, height + width - 2);
-            (int, int) startPoint;
-            if (startValue < height - 1)
-            {
-                startPoint = (startValue, 0);
-                dir = Dir.right;
-                previousDir = Dir.right;
-                isSide = true;
-            }
-            else
-            {
-                startPoint = (0, startValue - height + 2);
-                dir = Dir.down;
-                previousDir = Dir.down;
-                isSide = false;
-            }
+            GenerateStartPoint();
 
-            boardBool = new bool[height, width];
-            InitBoard();
-            i = startPoint.Item1;
-            j = startPoint.Item2;
             boardBool[i, j] = true;
             if (isSide)
                 board[i, j] = 11;
@@ -88,23 +88,73 @@ namespace Assets.Scripts
                         TurnTowardCenter();
                     else
                     {
-                        if (d100 < (100 + threshold) / 2)
+                        if (rot == 1)
                             TurnLeft();
                         else
                             TurnRight();
                     }
+                    cpt = 0;
                 }
+                else
+                    ++cpt;
 
                 if (!GoStraight())
                 {
                     if (rot == 0)
                         isComplete = true;
                     else
+                    {
                         ResetDir();
+                        if (!GoStraight())
+                            isComplete = true;
+                    }
                 }
             }
 
             return board;
+        }
+
+        private void GenerateStartPoint()
+        {
+            switch (planet.size)
+            {
+                case Planet.Size.small:
+                    isSide = false;
+                    break;
+                case Planet.Size.medium:
+                    int d2 = Random.Range(0, 2);
+                    if (d2 == 0)
+                        isSide = false;
+                    else
+                        isSide = true;
+                    break;
+                default:
+                    isSide = true;
+                    break;
+            }
+
+            (int, int) startPoint;
+            if (isSide)
+            {
+                int startValue = Random.Range(1, height - 1);
+                startPoint = (startValue, 0);
+                dir = Dir.right;
+                previousDir = Dir.right;
+                nbOffpath = nbTiles - width;
+            }
+            else
+            {
+                int startValue = Random.Range(1, width - 1);
+                startPoint = (0, startValue);
+                dir = Dir.down;
+                previousDir = Dir.down;
+                nbOffpath = nbTiles - height;
+            }
+
+            boardBool = new bool[height, width];
+            InitBoard();
+            i = startPoint.Item1;
+            j = startPoint.Item2;
         }
 
         private void InitBoard()
@@ -156,7 +206,9 @@ namespace Assets.Scripts
                     }
                     break;
             }
-            ++nbTiles;
+            ++currentTiles;
+            if (rot != 0)
+                ++currentOffpath;
             boardBool[i, j] = true;
             SetTileStraight();
             previousDir = dir;
@@ -271,15 +323,32 @@ namespace Assets.Scripts
 
         private int CalculateThreshold()
         {
-            if (nbTiles < 2)
+            if (currentTiles < 2)
                 return 100;
 
-            int th = 70 + 10 * difficulty;
+            int th;
+            int tilesLeft = nbTiles - currentTiles;
+            int offpathLeft = nbOffpath - currentOffpath;
+            int diff = tilesLeft - offpathLeft;
 
             if (rot != 0)
-                th /= 2;
+            {
+                if (offpathLeft == 0)
+                    th = 0;
+                else if (diff == 0)
+                    th = 100;
+                else
+                    th = 70 - (cpt * 5);
+            }
             else
-                th += nbTiles / 2;
+            {
+                if (offpathLeft == 0)
+                    th = 100;
+                else if (diff == 0)
+                    th = 0;
+                else
+                    th = 80 - (cpt * 5);
+            }
 
             return th;
         }
