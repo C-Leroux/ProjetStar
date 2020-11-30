@@ -96,6 +96,15 @@ namespace Assets.Scripts
             solarSystem.gameObject.SetActive(true);
         }
 
+        IEnumerator LoadMerchant()
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync("VilleMarchande");
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }
+        }
+
         public void Victory(SpaceObject destination)
         {
             StartCoroutine("LoadChoice", destination);
@@ -105,6 +114,11 @@ namespace Assets.Scripts
         {
             solarSystem.gameObject.SetActive(true);
             StartCoroutine("LoadSolarSystem");
+        }
+
+        public void Merchant()
+        {
+            StartCoroutine("LoadMerchant");
         }
 
         public void TravelTo(SpaceObject destination)
