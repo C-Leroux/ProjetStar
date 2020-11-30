@@ -15,7 +15,8 @@ namespace Assets.Scripts
         public Image image1;
         public Image image2;
         public Image image3;
-        public Sprite m_sprite;
+        public Sprite[] m_sprite;
+        public string[] m_stringText;
         public Text text1;
         public Text text2;
         public Text text3;
@@ -93,14 +94,18 @@ namespace Assets.Scripts
                     VictoryChoice.Instance.GetChoix(2);
                 }
             }*/
-            choice1 = VictoryChoice.Instance.GetChoix(0);
+            /*choice1 = VictoryChoice.Instance.GetChoix(0);
             choice2 = VictoryChoice.Instance.GetChoix(1);
             choice3 = VictoryChoice.Instance.GetChoix(2);
             SetImage();
             text1.text = "Augmentation du revenu par seconde";
             text2.text = "Augmentation des LP de la base";
-            text3.text = "Augmentation de la limite d'argent";
+            text3.text = "Augmentation de la limite d'argent";*/
+            m_stringText = new string[] { "Augmentation des LP de la base", "Augmentation du revenu par seconde", "Augmentation de la limite d'argent" };
             isChoice = false;
+            TransformChoice(text1, image1, 0);
+            TransformChoice(text2, image2, 1);
+            TransformChoice(text3, image3, 2);
         }
         
         public void Choice(string choice)
@@ -108,11 +113,50 @@ namespace Assets.Scripts
             isChoice = true;
         }
 
+
+        public void FoundChoice(int choice)
+        {
+            if(choice == 1)
+            {
+                ExecuteChoice(text1.text);
+            }
+            else if(choice == 2)
+            {
+                ExecuteChoice(text2.text);
+            }
+            else
+            {
+                ExecuteChoice(text3.text);
+            }
+        }
+        public void ExecuteChoice(string choice)
+        {
+            switch (choice)
+            {
+                case "Augmentation des LP de la base":
+                    BaseLifeUp();
+                    break;
+                case "Augmentation du revenu par seconde":
+                    MoneyRate();
+                    break;
+                case "Augmentation de la limite d'argent":
+                    MoneyLimiteRate();
+                    break;
+
+            }
+        }
+
+        public void TransformChoice(Text new_text, Image new_image, int indice)
+        {
+            new_text.text = m_stringText[indice];
+            new_image.sprite = m_sprite[indice];
+        }
+
         public void SetImage()
         {
-            image1.sprite = m_sprite;
-            image2.sprite = m_sprite;
-            image3.sprite = m_sprite;
+            image1.sprite = m_sprite[1];
+            image2.sprite = m_sprite[0];
+            image3.sprite = m_sprite[2];
         }
 
         public void BaseLifeUp()
@@ -121,13 +165,13 @@ namespace Assets.Scripts
             isChoice = true;
         }
 
-        public void MoneyRate()
+        public void MoneyLimiteRate()
         {
             Money.Instance.AddMaxMoney(250);
             isChoice = true;
         }
 
-        public void MoneyLimiteRate()
+        public void MoneyRate()
         {
             Money.Instance.AddMoneyPerSecond();
             isChoice = true;
