@@ -107,6 +107,7 @@ namespace Assets.Scripts
 
         public void Victory(SpaceObject destination)
         {
+
             StartCoroutine("LoadChoice", destination);
         }
 

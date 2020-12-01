@@ -18,7 +18,7 @@ namespace Assets.Scripts
         public int columns;
         public int rows;
         public turretDisplay turetDisp;
-        public TurretBehaviour turretTemplate;
+        public GameObject turretTemplate;
         private int multiplicator;
         private int typeFoliage;
         private Vector3[,] gridPositions2;
@@ -121,7 +121,7 @@ namespace Assets.Scripts
                     }
                 }
             }
-            turretTemplate = turetDisp.GetTurretBehaviour();
+            //turretTemplate = turetDisp.GetTurretBehaviour();
 
         }
 
@@ -342,20 +342,7 @@ namespace Assets.Scripts
             this.textTurret = text;
         }
 
-        public void DisplayTurret()
-        {
-            if (textTurret != "")
-            {
-                Turret new_turret = turetDisp.GetTurret(textTurret);
-                GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
-                TurretBehaviour behaviour = obj.GetComponent<TurretBehaviour>();
-                behaviour.init(new_turret);
-                //var new_object = Instantiate(new_turret, new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), (float)z), Quaternion.identity) as GameObject;
-                //new_object.transform.SetParent(boardHolder);
-                //gridCase[i, j].SetObject(new_object);
-                //turetDisp.createTurret(textTurret);
-            }
-        }
+        
         public void DisplayTurret(float x, float y)
         {
             if (textTurret != "")
@@ -369,8 +356,6 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    //Debug.Log("x :" + x);
-                    //Debug.Log("y :" + y);
                    for (int i = 0; i < columns; i++)
                     {
                         for (int j = 0; j < rows; j++)
@@ -380,17 +365,16 @@ namespace Assets.Scripts
                                 gridCase[i, j].SetTurret(new_turret);
                                 GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
                                 obj.transform.position = new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -1);
-                                TurretBehaviour behaviour = obj.GetComponent<TurretBehaviour>();
+                                TurretBehaviour behaviour = obj.GetComponentInChildren<TurretBehaviour>();
                                 gridCase[i, j].SetTurretBehaviour(behaviour);
                                 behaviour = gridCase[i, j].GetTurretBehaviour();
                                 behaviour.init(new_turret);
                                 gridCase[i, j].SetTurretBehaviour(null);
-                                //var new_object = Instantiate(new_turret.sprite, new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -1), Quaternion.identity) as GameObject;
                                 Money.Instance.RemoveMoney(cost);
+                                SpecialEffectsHelper.Instance.buildOrUpgradeTower(obj.transform.position);
                             }
                         }
                     }
-                    //turetDisp.createTurret(textTurret, x, y);
                 }
             }
         }

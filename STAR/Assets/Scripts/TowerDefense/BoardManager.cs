@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Assets.Scripts
 {
@@ -40,7 +41,8 @@ namespace Assets.Scripts
         private List<Vector3> gridPositions = new List<Vector3>();
         private bool isGridSelectionCreated;
         private bool isUpdate;
-
+        [SerializeField]
+        private TMP_Text explainConditionToContinuText;
 
         private void Awake()
         {
@@ -131,8 +133,15 @@ namespace Assets.Scripts
             isUpdate = true;
         }
 
-    // Update is called once per frame
-    void Update()
+
+        public void endVictoryScreen()
+        {
+            GameManager.Instance().Victory(planet);
+        }
+
+
+        // Update is called once per frame
+        void Update()
         {
             //IsSelectionTurretMode = true -> On selectionne des tourelles, sinon on ne selectionne pas
             if (m_board.GetSelectionTurretMode() && !isGridSelectionCreated) //Au Premier clic sur un bouton de tourelle, le mode selection tourelle est activé
@@ -196,7 +205,8 @@ namespace Assets.Scripts
                 background.enabled = true;
                 victory.gameObject.SetActive(true);
                 MoneyForMerchant.Instance.AddMoney(150);
-                GameManager.Instance().Victory(planet);
+                SpecialEffectsHelper.Instance.victoryEffect(new Vector3(23, 1, 0));
+                             
             }
         }
     }

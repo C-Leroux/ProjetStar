@@ -12,6 +12,7 @@ TagManager:
   - boardManager
   - Floor
   - Path
+  - Base
   layers:
   - Default
   - TransparentFX

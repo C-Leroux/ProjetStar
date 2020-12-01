@@ -17,6 +17,9 @@ namespace Assets.Scripts
         private string direction;
         private int positionCounter;
         private float movingSpeedWalkingAnimation;
+        private float current_time;
+        private float attack_speed;
+
         // Use this for initialization
         void Start()
         {
@@ -27,23 +30,33 @@ namespace Assets.Scripts
             direction = "right";
             positionCounter = 0;
             movingSpeedWalkingAnimation = 0.5f;
+            current_time = 0f;
+            attack_speed =1/0.9f; //Pour l'instant pareil pour tous les ennmis, à rajouter dans Ennemi_Data si on veut
         }
 
         // Update is called once per frame
         void Update()
         {
+            current_time += Time.deltaTime;
             if (!wave)
                 return;
-            if (CanAttackBase())
-                AttackBase();
-            else if (!stun)
+            if (CanAttackBase() && current_time >= attack_speed)
+            {                
+            AttackBase();              
+            }
+            if (!stun && !CanAttackBase())
             {
                 Walk();
+                current_time = attack_speed;
+
             }
+          
             //Changing Color sprite according to ennemi state
             changeSpriteColor();
-
         }
+
+
+
         //Poisonned Methods
         public bool getPoisonned()
         {
@@ -120,7 +133,7 @@ namespace Assets.Scripts
         }
 
 
-        private string updateEnnemiDirection(Vector2 currentPosition, Vector2 nextPosition)
+        private string updateEnnemiDirection(Vector2 currentPosition, Vector2 nextPosition) //ANIMATION ENNEMI
         {
             
             if (currentPosition.x < nextPosition.x)
@@ -149,7 +162,7 @@ namespace Assets.Scripts
             return null;
         }
 
-        public void setCounterPositionAfterDelay(float walkingSpeedAnimation, int couterPositionValue)
+        public void setCounterPositionAfterDelay(float walkingSpeedAnimation, int couterPositionValue) //ANIMATION
         {
             StartCoroutine(waitBeforeWalk(walkingSpeedAnimation, couterPositionValue));
         }
@@ -158,7 +171,7 @@ namespace Assets.Scripts
         {
             yield return new WaitForSeconds(walkingSpeedAnimation);
             positionCounter = couterPositionValue;
-        }
+        } //ANIMATION
 
 
 
@@ -171,6 +184,7 @@ namespace Assets.Scripts
             }
             Vector2 currentPosition = transform.localPosition;
             Vector2 nextPosition = Vector3.MoveTowards(transform.localPosition, path[targetIndex], SpeedFormula() * Time.deltaTime);
+           //ANIMATION
             if (currentPosition != nextPosition)
             {
                 direction = updateEnnemiDirection(currentPosition, nextPosition);
@@ -258,7 +272,8 @@ namespace Assets.Scripts
 
         private void AttackBase()
         {
-
+            current_time = current_time - attack_speed;
+            Base.Instance.ReceiveAttack(this.enemyData.AtkDamage);
         }
 
         public void TakeDamages(float damages)
@@ -268,7 +283,12 @@ namespace Assets.Scripts
             {
                 wave.Despawn();
                 Money.Instance.AddMoney(enemyData.DroppedMoney);
-                Destroy(gameObject);
+                SpecialEffectsHelper.Instance.destroyEnnemi(this.transform.position);
+                GameObject.Destroy(this.gameObject);
+            }
+            else
+            {
+                SpecialEffectsHelper.Instance.EnnemiHit(this.transform.position);
             }
         }
 

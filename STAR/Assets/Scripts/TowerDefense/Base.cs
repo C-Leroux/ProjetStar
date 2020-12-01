@@ -12,6 +12,7 @@ namespace Assets.Scripts
         private int lpMax;
         public Image healthbar;
         private Text healthbarText;
+        private Vector2 position;
 
         public Base()
         {
@@ -69,6 +70,7 @@ namespace Assets.Scripts
         {
             lp -= attack;
             UpdateHealth();
+            SpecialEffectsHelper.Instance.baseHit(getPosition());
         }
 
         public void AddMaxLp(int addLP)
@@ -79,6 +81,12 @@ namespace Assets.Scripts
         public void ResetLp()
         {
             lp = lpMax;
+        }
+
+       
+        public Vector2 getPosition()
+        {
+            return GameObject.FindGameObjectWithTag("Base").transform.position;
         }
     }
 }

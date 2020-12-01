@@ -10,15 +10,10 @@ public class onClickOnTurret : MonoBehaviour
     private GameObject turret;
     [SerializeField]
     private Canvas turretUI;
-    [SerializeField]
-    private GameObject sell;
-    [SerializeField]
-    private GameObject upgrade;
     private GameObject boardManager;
     private GameObject turretManager;
 
 
-    private string selectedTurretName;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +38,7 @@ public class onClickOnTurret : MonoBehaviour
                 Debug.Log("tourelle Upgraded");
                 break;
             case "sell":
-                int sellPrice = this.GetComponent<TurretBehaviour>().getTurretSelectedCost() / 2;
+                int sellPrice = turret.GetComponent<TurretBehaviour>().getTurretSelectedCost() / 2;
                 Money.Instance.AddMoney(sellPrice);
                 GameObject.Destroy(this.gameObject);
                 break;
@@ -54,17 +49,18 @@ public class onClickOnTurret : MonoBehaviour
     private void upgradeTower()
     {
         int upgradeCost = 0;
-        switch (this.GetComponent<TurretBehaviour>().getTurretSelectedName())
+        switch (turret.GetComponent<TurretBehaviour>().getTurretSelectedName())
         {
             case "STAR": //TOURELLE DE LA STAR
                 upgradeCost = 15;
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("STAR1");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.5f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("STAR1");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("STAR1");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.5f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("STAR1");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -76,10 +72,11 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("STAR2");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(2f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("STAR2");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("STAR2");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(2f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("STAR2");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -93,9 +90,10 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Grenadiere1");
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Grenadiere1");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Grenadiere1");
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Grenadiere1");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -107,9 +105,10 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Grenadiere2");
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Grenadiere2");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Grenadiere2");
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Grenadiere2");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -124,11 +123,12 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Cryomancienne1");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1f);
-                    this.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Cryomancienne1");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Cryomancienne1");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1f);
+                    turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Cryomancienne1");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -140,11 +140,12 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Cryomancienne2");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.2f);
-                    this.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Cryomancienne2");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Cryomancienne2");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.2f);
+                    turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Cryomancienne2");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -159,11 +160,12 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Empoisonneuse1");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.5f);
-                    this.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Empoisonneuse1");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Empoisonneuse1");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.5f);
+                    turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Empoisonneuse1");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -175,11 +177,12 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Empoisonneuse2");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(2f);
-                    this.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Empoisonneuse2");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Empoisonneuse2");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(2f);
+                    turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Empoisonneuse2");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -194,11 +197,12 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Pyromancienne1");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(0.8f);
-                    this.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Pyromancienne1");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Pyromancienne1");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(0.8f);
+                    turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Pyromancienne1");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -210,11 +214,12 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Pyromancienne2");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1f);
-                    this.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Pyromancienne2");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Pyromancienne2");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1f);
+                    turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Pyromancienne2");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -229,10 +234,11 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Survolteuse1");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(8f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Survolteuse1");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Survolteuse1");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(8f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Survolteuse1");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -244,10 +250,11 @@ public class onClickOnTurret : MonoBehaviour
                 if (checkIfUpgradeIsPossible(upgradeCost))
                 {
                     Money.Instance.RemoveMoney(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
-                    this.GetComponent<TurretBehaviour>().setNameForUpgrade("Survolteuse2");
-                    this.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(10f);
-                    this.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Survolteuse2");
+                    turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
+                    turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Survolteuse2");
+                    turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(10f);
+                    turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Survolteuse2");
+                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                 }
                 else
                 {
@@ -262,14 +269,7 @@ public class onClickOnTurret : MonoBehaviour
 
     private bool checkIfUpgradeIsPossible(int cost)
     {
-         if (cost < Money.Instance.GetCurrentMoney())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return cost < Money.Instance.GetCurrentMoney();
     }
     // Update is called once per frame
     void Update()

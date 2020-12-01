@@ -13,7 +13,8 @@ public class ProjectileBehaviour : MonoBehaviour
     private int explosionRange;
     private float poisonnedTime;
     private float stunTime;
-    private Enemy ennemi; 
+    private Enemy ennemi;
+    private ParticleSystem moovingEffect;
     //testEnnemiScript temporaire à remplacer avec la classe ennemi, ici on vient rechercher la methode looseLife notamment 
 
 
@@ -56,6 +57,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public void initFire(Collider2D target)
     {
         this.target = target;
+        moovingEffect =SpecialEffectsHelper.Instance.projectileMoving(this.transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,6 +77,7 @@ public class ProjectileBehaviour : MonoBehaviour
                     break;
                 case "Grenadiere":
                     Collider2D[] targets = getEnnemisInExplosionRange();//La tourelle tire sur une cible, et affecte des dégats dans la zone de l'explosion
+                    SpecialEffectsHelper.Instance.Explosion(this.transform.position);
                     for (int i = 0; i < targets.Length; i++)
                     {
                         if (targets[i].tag == "Ennemi")
@@ -125,6 +128,7 @@ public class ProjectileBehaviour : MonoBehaviour
     }
    
     
+    
     void Update()
     {
         if (target != null)
@@ -133,6 +137,8 @@ public class ProjectileBehaviour : MonoBehaviour
         }
         transform.position = transform.position +
            ((target == null ? dead_target : target.transform.position) - transform.position) * Time.deltaTime * 10f;
+        moovingEffect.transform.position = this.transform.position;
+
        if (target==null)
         {
             GameObject.Destroy(this.gameObject);

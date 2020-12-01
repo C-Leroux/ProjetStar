@@ -58,6 +58,11 @@ namespace Assets.Scripts
                     isClickable = false;
                     SetObject(new_object);
                     break;
+                case "Base":
+                    isClickable = false;
+                    SetObject(new_object);
+                    this.m_object.transform.localScale = new Vector3(7, 7, 7);
+                    break;
             }
 
         }

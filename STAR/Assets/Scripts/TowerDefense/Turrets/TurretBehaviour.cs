@@ -24,9 +24,12 @@ namespace Assets.Scripts
         [SerializeField]
         private Sprite[] turretSpriteUpgrade;
         [SerializeField]
+        private GameObject firePoint;
+        [SerializeField]
         private LayerMask ennemis;
+        [SerializeField]
+        private GameObject turretUI;
 
-        
 
         public void init(Turret turret)
         {
@@ -44,11 +47,14 @@ namespace Assets.Scripts
 
         }
 
+
+  
+
         // Start is called before the first frame update
         void Start()
         {
             current_time = 0f;
-            gameObject.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+            turretUI.GetComponent<Canvas>().worldCamera = Camera.main;
         }
         private void OnDrawGizmos()
         {
@@ -194,7 +200,7 @@ namespace Assets.Scripts
             //La tourelle est l'équivalent du turretManager pour les projectiles, c'est un projectilesManager
             current_time = current_time - attack_speed;
             GameObject bullet = GameObject.Instantiate(projectileTemplate.gameObject);
-            bullet.transform.position = turretPosition.position;
+            bullet.transform.position = firePoint.transform.position;
             ProjectileBehaviour behaviour = bullet.GetComponent<ProjectileBehaviour>();
             behaviour.init(projectileToSpawn);
             behaviour.updateProjectileDamageUpgraded(this.name);

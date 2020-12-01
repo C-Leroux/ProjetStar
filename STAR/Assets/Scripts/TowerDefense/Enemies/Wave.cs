@@ -42,11 +42,12 @@ namespace Assets.Scripts
             GameObject enemy_go = new GameObject("Enemy");
             Enemy enemy = enemy_go.AddComponent<Enemy>();
             enemy_go.AddComponent<BoxCollider2D>();
+            enemy_go.GetComponent<BoxCollider2D>().size= new Vector2(0.25f, 0.4f);
             enemy_go.AddComponent<Rigidbody2D>();
             enemy_go.GetComponent<Rigidbody2D>().isKinematic = true;
             enemy_go.tag = "Ennemi";
             enemy_go.GetComponent<BoxCollider2D>().isTrigger = true;
-            enemy_go.layer = 8; //ENEMY LAYER, FOR TURRET TARGET
+            enemy_go.layer = 4; //MASK LAYER, FOR TURRET TARGET
             enemy_go.transform.parent = transform;
             enemy_go.transform.localPosition = spawnPoint;
             enemy_go.transform.localScale *= 5;
