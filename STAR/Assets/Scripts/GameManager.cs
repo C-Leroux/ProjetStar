@@ -105,6 +105,16 @@ namespace Assets.Scripts
             }
         }
 
+        IEnumerator LoadMenu()
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync("MainMenu");
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }
+        }
+
+
         public void Victory(SpaceObject destination)
         {
 
@@ -127,6 +137,11 @@ namespace Assets.Scripts
             solarSystem.gameObject.SetActive(false);
             // For marchands (or other SpaceObject types) : Find the type of the SpaceObject and execute the right portion of code
             StartCoroutine("LoadPlateau", destination);
+        }
+
+        public void ReturnToMenu()
+        {
+            StartCoroutine("LoadMenu");
         }
     }
 }

@@ -187,6 +187,10 @@ namespace Assets.Scripts
             GameManager.Instance().Victory(planet);
         }
 
+        public void ReturnToMenu()
+        {
+            GameManager.Instance().ReturnToMenu();
+        }
 
         // Update is called once per frame
         void Update()
