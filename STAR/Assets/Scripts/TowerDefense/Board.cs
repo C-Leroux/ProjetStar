@@ -37,6 +37,7 @@ namespace Assets.Scripts
         private bool isCryo;
         private bool isSUrvol;
         private bool isPyro;
+        private int music;
 
 
 
@@ -132,7 +133,7 @@ namespace Assets.Scripts
                 string str = "{";
                 for (int j = 0; j < columns; ++j)
                     str += board[i, j] + ", ";
-                print(str +"}");
+                //print(str +"}");
             }    
         }
 
@@ -246,7 +247,6 @@ namespace Assets.Scripts
                     isStar = false;
                     break;
             }        
-            Debug.Log(isSelectionTurretModeActivate);
         }
 
 
@@ -317,19 +317,24 @@ namespace Assets.Scripts
                 case Planet.Biome.ice:
                     multiplicator = 1;
                     typeFoliage = 2;
+                    music = 1;
                     break;
                 case Planet.Biome.fire:
                     multiplicator = 2;
+                    music = 2;
                     break;
                 case Planet.Biome.desert:
                     multiplicator = 3;
                     typeFoliage = 4;
+                    music = 3;
                     break;
                 default:
                     multiplicator = 0;
                     typeFoliage = 0;
+                    music = 0;
                     break;
             }
+            Debug.Log(music);
         }
 
         void SetPlanet(Planet planet)
@@ -342,6 +347,15 @@ namespace Assets.Scripts
             this.textTurret = text;
         }
 
+        public turretDisplay getTurretDisplay()
+        {
+            return turetDisp;
+        }
+
+        public int getMusic()
+        {
+            return music;
+        }
         
         public void DisplayTurret(float x, float y)
         {

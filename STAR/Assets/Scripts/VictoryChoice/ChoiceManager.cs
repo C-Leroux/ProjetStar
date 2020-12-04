@@ -8,18 +8,17 @@ namespace Assets.Scripts
     public class ChoiceManager : MonoBehaviour
     {
         private static ChoiceManager instance = null;// SINGLETON
+        public Sprite[] m_sprite;
+        public Text[] m_tabText;
+        public Text[] m_desciptText;
+        public Image[] m_tabImage;
+        private string[] m_stringText;
+        private int[] couts;
         private string choice1;
         private string choice2;
         private string choice3;
         private bool isChoice;
-        public Image image1;
-        public Image image2;
-        public Image image3;
-        public Sprite[] m_sprite;
-        public string[] m_stringText;
-        public Text text1;
-        public Text text2;
-        public Text text3;
+        private ArrayList tirageAleatoire = new ArrayList();
 
         public ChoiceManager()
         {
@@ -47,11 +46,15 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            //DEBUG
             if (Input.GetKeyDown("space"))
             {
                 isChoice = true;
             }
-
+            else if (Input.GetKeyDown("a"))
+            {
+                Player.Instance.AddTurret("Cryomancienne");
+            }
             if (isChoice)
             {
                 GameManager.Instance().Merchant();
@@ -101,11 +104,43 @@ namespace Assets.Scripts
             text1.text = "Augmentation du revenu par seconde";
             text2.text = "Augmentation des LP de la base";
             text3.text = "Augmentation de la limite d'argent";*/
-            m_stringText = new string[] { "Augmentation des LP de la base", "Augmentation du revenu par seconde", "Augmentation de la limite d'argent" };
+            m_stringText = new string[] 
+            {
+                "Augmentation des LP de la base",
+                "Augmentation du revenu par seconde",
+                "Augmentation de la limite d'argent",
+                "Diminution du temps de récupération du pouvoir",
+                "Augmentation du temps de freeze",
+                "Récupération de la vie"/*,
+                "Ajout de tourelle"*/
+            };
+            couts = new int[]
+            {
+                100,
+                200,
+                75,
+                125,
+                100,
+                300/*,
+                500*/
+            };
             isChoice = false;
-            TransformChoice(text1, image1, 0);
-            TransformChoice(text2, image2, 1);
-            TransformChoice(text3, image3, 2);
+            for(int i=0; i < m_stringText.Length; i++)
+            {
+                tirageAleatoire.Add(i);
+            }
+            for (int j = 0; j < 3; j++)
+            {
+                int tirage = Random.Range(0, tirageAleatoire.Count);
+                TransformChoice(m_tabText[j], m_tabImage[j], (int)tirageAleatoire[tirage]);
+                tirageAleatoire.RemoveAt(tirage);
+            }
+            m_desciptText[0].text = "BASE \n" + Base.Instance.GetInfos();
+            m_desciptText[1].text = "POUVOIR \n" + Spell.Instance.GetInfos();
+            m_desciptText[2].text = "VAISSEAU \n" +Player.Instance.GetInfos();
+            //TransformChoice(text1, image1, 0);
+            //TransformChoice(text2, image2, 1);
+            // TransformChoice(text3, image3, 4);
         }
         
         public void Choice(string choice)
@@ -113,22 +148,22 @@ namespace Assets.Scripts
             isChoice = true;
         }
 
-
         public void FoundChoice(int choice)
         {
             if(choice == 1)
             {
-                ExecuteChoice(text1.text);
+                ExecuteChoice(m_tabText[0].text);
             }
             else if(choice == 2)
             {
-                ExecuteChoice(text2.text);
+                ExecuteChoice(m_tabText[1].text);
             }
             else
             {
-                ExecuteChoice(text3.text);
+                ExecuteChoice(m_tabText[2].text);
             }
         }
+
         public void ExecuteChoice(string choice)
         {
             switch (choice)
@@ -142,6 +177,15 @@ namespace Assets.Scripts
                 case "Augmentation de la limite d'argent":
                     MoneyLimiteRate();
                     break;
+                case "Diminution du temps de récupération du pouvoir":
+                    CoolDownTime();
+                    break;
+                case "Augmentation du temps de freeze":
+                    SpellStunTime();
+                    break;
+                case "Récupération de la vie":
+                    BaseRecupLife();
+                    break;
 
             }
         }
@@ -154,14 +198,20 @@ namespace Assets.Scripts
 
         public void SetImage()
         {
-            image1.sprite = m_sprite[1];
-            image2.sprite = m_sprite[0];
-            image3.sprite = m_sprite[2];
+            m_tabImage[0].sprite = m_sprite[1];
+            m_tabImage[1].sprite = m_sprite[0];
+            m_tabImage[2].sprite = m_sprite[2];
         }
 
         public void BaseLifeUp()
         {
             Base.Instance.AddMaxLp(500);
+            isChoice = true;
+        }
+        
+        public void BaseRecupLife()
+        {
+            Base.Instance.ResetLp();
             isChoice = true;
         }
 
@@ -177,14 +227,22 @@ namespace Assets.Scripts
             isChoice = true;
         }
 
-        public void ReduceTime()
+        public void CoolDownTime()
         {
+            Spell.Instance.SetColldownTime();
+            isChoice = true;
+        }
 
+        public void SpellStunTime()
+        {
+            Spell.Instance.SetSpellStunTime();
+            isChoice = true;
         }
 
         public void AddDepartMoney()
         {
             Money.Instance.AddDepartMoney(25);
+            isChoice = true;
         }
     }
 }

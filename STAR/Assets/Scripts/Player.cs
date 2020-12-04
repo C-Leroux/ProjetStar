@@ -14,8 +14,6 @@ namespace Assets.Scripts
         public Player()
         {
             turrets = new List<Turret>();
-            turrets.Add(turetDisp.GetTurret("STAR"));
-            turrets.Add(turetDisp.GetTurret("Grenadiere"));
         }
 
         public void AddTurret(string nameTurret)
@@ -28,6 +26,13 @@ namespace Assets.Scripts
             return turrets;
         }
 
+        public void SetDisplayTurret(turretDisplay turretDisp)
+        {
+            this.turetDisp = turretDisp;
+            turrets.Add(turetDisp.GetTurret("STAR"));
+            turrets.Add(turetDisp.GetTurret("Grenadiere"));
+        }
+
         public static Player Instance
         {
             get
@@ -38,6 +43,16 @@ namespace Assets.Scripts
                 }
                 return instance;
             }
+        }
+
+        public string GetInfos()
+        {
+            string s_return = "";
+            for(int i = 0; i < turrets.Count; i++)
+            {
+                s_return = s_return + turrets[i].name + "\n";
+            }
+            return s_return;
         }
     }
 }

@@ -21,9 +21,6 @@ namespace Assets.Scripts
         public GameObject[] pathTiles;
         public GameObject test_vert;
         public Board m_board;
-        private float timePassing;
-        private float checkTime;
-        private bool timerIsRunning;
         public Text timeText;
         public Text moneyText;
         public Text defeat;
@@ -31,7 +28,13 @@ namespace Assets.Scripts
         public Text healthbarText;
         public Image healthbar;
         public Image background;
+        public Image[] m_imageTurrets;
+        public Image[] m_imageBackground;
+        public Image[] m_imageCaches;
         public Base m_base;
+        private float timePassing;
+        private float checkTime;
+        private bool timerIsRunning;
         private Planet planet;
         private int typeFloor;
         private int typePath;
@@ -114,6 +117,7 @@ namespace Assets.Scripts
             m_board.LayoutTree(3, 8);
             m_board.LayoutTree(12, 1);
             m_board.AffObject();
+            MusicPlateau.Instance.LaunchMusic(m_board.getMusic());
         }
 
         // Start is called before the first frame update
@@ -123,14 +127,58 @@ namespace Assets.Scripts
             background.enabled = false;
             defeat.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
-            Base.Instance.ResetLp();
             Base.Instance.SetHealthbar(healthbar);
             Base.Instance.SetHealthbarText(healthbarText);
+            Base.Instance.UpdateHealth();
             Money.Instance.AddMoneyText(moneyText);
             Money.Instance.LaunchBoard();
+            Player.Instance.SetDisplayTurret(m_board.getTurretDisplay());
             checkTime = 0;
             timerIsRunning = false;
             isUpdate = true;
+            for(int i = 0; i < m_imageTurrets.Length; i++)
+            {
+                m_imageTurrets[i].enabled = false;
+                m_imageBackground[i].enabled = false;
+                m_imageCaches[i].enabled = false;
+            }
+            var tourelles = Player.Instance.GetTurrets();
+            for (int i = 0; i < tourelles.Count; i++)
+            {
+                switch (tourelles[i].name)
+                {
+                    case "STAR": //TOURELLE DE LA STAR
+                        m_imageTurrets[0].enabled = true;
+                        m_imageBackground[0].enabled = true;
+                        m_imageCaches[0].enabled = true;
+                        break;
+                    case "Grenadiere": //GRENADIERE
+                        m_imageTurrets[1].enabled = true;
+                        m_imageBackground[1].enabled = true;
+                        m_imageCaches[1].enabled = true;
+                        break;
+                    case "Cryomancienne": //CRYOMANCIENNE
+                        m_imageTurrets[2].enabled = true;
+                        m_imageBackground[2].enabled = true;
+                        m_imageCaches[2].enabled = true;
+                        break;
+                    case "Empoisonneuse": //EMPOISONNEUSE
+                        m_imageTurrets[3].enabled = true;
+                        m_imageBackground[3].enabled = true;
+                        m_imageCaches[3].enabled = true;
+                        break;
+                    case "Pyromancienne": //PYROMANCIENNE
+                        m_imageTurrets[4].enabled = true;
+                        m_imageBackground[4].enabled = true;
+                        m_imageCaches[4].enabled = true;
+                        break;
+                    case "Survolteuse": //SURVOLTEUSE
+                        m_imageTurrets[5].enabled = true;
+                        m_imageBackground[5].enabled = true;
+                        m_imageCaches[5].enabled = true;
+                        break;
+                }
+            }
         }
 
 
@@ -179,6 +227,14 @@ namespace Assets.Scripts
             else if(Input.GetKeyDown("t"))
             {
                 Money.Instance.AddMoney(500);
+            }
+            else if (Input.GetKeyDown("q"))
+            {
+                Spell.Instance.SetColldownTime(3);
+            }
+            else if (Input.GetKeyDown("s"))
+            {
+                Spell.Instance.SetSpellStunTime(3);
             }
 
             //Si la condition de victoire et defaite n'est pas atteinte
