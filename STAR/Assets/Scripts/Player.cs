@@ -18,7 +18,10 @@ namespace Assets.Scripts
 
         public void AddTurret(string nameTurret)
         {
-            turrets.Add(turetDisp.GetTurret(nameTurret));
+            if (turrets.IndexOf(turetDisp.GetTurret(nameTurret)) < 0)
+            {
+                turrets.Add(turetDisp.GetTurret(nameTurret));
+            }
         }
 
         public List<Turret> GetTurrets()
@@ -29,8 +32,14 @@ namespace Assets.Scripts
         public void SetDisplayTurret(turretDisplay turretDisp)
         {
             this.turetDisp = turretDisp;
-            turrets.Add(turetDisp.GetTurret("STAR"));
-            turrets.Add(turetDisp.GetTurret("Grenadiere"));
+            if (turrets.IndexOf(turetDisp.GetTurret("STAR")) < 0)
+            {
+                turrets.Add(turetDisp.GetTurret("STAR"));
+            }
+            if (turrets.IndexOf(turetDisp.GetTurret("Grenadiere")) < 0)
+            {
+                turrets.Add(turetDisp.GetTurret("Grenadiere"));
+            }
         }
 
         public static Player Instance

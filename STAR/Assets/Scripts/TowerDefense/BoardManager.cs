@@ -34,7 +34,7 @@ namespace Assets.Scripts
         public Base m_base;
         private float timePassing;
         private float checkTime;
-        private bool timerIsRunning;
+        public bool timerIsRunning;
         private Planet planet;
         private int typeFloor;
         private int typePath;

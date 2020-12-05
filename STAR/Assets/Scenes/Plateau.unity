@@ -3036,6 +3036,7 @@ MonoBehaviour:
   - {fileID: 1234402111}
   - {fileID: 720664212}
   - {fileID: 1913005678}
+  timerIsRunning: 0
   explainConditionToContinuText: {fileID: 1658834863}
 --- !u!4 &1265646157
 Transform:

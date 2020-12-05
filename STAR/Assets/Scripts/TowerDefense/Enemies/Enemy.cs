@@ -37,22 +37,25 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            current_time += Time.deltaTime;
-            if (!wave)
-                return;
-            if (CanAttackBase() && current_time >= attack_speed)
-            {                
-            AttackBase();              
-            }
-            if (!stun && !CanAttackBase())
+            if (BoardManager.Instance().timerIsRunning)
             {
-                Walk();
-                current_time = attack_speed;
+                current_time += Time.deltaTime;
+                if (!wave)
+                    return;
+                if (CanAttackBase() && current_time >= attack_speed && !stun)
+                {
+                    AttackBase();
+                }
+                if (!stun && !CanAttackBase())
+                {
+                    Walk();
+                    current_time = attack_speed;
 
+                }
+
+                //Changing Color sprite according to ennemi state
+                changeSpriteColor();
             }
-          
-            //Changing Color sprite according to ennemi state
-            changeSpriteColor();
         }
 
 
@@ -68,7 +71,7 @@ namespace Assets.Scripts
             StartCoroutine(WaitBeforeUnPoisonned(poisonnedTime));
             StartCoroutine(WaitBeforeDealDamagePoisonned(damage, poisonnedTime));
         }
-        IEnumerator WaitBeforeUnPoisonned(float poisonnedTime) //On lance de décompte, une fois le poisonnedTime écoulé, la cilbe n'est plus empoisonnée
+        IEnumerator WaitBeforeUnPoisonned(float poisonnedTime) //On lance de décompte, une fois le poisonnedTime écoulé, la cible n'est plus empoisonnée
         {
             yield return new WaitForSeconds(poisonnedTime);
             poisonned = false;
@@ -88,6 +91,7 @@ namespace Assets.Scripts
         {
             return stun;
         }
+
         public void setStunTrue(float stunTime) //La cible est étourdie
         {
             stun = true;

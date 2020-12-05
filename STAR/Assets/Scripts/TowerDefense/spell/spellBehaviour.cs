@@ -39,14 +39,17 @@ public class spellBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (!isSpellAvailable)
+        if (BoardManager.Instance().timerIsRunning)
         {
-            spellBackground.GetComponent<Image>().fillAmount = currentTime / Spell.Instance.GetCooldownTime();
+            if (!isSpellAvailable)
+            {
+                spellBackground.GetComponent<Image>().fillAmount = currentTime / Spell.Instance.GetCooldownTime();
+            }
+            if (currentTime >= Spell.Instance.GetCooldownTime())
+            {
+                isSpellAvailable = true;
+            }
+            currentTime = currentTime + Time.deltaTime;
         }
-        if(currentTime >= Spell.Instance.GetCooldownTime())
-        {
-            isSpellAvailable = true;
-        }
-        currentTime = currentTime + Time.deltaTime;
     }
 }

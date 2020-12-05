@@ -105,18 +105,22 @@ namespace Assets.Scripts
         {
             this.name = name;
         }
+
         public void setAttackSpeedForUpgrade(float attackSpeed)
         {
             this.attack_speed = attackSpeed;
         }
+
         public void setRangeForUpgrade(float range)
         {
             this.range = range;
         }
+
         public void setCostForUpgrade(int upgradedCost)
         {
             this.cost = cost + upgradedCost;
-        }     
+        } 
+        
         public void setSpriteForUpgrade(string turretName)
         {
             switch (turretName)
@@ -213,22 +217,25 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (target == null || !IsInRange(target.transform))
+            if (BoardManager.Instance().timerIsRunning)
             {
-                getEnnemiInRange();
-            }
-            current_time += Time.deltaTime;
-            if (target != null)
-            {
-                followTarget();
-                if (current_time >= attack_speed)
+                if (target == null || !IsInRange(target.transform))
                 {
-                    Fire();
+                    getEnnemiInRange();
                 }
-            }
-            else if (current_time >= attack_speed)
-            {
-                current_time = attack_speed - readyTime;
+                current_time += Time.deltaTime;
+                if (target != null)
+                {
+                    followTarget();
+                    if (current_time >= attack_speed)
+                    {
+                        Fire();
+                    }
+                }
+                else if (current_time >= attack_speed)
+                {
+                    current_time = attack_speed - readyTime;
+                }
             }
         }
 

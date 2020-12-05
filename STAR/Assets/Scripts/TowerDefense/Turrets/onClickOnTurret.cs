@@ -25,24 +25,28 @@ public class onClickOnTurret : MonoBehaviour
 
     private void OnMouseDown()
     {
-        turretUI.enabled = !turretUI.isActiveAndEnabled;
+        if (BoardManager.Instance().timerIsRunning)
+        {
+            turretUI.enabled = !turretUI.isActiveAndEnabled;
+        }
     }
 
     public void onClickUITurretButton(string Name)
     {
-            
-        switch (Name)
+        if (BoardManager.Instance().timerIsRunning)
         {
-            case "upgrade":
-                upgradeTower();
-                Debug.Log("tourelle Upgraded");
-                break;
-            case "sell":
-                int sellPrice = turret.GetComponent<TurretBehaviour>().getTurretSelectedCost() / 2;
-                Money.Instance.AddMoney(sellPrice);
-                GameObject.Destroy(this.gameObject);
-                break;
-            
+            switch (Name)
+            {
+                case "upgrade":
+                    upgradeTower();
+                    Debug.Log("tourelle Upgraded");
+                    break;
+                case "sell":
+                    int sellPrice = turret.GetComponent<TurretBehaviour>().getTurretSelectedCost() / 2;
+                    Money.Instance.AddMoney(sellPrice);
+                    GameObject.Destroy(this.gameObject);
+                    break;
+            }
         }
     }
   
