@@ -99,5 +99,10 @@ namespace Assets.Scripts
             return ("Point de vie actuel : " + "\n" + lp + "\n"
                 + "Point de vie max : " + "\n" + lpMax);
         }
+
+        public static void Reset()
+        {
+            instance = null;
+        }
     }
 }

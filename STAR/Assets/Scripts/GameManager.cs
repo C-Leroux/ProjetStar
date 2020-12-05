@@ -72,7 +72,7 @@ namespace Assets.Scripts
             }
             InitBoard((Planet)destination);
             InitTD(boardScript.GetBoard(), (Planet)destination);
-            print("Scene loaded");
+            //print("Scene loaded");
         }
 
         IEnumerator LoadChoice(SpaceObject destination)
@@ -112,6 +112,14 @@ namespace Assets.Scripts
             {
                 yield return null;
             }
+            Destroy(solarSystem.gameObject);
+            Base.Reset();
+            Player.Reset();
+            Spell.Reset();
+            Money.Reset();
+            MoneyForMerchant.Reset();
+            Destroy(gameObject);
+
         }
 
 

@@ -32,6 +32,9 @@ namespace Assets.Scripts
         public Image[] m_imageBackground;
         public Image[] m_imageCaches;
         public Base m_base;
+        public Image rToMenu;
+        public Text rToMenuText;
+        public Image rToMenuCache;
         private float timePassing;
         private float checkTime;
         public bool timerIsRunning;
@@ -127,6 +130,9 @@ namespace Assets.Scripts
             background.enabled = false;
             defeat.gameObject.SetActive(false);
             victory.gameObject.SetActive(false);
+            rToMenu.enabled = false;
+            rToMenuText.enabled = false;
+            rToMenuCache.enabled = false;
             Base.Instance.SetHealthbar(healthbar);
             Base.Instance.SetHealthbarText(healthbarText);
             Base.Instance.UpdateHealth();
@@ -216,19 +222,19 @@ namespace Assets.Scripts
                 //m_base.ReceiveAttack(500);
                 Base.Instance.ReceiveAttack(500);
             }
-            else if(Input.GetKeyDown("z"))
+            else if (Input.GetKeyDown("z"))
             {
                 m_board.BeginningPoseTurret();
             }
-            else if(Input.GetKeyDown("e"))
+            else if (Input.GetKeyDown("e"))
             {
                 m_board.EndingPoseTurret();
             }
-            else if(Input.GetKeyDown("r"))
+            else if (Input.GetKeyDown("r"))
             {
                 TDManager.Instance().EndWave();
             }
-            else if(Input.GetKeyDown("t"))
+            else if (Input.GetKeyDown("t"))
             {
                 Money.Instance.AddMoney(500);
             }
@@ -239,6 +245,25 @@ namespace Assets.Scripts
             else if (Input.GetKeyDown("s"))
             {
                 Spell.Instance.SetSpellStunTime(3);
+            }
+            else if (Input.GetKeyDown("escape"))
+            {
+                if (timerIsRunning)
+                {
+                    ManageTime();
+                    background.enabled = true;
+                    rToMenu.enabled = true;
+                    rToMenuText.enabled = true;
+                    rToMenuCache.enabled = true;
+                }
+                else
+                {
+                    ManageTime();
+                    background.enabled = false;
+                    rToMenu.enabled = false;
+                    rToMenuText.enabled = false;
+                    rToMenuCache.enabled = false;
+                }
             }
 
             //Si la condition de victoire et defaite n'est pas atteinte

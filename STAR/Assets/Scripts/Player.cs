@@ -63,5 +63,11 @@ namespace Assets.Scripts
             }
             return s_return;
         }
+
+        public static void Reset()
+        {
+            instance = null;
+        }
+
     }
 }

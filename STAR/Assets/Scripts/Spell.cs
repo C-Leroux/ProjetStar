@@ -79,5 +79,11 @@ namespace Assets.Scripts
             return ("Temps d'activité : " + "\n" + spellStunTime + "\n"
                 + "Temps de récupération : " + "\n" + cooldownTime);
         }
+
+        public static void Reset()
+        {
+            instance = null;
+        }
+
     }
 }

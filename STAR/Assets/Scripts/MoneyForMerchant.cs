@@ -60,4 +60,10 @@ public class MoneyForMerchant
     {
         moneyText.text = ("" + currentMoney);
     }
+
+    public static void Reset()
+    {
+        instance = null;
+    }
+
 }
