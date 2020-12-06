@@ -44,7 +44,7 @@ namespace Assets.Scripts
 
         public void LaunchMusic(int choiceMusic)
         {
-            Debug.Log("music" + choiceMusic);
+            //Debug.Log("music" + choiceMusic);
             Instantiate(m_musics[choiceMusic]);
         }
     }
