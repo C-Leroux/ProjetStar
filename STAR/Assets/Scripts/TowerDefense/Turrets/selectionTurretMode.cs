@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         [SerializeField]
         private GameObject[] backgroundUI;
+        private bool isActivate;
         // Start is called before the first frame update
         void Start()
         {
@@ -21,7 +22,30 @@ namespace Assets.Scripts
             if (BoardManager.Instance().timerIsRunning)
             {
                 List<Turret> turrets = Player.Instance.GetTurrets();
-                for(int i = 0; i < turrets.Count; i++)
+
+                switch (name)
+                {
+                    case "STAR": //TOURELLE DE LA STAR
+                        isActivate = backgroundUI[0].GetComponent<Image>().isActiveAndEnabled;
+                        break;
+                    case "Grenadiere": //GRENADIERE
+                        isActivate = backgroundUI[1].GetComponent<Image>().isActiveAndEnabled;
+                        break;
+                    case "Cryomancienne": //CRYOMANCIENNE
+                        isActivate = backgroundUI[2].GetComponent<Image>().isActiveAndEnabled;
+                        break;
+                    case "Empoisonneuse": //EMPOISONNEUSE
+                        isActivate = backgroundUI[3].GetComponent<Image>().isActiveAndEnabled;
+                        break;
+                    case "Pyromancienne": //PYROMANCIENNE
+                        isActivate = backgroundUI[4].GetComponent<Image>().isActiveAndEnabled;
+                        break;
+                    case "Survolteuse": //SURVOLTEUSE
+                        isActivate = backgroundUI[5].GetComponent<Image>().isActiveAndEnabled;
+                        break;
+                }
+
+                for (int i = 0; i < turrets.Count; i++)
                 {
                     switch (turrets[i].name)
                     {
@@ -49,22 +73,22 @@ namespace Assets.Scripts
                 switch (name)
                 {
                     case "STAR": //TOURELLE DE LA STAR
-                        backgroundUI[0].GetComponent<Image>().enabled = !backgroundUI[0].GetComponent<Image>().isActiveAndEnabled;
+                        backgroundUI[0].GetComponent<Image>().enabled = !isActivate;
                         break;
                     case "Grenadiere": //GRENADIERE
-                        backgroundUI[1].GetComponent<Image>().enabled = !backgroundUI[1].GetComponent<Image>().isActiveAndEnabled;
+                        backgroundUI[1].GetComponent<Image>().enabled = !isActivate;
                         break;
                     case "Cryomancienne": //CRYOMANCIENNE
-                        backgroundUI[2].GetComponent<Image>().enabled = !backgroundUI[2].GetComponent<Image>().isActiveAndEnabled;
+                        backgroundUI[2].GetComponent<Image>().enabled = !isActivate;
                         break;
                     case "Empoisonneuse": //EMPOISONNEUSE
-                        backgroundUI[3].GetComponent<Image>().enabled = !backgroundUI[3].GetComponent<Image>().isActiveAndEnabled;
+                        backgroundUI[3].GetComponent<Image>().enabled = !isActivate;
                         break;
                     case "Pyromancienne": //PYROMANCIENNE
-                        backgroundUI[4].GetComponent<Image>().enabled = !backgroundUI[4].GetComponent<Image>().isActiveAndEnabled;
+                        backgroundUI[4].GetComponent<Image>().enabled = !isActivate;
                         break;
                     case "Survolteuse": //SURVOLTEUSE
-                        backgroundUI[5].GetComponent<Image>().enabled = !backgroundUI[5].GetComponent<Image>().isActiveAndEnabled;
+                        backgroundUI[5].GetComponent<Image>().enabled = !isActivate;
                         break;
                 }
             }

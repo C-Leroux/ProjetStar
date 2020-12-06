@@ -271,7 +271,8 @@ namespace Assets.Scripts
                 {
                     for (int y = 0; y < rows; y++)
                     {
-                        if (!gridPositions2[y, x].Equals(Vector3.zero))
+                        //if (!gridPositions2[y, x].Equals(Vector3.zero))
+                        if(gridCase[x, y].IsClickable())
                         {
                             GameObject gO = Instantiate(test_vert, gridPositions2[y, x], Quaternion.identity);
                             gridPositions3.Add(gO);
@@ -337,7 +338,6 @@ namespace Assets.Scripts
                     music = 0;
                     break;
             }
-            Debug.Log(music);
         }
 
         void SetPlanet(Planet planet)
@@ -394,6 +394,9 @@ namespace Assets.Scripts
                                     gridCase[i, j].SetTurretBehaviour(null);
                                     Money.Instance.RemoveMoney(cost);
                                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(obj.transform.position);
+                                    EndingPoseTurret();
+                                    BeginningPoseTurret();
+
                                 }
                             }
                         }

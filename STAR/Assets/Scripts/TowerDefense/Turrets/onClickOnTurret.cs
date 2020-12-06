@@ -39,7 +39,7 @@ public class onClickOnTurret : MonoBehaviour
             {
                 case "upgrade":
                     upgradeTower();
-                    Debug.Log("tourelle Upgraded");
+                    //Debug.Log("tourelle Upgraded");
                     break;
                 case "sell":
                     int sellPrice = turret.GetComponent<TurretBehaviour>().getTurretSelectedCost() / 2;
