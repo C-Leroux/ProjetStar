@@ -30,7 +30,6 @@ namespace Assets.Scripts
         public void SetVolume(float newVolume)
         {
             volume = newVolume;
-            Debug.Log(volume);
         }
         
         public float GetVolume()

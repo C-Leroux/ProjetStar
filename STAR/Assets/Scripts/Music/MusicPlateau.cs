@@ -43,8 +43,7 @@ namespace Assets.Scripts
 
         public void SetVolume()
         {
-            Debug.Log("Volume : " + music.GetComponent<AudioSource>().volume);
-            music.GetComponent<AudioSource>().volume = SaveSlider.Instance.GetVolume();
+            //music.GetComponent<AudioSource>().volume = SaveSlider.Instance.GetVolume();
             AudioListener.volume = SaveSlider.Instance.GetVolume();
         }
 
