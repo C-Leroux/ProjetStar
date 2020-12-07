@@ -24,11 +24,24 @@ public class UIController : MonoBehaviour
     {
 
     }
+
+    IEnumerator StartMission()
+    {
+        Assets.Scripts.LevelLoader loader = Assets.Scripts.LevelLoader.Instance();
+        StartCoroutine(loader.LoadLevel("SolarSystem"));
+        yield return new WaitForSeconds(1);
+        while (loader.IsLoading())
+            yield return null;
+
+        StartCoroutine(loader.EndLoad());
+    }
  
 
     public void loadMission()
     {
         SceneManager.LoadScene("SolarSystem");
+        //StartCoroutine(StartMission());
+
         Debug.Log("chargement de la partie");
     }
 
@@ -43,7 +56,9 @@ public class UIController : MonoBehaviour
     public void createMission()
     {
         SceneManager.LoadScene("SolarSystem");
-        //Debug.Log("création de la partie");
+        //StartCoroutine(StartMission());
+
+        Debug.Log("création de la partie");
     }
     
     public void QuitGame()

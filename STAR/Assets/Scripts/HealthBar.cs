@@ -41,7 +41,7 @@ namespace Assets.Scripts
                     segment.SetMaxHealth(4);
                 else
                     segment.SetMaxHealth(health - i);
-                segment.transform.parent = transform;
+                segment.transform.SetParent(transform);
                 segments.Add(segment);
                 ++index;
             }

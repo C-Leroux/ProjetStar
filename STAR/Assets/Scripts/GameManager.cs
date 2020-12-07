@@ -65,13 +65,16 @@ namespace Assets.Scripts
 
         IEnumerator LoadPlateau(SpaceObject destination)
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("Plateau", LoadSceneMode.Single);
-            while (!asyncLoadLevel.isDone)
-            {
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("Plateau"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
                 yield return null;
-            }
+
+            solarSystem.gameObject.SetActive(false);
             InitBoard((Planet)destination);
             InitTD(boardScript.GetBoard(), (Planet)destination);
+            StartCoroutine(loader.EndLoad());
             //print("Scene loaded");
         }
 
@@ -82,18 +85,36 @@ namespace Assets.Scripts
             {
                 yield return null;
             }
+
+            /*LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("Empty"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
+                yield return null;
+
             InitChoice((Planet)destination);
+
+            StartCoroutine(loader.EndLoad());*/
         }
         
         
-        IEnumerator LoadSolarSystem()
+        public IEnumerator LoadSolarSystem()
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
+            /*asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
             while (!asyncLoadLevel.isDone)
             {
                 yield return null;
-            }
+            }*/
+
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("Empty"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
+                yield return null;
+
             solarSystem.gameObject.SetActive(true);
+
+            StartCoroutine(loader.EndLoad());
         }
 
         IEnumerator LoadMerchant()
@@ -103,15 +124,22 @@ namespace Assets.Scripts
             {
                 yield return null;
             }
+
+            /*LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("VilleMarchande"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
+                yield return null;*/
         }
 
         IEnumerator LoadMenu()
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("MainMenu");
-            while (!asyncLoadLevel.isDone)
-            {
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("MainMenu"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
                 yield return null;
-            }
+
             Destroy(solarSystem.gameObject);
             Base.Reset();
             Player.Reset();
@@ -120,6 +148,7 @@ namespace Assets.Scripts
             MoneyForMerchant.Reset();
             Destroy(gameObject);
 
+            StartCoroutine(loader.EndLoad());
         }
 
 
@@ -143,7 +172,6 @@ namespace Assets.Scripts
 
         public void TravelTo(SpaceObject destination)
         {
-            solarSystem.gameObject.SetActive(false);
             // For marchands (or other SpaceObject types) : Find the type of the SpaceObject and execute the right portion of code
             StartCoroutine("LoadPlateau", destination);
         }
