@@ -156,7 +156,7 @@ namespace Assets.Scripts
             }
             m_desciptText[0].text = "BASE \n" + Base.Instance.GetInfos();
             m_desciptText[1].text = "POUVOIR \n" + Spell.Instance.GetInfos();
-            m_desciptText[2].text = "VAISSEAU \n" + Player.Instance.GetInfos();
+            m_desciptText[2].text = "TOURELLES \n" + Player.Instance.GetInfos();
             m_desciptText[3].text = "ARGENT \n" + Money.Instance.GetInfos();
             //TransformChoice(text1, image1, 0);
             //TransformChoice(text2, image2, 1);
@@ -188,7 +188,7 @@ namespace Assets.Scripts
         {
             switch (choice)
             {
-                case "Augmentation des LP de la base":
+                case "Augmentation des points de vie de la base":
                     BaseLifeUp();
                     break;
                 case "Augmentation du revenu par seconde":
