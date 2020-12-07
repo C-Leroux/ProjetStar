@@ -92,11 +92,20 @@ public class soundEffectHelper : MonoBehaviour
         AudioClip newAudioClip = Instantiate(
           sound
         ) as AudioClip;
-        effectManager.AddComponent<AudioSource>();
-        AudioSource audioSource = effectManager.GetComponent<AudioSource>();
+        GameObject audioSourceObject = new GameObject();
+        audioSourceObject.AddComponent<AudioSource>();
+        AudioSource audioSource = audioSourceObject.GetComponent<AudioSource>();
         audioSource.clip = newAudioClip;
         audioSource.Play();
+        StartCoroutine(WaitBeforeUnStun(sound.length, audioSourceObject));
     }
+
+    IEnumerator WaitBeforeUnStun(float stunTime, GameObject audioSourceObject) //On lance de décompte, une fois le stunTime écoulé, la cilbe n'est plus étourdie
+    {
+        yield return new WaitForSeconds(stunTime);
+        GameObject.Destroy(audioSourceObject);
+    }
+
 }
 
 
