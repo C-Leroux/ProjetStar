@@ -86,13 +86,13 @@ namespace Assets.Scripts
                 yield return null;
             }
 
+            InitChoice((Planet)destination);
+
             /*LevelLoader loader = LevelLoader.Instance();
             StartCoroutine(loader.LoadLevel("Empty"));
             yield return new WaitForSeconds(1);
             while (loader.IsLoading())
                 yield return null;
-
-            InitChoice((Planet)destination);
 
             StartCoroutine(loader.EndLoad());*/
         }
