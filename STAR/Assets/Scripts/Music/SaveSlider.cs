@@ -7,11 +7,12 @@ namespace Assets.Scripts
     public class SaveSlider
     {
         private static SaveSlider instance = null;// SINGLETON
+        private float volume;
         //public Slider volumeSlider;
 
         public SaveSlider()
         {
-            
+            volume = 1f;
         }
 
         public static SaveSlider Instance
@@ -25,16 +26,17 @@ namespace Assets.Scripts
                 return instance;
             }
         }
-        // Start is called before the first frame update
-        void Start()
-        {
 
+        public void SetVolume(float newVolume)
+        {
+            volume = newVolume;
+            Debug.Log(volume);
+        }
+        
+        public float GetVolume()
+        {
+            return volume;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
