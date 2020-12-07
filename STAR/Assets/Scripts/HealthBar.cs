@@ -47,21 +47,22 @@ namespace Assets.Scripts
             }
 
             segments[0].transform.localPosition = new Vector3();
+            float scale = segments[0].transform.localScale.x;
 
             for (int i = 1; i < segments.Count; ++i)
             {
                 if (i == 1)
-                    segments[i].transform.localPosition = new Vector3(0, 1.52f, -0.5f);
+                    segments[i].transform.localPosition = new Vector3(0, 152 * scale, -0.5f);
                 else if (i == 2)
-                    segments[i].transform.localPosition = new Vector3(1.30f, 0.76f, -0.5f);
+                    segments[i].transform.localPosition = new Vector3(130 * scale, 76 * scale, -0.5f);
                 else if (i == 3)
-                    segments[i].transform.localPosition = new Vector3(1.30f, -0.76f, -0.5f);
+                    segments[i].transform.localPosition = new Vector3(130 * scale, 76 * scale, -0.5f);
                 else if (i == 4)
-                    segments[i].transform.localPosition = new Vector3(0, -1.52f, -0.5f);
+                    segments[i].transform.localPosition = new Vector3(0, -152 * scale, -0.5f);
                 else if (i == 5)
-                    segments[i].transform.localPosition = new Vector3(-1.30f, -0.76f, -0.5f);
+                    segments[i].transform.localPosition = new Vector3(-130 * scale, -76 * scale, -0.5f);
                 else if (i == 6)
-                    segments[i].transform.localPosition = new Vector3(-1.30f, 0.76f, -0.5f);
+                    segments[i].transform.localPosition = new Vector3(-130 * scale, 76 * scale, -0.5f);
             }
 
             cur_health = health;
@@ -86,6 +87,7 @@ namespace Assets.Scripts
                     diff -= curSegmentHP;
                 }
             }
+            cur_health = health;
         }
     }
 }

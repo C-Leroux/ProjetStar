@@ -43,7 +43,7 @@ namespace Assets.Scripts
 
         public void UpdateSmooth()
         {
-            smoothHP -= Time.deltaTime;
+            smoothHP -= 2 * Time.deltaTime;
             if (smoothHP < curHP)
                 smoothHP = curHP;
             fill_red.fillAmount = smoothHP / 4f;

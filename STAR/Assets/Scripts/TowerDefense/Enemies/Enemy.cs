@@ -134,7 +134,7 @@ namespace Assets.Scripts
             GameObject go = new GameObject();
             Canvas canvas = go.AddComponent<Canvas>();
             canvas.transform.parent = transform;
-            canvas.transform.localPosition = new Vector3(0, 0.5f, 0);
+            canvas.transform.localPosition = new Vector3(0, 0.3f, 0);
             canvas.renderMode = RenderMode.WorldSpace;
             GameObject healthBarObj = new GameObject("Healthbar");
             healthBarObj.transform.parent = canvas.transform;
