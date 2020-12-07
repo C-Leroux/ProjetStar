@@ -1,60 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
     public class MusicPlateau : MonoBehaviour
     {
-        private static MusicPlateau instance = null;// SINGLETON
+        private static MusicPlateau instance;// SINGLETON
         private GameObject[] m_musics;
-        public int choice;
+        private GameObject music;
+        //private AudioSource audio_music;
 
-        public MusicPlateau()
+        void Awake()
         {
-            m_musics = new GameObject[4];
-            m_musics[0] = (GameObject)Resources.Load("Musics/MusicForest", typeof(GameObject));
-            m_musics[1] = (GameObject)Resources.Load("Musics/MusicIce", typeof(GameObject));
-            m_musics[2] = (GameObject)Resources.Load("Musics/MusicLava", typeof(GameObject));
-            m_musics[3] = (GameObject)Resources.Load("Musics/MusicSand", typeof(GameObject));
-            choice = 0;
-        }
-
-        public static MusicPlateau Instance
-        {
-            get
+            if (instance != null && instance != this)
+                Destroy(gameObject);
+            else
             {
-                if (instance == null)
-                {
-                    instance = new MusicPlateau();
-                }
-                return instance;
+                m_musics = new GameObject[4];
+                m_musics[0] = (GameObject)Resources.Load("Musics/MusicForest", typeof(GameObject));
+                m_musics[1] = (GameObject)Resources.Load("Musics/MusicIce", typeof(GameObject));
+                m_musics[2] = (GameObject)Resources.Load("Musics/MusicLava", typeof(GameObject));
+                m_musics[3] = (GameObject)Resources.Load("Musics/MusicSand", typeof(GameObject));
+                instance = this;
             }
         }
 
-        // Start is called before the first frame update
-        void Start()
+        public static MusicPlateau Instance()
         {
-
+            return instance;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            SetVolume();
-        }
 
         public void LaunchMusic(int choiceMusic)
         {
-            //Debug.Log("music" + choiceMusic);
-            m_musics[choiceMusic].GetComponent<AudioSource>().volume = SaveSlider.Instance.GetVolume();
-            Instantiate(m_musics[choiceMusic]);
-            this.choice = choiceMusic;
+            music = (GameObject)m_musics[choiceMusic];
+            SetVolume();
+            Instantiate(music);
+  
         }
 
         public void SetVolume()
         {
-            m_musics[choice].GetComponent<AudioSource>().volume = SaveSlider.Instance.GetVolume();
+            Debug.Log("Volume : " + music.GetComponent<AudioSource>().volume);
+            music.GetComponent<AudioSource>().volume = SaveSlider.Instance.GetVolume();
         }
 
     }
