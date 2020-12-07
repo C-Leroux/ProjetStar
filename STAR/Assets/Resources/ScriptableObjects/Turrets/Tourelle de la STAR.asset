@@ -22,3 +22,4 @@ MonoBehaviour:
   projectileTemplate: {fileID: 7606367354733108959, guid: 05cf9fb5141ef004db75a7c9ce455944,
     type: 3}
   projectileToSpawn: {fileID: 11400000, guid: c37b23fca93f62344ab18b1b3d723391, type: 2}
+  fireSound: {fileID: 8300000, guid: 75adfe9a619833445a701305b983e548, type: 3}

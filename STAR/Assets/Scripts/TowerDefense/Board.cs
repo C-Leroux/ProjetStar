@@ -372,6 +372,7 @@ namespace Assets.Scripts
                                 gridCase[i, j].SetTurretBehaviour(null);
                                 Money.Instance.RemoveMoney(cost);
                                 SpecialEffectsHelper.Instance.buildOrUpgradeTower(obj.transform.position);
+                                soundEffectHelper.Instance.buildTower();
                             }
                         }
                     }

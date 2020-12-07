@@ -189,9 +189,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16
   turretUI: {fileID: 947403344215702228}
-  particleSystems:
-  - {fileID: 0}
-  particleSystemScale: 0.01
 --- !u!1001 &1466090942629620829
 PrefabInstance:
   m_ObjectHideFlags: 0

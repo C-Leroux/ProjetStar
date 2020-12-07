@@ -71,6 +71,7 @@ namespace Assets.Scripts
             lp -= attack;
             UpdateHealth();
             SpecialEffectsHelper.Instance.baseHit(getPosition());
+            soundEffectHelper.Instance.baseHit();
         }
 
         public void AddMaxLp(int addLP)

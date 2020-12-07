@@ -29,7 +29,7 @@ namespace Assets.Scripts
             sprite.sprite = enemyData.Sprite;
             direction = "right";
             positionCounter = 0;
-            movingSpeedWalkingAnimation = 0.5f;
+            movingSpeedWalkingAnimation = 0.25f;
             current_time = 0f;
             attack_speed =1/0.9f; //Pour l'instant pareil pour tous les ennmis, à rajouter dans Ennemi_Data si on veut
         }
@@ -283,12 +283,14 @@ namespace Assets.Scripts
             {
                 wave.Despawn();
                 Money.Instance.AddMoney(enemyData.DroppedMoney);
+                soundEffectHelper.Instance.destroyEnnemi();
                 SpecialEffectsHelper.Instance.destroyEnnemi(this.transform.position);
                 GameObject.Destroy(this.gameObject);
             }
             else
             {
                 SpecialEffectsHelper.Instance.EnnemiHit(this.transform.position);
+                //soundEffectHelper.Instance.EnnemiHit();
             }
         }
 

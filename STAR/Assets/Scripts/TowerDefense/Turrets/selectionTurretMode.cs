@@ -16,6 +16,7 @@ public class selectionTurretMode : MonoBehaviour
 
     public void onClick(string name)
     {
+        soundEffectHelper.Instance.UIInteraction();
         switch (name)
         {
             case "STAR": //TOURELLE DE LA STAR

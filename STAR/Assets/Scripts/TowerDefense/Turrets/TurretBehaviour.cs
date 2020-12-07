@@ -21,6 +21,7 @@ namespace Assets.Scripts
         private Collider2D target;
 
 
+
         [SerializeField]
         private Sprite[] turretSpriteUpgrade;
         [SerializeField]
@@ -48,7 +49,7 @@ namespace Assets.Scripts
         }
 
 
-  
+
 
         // Start is called before the first frame update
         void Start()
@@ -205,10 +206,35 @@ namespace Assets.Scripts
             behaviour.init(projectileToSpawn);
             behaviour.updateProjectileDamageUpgraded(this.name);
             behaviour.initFire(target);
+            playSound();
         }
 
 
-
+        private void playSound()
+        {
+            switch (this.name)
+            {
+                case "STAR": //TOURELLE DE LA STAR
+                    soundEffectHelper.Instance.starFire();
+                    break;
+                case "Grenadiere": //GRENADIERE
+                    soundEffectHelper.Instance.grenadiereFire();
+                    break;
+                case "Cryomancienne": //CRYOMANCIENNE
+                    soundEffectHelper.Instance.cryomancienneFire();
+                    break;
+                case "Empoisonneuse": //EMPOISONNEUSE
+                    soundEffectHelper.Instance.empoisonneuseFire();
+                    break;
+                case "Pyromancienne": //PYROMANCIENN
+                    soundEffectHelper.Instance.pyromancienneFire();
+                    break;
+                case "Survolteuse": //SURVOLTEUSE
+                    soundEffectHelper.Instance.survolteuseFire();
+                    break;
+            }
+       
+        }
 
         // Update is called once per frame
         void Update()

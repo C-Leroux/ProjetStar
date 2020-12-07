@@ -58,6 +58,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         this.target = target;
         moovingEffect =SpecialEffectsHelper.Instance.projectileMoving(this.transform.position);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -26,6 +26,7 @@ public class spellBehaviour : MonoBehaviour
             for (int i = 0; i < allCurrentEnnemis.Length; i++)
             {
                 allCurrentEnnemis[i].GetComponent<Enemy>().setStunTrue(spellStunTime);
+                soundEffectHelper.Instance.spellStunUse();
             }
             isSpellAvailable = false;
             currentTime = 0;
