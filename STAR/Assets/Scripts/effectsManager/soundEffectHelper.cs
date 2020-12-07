@@ -11,7 +11,7 @@ public class soundEffectHelper : MonoBehaviour
 
     void Awake()
     {
-        // On garde une référence du singleton
+        // On garde une référence du singleton p
         if (Instance != null)
         {
             Debug.LogError("Multiple instances of soundEffectHelper!");
