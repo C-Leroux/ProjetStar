@@ -137,11 +137,11 @@ namespace Assets.Scripts
         {
             GameObject go = new GameObject();
             Canvas canvas = go.AddComponent<Canvas>();
-            canvas.transform.parent = transform;
+            canvas.transform.SetParent(transform);
             canvas.transform.localPosition = new Vector3(0, 0.3f, 0);
             canvas.renderMode = RenderMode.WorldSpace;
             GameObject healthBarObj = new GameObject("Healthbar");
-            healthBarObj.transform.parent = canvas.transform;
+            healthBarObj.transform.SetParent(canvas.transform);
             healthBarObj.transform.localPosition = new Vector3();
             healthbar = healthBarObj.AddComponent<HealthBar>();
             healthbar.SetMaxHealth((int)hp);
