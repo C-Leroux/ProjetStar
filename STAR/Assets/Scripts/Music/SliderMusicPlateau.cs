@@ -14,21 +14,20 @@ namespace Assets.Scripts
         void Start()
         {
             volumeSlider.value = SaveSlider.Instance.GetVolume();
-            MusicPlateau.Instance.SetVolume();
-            volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
+            //MusicPlateau.Instance.SetVolume();
         }
 
         void OnEnable()
         {
             //Register Slider Events
-           // volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
+            volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
         }
 
         //Called when Slider is moved
         void changeVolume(float sliderValue)
         {
             SaveSlider.Instance.SetVolume(sliderValue);
-            MusicPlateau.Instance.SetVolume();
+            MusicPlateau.Instance().SetVolume();
         }
 
     }

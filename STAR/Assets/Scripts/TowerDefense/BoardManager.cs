@@ -35,6 +35,7 @@ namespace Assets.Scripts
         public Image rToMenu;
         public Text rToMenuText;
         public Image rToMenuCache;
+        public Slider volumeSlider;
         private float timePassing;
         private float checkTime;
         public bool timerIsRunning;
@@ -120,7 +121,7 @@ namespace Assets.Scripts
             m_board.LayoutTree(3, 8);
             m_board.LayoutTree(12, 1);
             m_board.AffObject();
-            MusicPlateau.Instance.LaunchMusic(m_board.getMusic());
+            MusicPlateau.Instance().LaunchMusic(m_board.getMusic());
         }
 
         // Start is called before the first frame update
@@ -133,6 +134,8 @@ namespace Assets.Scripts
             rToMenu.enabled = false;
             rToMenuText.enabled = false;
             rToMenuCache.enabled = false;
+            volumeSlider.enabled = false;
+            volumeSlider.gameObject.SetActive(false);
             Base.Instance.SetHealthbar(healthbar);
             Base.Instance.SetHealthbarText(healthbarText);
             Base.Instance.UpdateHealth();
@@ -255,6 +258,8 @@ namespace Assets.Scripts
                     rToMenu.enabled = true;
                     rToMenuText.enabled = true;
                     rToMenuCache.enabled = true;
+                    volumeSlider.enabled = true;
+                    volumeSlider.gameObject.SetActive(true);
                 }
                 else
                 {
@@ -263,6 +268,8 @@ namespace Assets.Scripts
                     rToMenu.enabled = false;
                     rToMenuText.enabled = false;
                     rToMenuCache.enabled = false;
+                    volumeSlider.enabled = false;
+                    volumeSlider.gameObject.SetActive(false);
                 }
             }
 
