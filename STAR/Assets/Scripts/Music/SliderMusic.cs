@@ -39,6 +39,7 @@ namespace Assets.Scripts
         {
             //Register Slider Events
             volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
+            Debug.Log("ici");
         }
 
         //Called when Slider is moved

@@ -14,12 +14,14 @@ namespace Assets.Scripts
         void Start()
         {
             volumeSlider.value = SaveSlider.Instance.GetVolume();
+            MusicPlateau.Instance.SetVolume();
+            volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
         }
 
         void OnEnable()
         {
             //Register Slider Events
-            volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
+           // volumeSlider.onValueChanged.AddListener(delegate { changeVolume(volumeSlider.value); });
         }
 
         //Called when Slider is moved
