@@ -9,6 +9,7 @@ namespace Assets.Scripts
         [SerializeField]
         private EnemyData enemyData;
         private Wave wave;
+        private HealthBar healthbar;
         private int targetIndex = 0;
         private float hp;
         private bool poisonned;
@@ -129,6 +130,21 @@ namespace Assets.Scripts
         {
             enemyData = data;
             hp = data.MaxHP;
+            SetHealthBar();
+        }
+
+        private void SetHealthBar()
+        {
+            GameObject go = new GameObject();
+            Canvas canvas = go.AddComponent<Canvas>();
+            canvas.transform.parent = transform;
+            canvas.transform.localPosition = new Vector3(0, 0.3f, 0);
+            canvas.renderMode = RenderMode.WorldSpace;
+            GameObject healthBarObj = new GameObject("Healthbar");
+            healthBarObj.transform.parent = canvas.transform;
+            healthBarObj.transform.localPosition = new Vector3();
+            healthbar = healthBarObj.AddComponent<HealthBar>();
+            healthbar.SetMaxHealth((int)hp);
         }
 
         public void SetWave(Wave wave)
@@ -283,8 +299,9 @@ namespace Assets.Scripts
         public void TakeDamages(float damages)
         {
             hp -= damages;
-            if (hp < 0)
+            if (hp <= 0)
             {
+                hp = 0;
                 wave.Despawn();
                 Money.Instance.AddMoney(enemyData.DroppedMoney);
                 soundEffectHelper.Instance.destroyEnnemi();
@@ -295,7 +312,13 @@ namespace Assets.Scripts
             {
                 SpecialEffectsHelper.Instance.EnnemiHit(this.transform.position);
                 //soundEffectHelper.Instance.EnnemiHit();
+                UpdateHealthBar();
             }
+        }
+
+        private void UpdateHealthBar()
+        {
+            healthbar.SetHealth(hp);
         }
 
         public static void SetPath(List<Vector3> newpath)

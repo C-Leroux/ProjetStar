@@ -366,20 +366,22 @@ namespace Assets.Scripts
                         {
                             for (int j = 0; j < rows; j++)
                             {
-                                gridCase[i, j].SetTurret(new_turret);
-                                GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
-                                obj.transform.position = new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -1);
-                                TurretBehaviour behaviour = obj.GetComponentInChildren<TurretBehaviour>();
-                                gridCase[i, j].SetTurretBehaviour(behaviour);
-                                behaviour = gridCase[i, j].GetTurretBehaviour();
-                                behaviour.init(new_turret);
-                                gridCase[i, j].SetTurretBehaviour(null);
-                                Money.Instance.RemoveMoney(cost);
-                                SpecialEffectsHelper.Instance.buildOrUpgradeTower(obj.transform.position);
-                                soundEffectHelper.Instance.buildTower();
-				EndingPoseTurret();
-                                BeginningPoseTurret();
-
+                                if ((gridCase[i, j].GetX() == x) && (gridCase[i, j].GetY() == -y))
+                                {
+                                    gridCase[i, j].SetTurret(new_turret);
+                                    GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
+                                    obj.transform.position = new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -1);
+                                    TurretBehaviour behaviour = obj.GetComponentInChildren<TurretBehaviour>();
+                                    gridCase[i, j].SetTurretBehaviour(behaviour);
+                                    behaviour = gridCase[i, j].GetTurretBehaviour();
+                                    behaviour.init(new_turret);
+                                    gridCase[i, j].SetTurretBehaviour(null);
+                                    Money.Instance.RemoveMoney(cost);
+                                    SpecialEffectsHelper.Instance.buildOrUpgradeTower(obj.transform.position);
+                                    soundEffectHelper.Instance.buildTower();
+                                    EndingPoseTurret();
+                                    BeginningPoseTurret();
+                                }
                             }
                         }
                     }

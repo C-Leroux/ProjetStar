@@ -18,19 +18,33 @@ namespace Assets.Scripts
         // True if the player is on a space object that has this one as a neighbor
         public bool Reachable { get; set; } = false;
 
+        protected SpriteRenderer render;
+
         // Animation variables
         protected bool isMouseHover = false;
         protected Vector3 initialScale;
         protected Vector3 hoverScale;
+        protected float tick;
         static protected float speed = 3.0f;
         static protected float scaleMult = 1.3f;
 
         // Update is called once per frame
         void Update()
         {
+            tick += Time.deltaTime;
+            if (tick > 1)
+                tick = 0;
+
             if (isMouseHover && Reachable)
             {
                 transform.localScale = Vector3.Lerp(transform.localScale, hoverScale, speed * Time.deltaTime);
+            }
+            else if (Reachable)
+            {
+                if (tick < 0.5)
+                    transform.localScale = Vector3.Lerp(transform.localScale, hoverScale * 0.9f, (speed / 2) * Time.deltaTime);
+                else
+                    transform.localScale = Vector3.Lerp(transform.localScale, initialScale, (speed / 2) * Time.deltaTime);
             }
             else
             {
@@ -67,6 +81,16 @@ namespace Assets.Scripts
             {
                 neighbors.Add(new_neighbor);
             }
+        }
+
+        public void SetVisited()
+        {
+            render.color = new Color(0.5f, 0.5f, 0.5f);
+            GameObject complete = (GameObject)Instantiate(Resources.Load("Prefabs/UI/complete"), transform, false);
+            complete.transform.localPosition = new Vector3();
+            SpriteRenderer rend = complete.GetComponent<SpriteRenderer>();
+            rend.sortingLayerName = "Sprites";
+            rend.sortingOrder = 1;
         }
     }
 }

@@ -22,8 +22,8 @@ namespace Assets.Scripts
 	
             if (BoardManager.Instance().timerIsRunning)
             {
-		soundEffectHelper.Instance.UIInteraction();
-                List<Turret> turrets = Player.Instance.GetTurrets();
+		    soundEffectHelper.Instance.UIInteraction();
+            List<Turret> turrets = Player.Instance.GetTurrets();
 
                 switch (name)
                 {
