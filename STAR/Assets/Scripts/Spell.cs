@@ -49,7 +49,6 @@ namespace Assets.Scripts
             {
                 spellStunTime = spellStunTime + 0.5f;
             }
-            Debug.Log(" spellStunTime " + spellStunTime);
         }
 
         public void SetColldownTime()
@@ -58,20 +57,17 @@ namespace Assets.Scripts
             {
                 cooldownTime = cooldownTime - 1;
             }
-            Debug.Log("cooldownTime " + cooldownTime);
         }
 
         //DEBUG
         public void SetColldownTime(float test)
         {
             cooldownTime = test;
-            Debug.Log("DEBUG : cooldownTime " + cooldownTime);
         }
 
         public void SetSpellStunTime(float test)
         {
             spellStunTime = test;
-            Debug.Log("DEBUG : spellStunTime " + spellStunTime);
         }
 
         public string GetInfos()

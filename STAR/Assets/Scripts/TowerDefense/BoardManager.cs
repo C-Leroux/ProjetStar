@@ -286,6 +286,7 @@ namespace Assets.Scripts
             //Victoire
             else if(TDManager.Instance().IsWaveEnd() && isUpdate)
             {
+                timerIsRunning = false;
                 isUpdate = false;
                 background.enabled = true;
                 victory.gameObject.SetActive(true);

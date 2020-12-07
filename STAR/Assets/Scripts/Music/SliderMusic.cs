@@ -7,7 +7,7 @@ public class SliderMusic : MonoBehaviour
 {
     //public AudioClip[] soundtrack;
     public Slider volumeSlider;
-
+    private ArrayList audioSources;
     AudioSource audioSource;
 
 
@@ -20,6 +20,7 @@ public class SliderMusic : MonoBehaviour
     void Start()
     {
         audioSource = GameObject.Find("MusicIntro(Clone)").GetComponent<AudioSource>();
+        audioSources = new ArrayList();
     }
 
     // Update is called once per frame
@@ -42,6 +43,17 @@ public class SliderMusic : MonoBehaviour
     void changeVolume(float sliderValue)
     {
         audioSource.volume = sliderValue;
+    }
+
+   /* public void AddAudioSource(GameObject objectMusic)
+    {
+        audioSources.Add(objectMusic);
+        audioSources[audioSources.Count].GetComponent<AudioSource>().volume = volumeSlider.value;
+    }*/
+
+    public void SetSlider(Slider slider)
+    {
+        this.volumeSlider = slider;
     }
 
     void OnDisable()
