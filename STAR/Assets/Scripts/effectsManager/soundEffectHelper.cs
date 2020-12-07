@@ -96,6 +96,7 @@ public class soundEffectHelper : MonoBehaviour
         audioSourceObject.AddComponent<AudioSource>();
         AudioSource audioSource = audioSourceObject.GetComponent<AudioSource>();
         audioSource.clip = newAudioClip;
+        audioSource.volume = 0.5f;
         audioSource.Play();
         StartCoroutine(WaitBeforeUnStun(sound.length, audioSourceObject));
     }
