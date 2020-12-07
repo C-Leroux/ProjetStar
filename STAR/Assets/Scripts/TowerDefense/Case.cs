@@ -80,6 +80,7 @@ namespace Assets.Scripts
         public void SetTurret(Turret turret)
         {
             this.m_turret = turret;
+            isClickable = false;
         }
 
         public Turret GetTurret()

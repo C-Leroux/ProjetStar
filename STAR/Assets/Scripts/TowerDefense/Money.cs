@@ -103,5 +103,17 @@ namespace Assets.Scripts
             UpdateMoney();
         }
 
+        public string GetInfos()
+        {
+            return ("Argent en début : " + "\n" + departMoney + "\n"
+                + "Argent maximum : " + "\n" + maxMonney + "\n"
+                + "Argent par seconde : " + "\n" + moneyPerSecond);
+        }
+
+        public static void Reset()
+        {
+            instance = null;
+        }
+
     }
 }

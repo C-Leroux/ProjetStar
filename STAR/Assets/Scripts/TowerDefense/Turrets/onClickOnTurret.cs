@@ -25,14 +25,18 @@ public class onClickOnTurret : MonoBehaviour
 
     private void OnMouseDown()
     {
-        turretUI.enabled = !turretUI.isActiveAndEnabled;
+        if (BoardManager.Instance().timerIsRunning)
+        {
+            turretUI.enabled = !turretUI.isActiveAndEnabled;
+        }
     }
 
     public void onClickUITurretButton(string Name)
     {
-            
-        switch (Name)
+        if (BoardManager.Instance().timerIsRunning)
         {
+	switch (Name)
+            {
             case "upgrade":
                 upgradeTower();
                 Debug.Log("tourelle Upgraded");
@@ -43,7 +47,8 @@ public class onClickOnTurret : MonoBehaviour
                 soundEffectHelper.Instance.sellTower();
                 GameObject.Destroy(this.gameObject);
                 break;
-            
+            }
+
         }
     }
   

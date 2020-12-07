@@ -43,13 +43,13 @@ public class UIController : MonoBehaviour
     public void createMission()
     {
         SceneManager.LoadScene("SolarSystem");
-        Debug.Log("création de la partie");
+        //Debug.Log("création de la partie");
     }
     
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Game quit");
+        //Debug.Log("Game quit");
         //Just to make sure its working
     }
 

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class spellBehaviour : MonoBehaviour
 {
-    public float spellStunTime;
-    public float cooldownTime;
+    //public float spellStunTime;
+    //public float cooldownTime;
     private float currentTime;
     private bool isSpellAvailable;
     public GameObject spellBackground;
@@ -25,8 +25,8 @@ public class spellBehaviour : MonoBehaviour
             GameObject[] allCurrentEnnemis = GameObject.FindGameObjectsWithTag("Ennemi");
             for (int i = 0; i < allCurrentEnnemis.Length; i++)
             {
-                allCurrentEnnemis[i].GetComponent<Enemy>().setStunTrue(spellStunTime);
                 soundEffectHelper.Instance.spellStunUse();
+                allCurrentEnnemis[i].GetComponent<Enemy>().setStunTrue(Spell.Instance.GetSpellStunTime());
             }
             isSpellAvailable = false;
             currentTime = 0;
@@ -40,14 +40,17 @@ public class spellBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (!isSpellAvailable)
+        if (BoardManager.Instance().timerIsRunning)
         {
-            spellBackground.GetComponent<Image>().fillAmount = currentTime /cooldownTime;
+            if (!isSpellAvailable)
+            {
+                spellBackground.GetComponent<Image>().fillAmount = currentTime / Spell.Instance.GetCooldownTime();
+            }
+            if (currentTime >= Spell.Instance.GetCooldownTime())
+            {
+                isSpellAvailable = true;
+            }
+            currentTime = currentTime + Time.deltaTime;
         }
-        if(currentTime >=cooldownTime)
-        {
-            isSpellAvailable = true;
-        }
-        currentTime = currentTime + Time.deltaTime;
     }
 }

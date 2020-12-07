@@ -76,7 +76,12 @@ namespace Assets.Scripts
 
         public void AddMaxLp(int addLP)
         {
-            this.lpMax += addLP;
+            lpMax += addLP;
+            lp += addLP;
+            if(lp > lpMax)
+            {
+                lp = lpMax;
+            }
         }
 
         public void ResetLp()
@@ -88,6 +93,17 @@ namespace Assets.Scripts
         public Vector2 getPosition()
         {
             return GameObject.FindGameObjectWithTag("Base").transform.position;
+        }
+
+        public string GetInfos()
+        {
+            return ("Point de vie actuel : " + "\n" + lp + "\n"
+                + "Point de vie max : " + "\n" + lpMax);
+        }
+
+        public static void Reset()
+        {
+            instance = null;
         }
     }
 }

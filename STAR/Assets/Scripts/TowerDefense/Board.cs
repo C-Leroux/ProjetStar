@@ -37,6 +37,7 @@ namespace Assets.Scripts
         private bool isCryo;
         private bool isSUrvol;
         private bool isPyro;
+        private int music;
 
 
 
@@ -62,22 +63,6 @@ namespace Assets.Scripts
             textTurret = "";
             boardHolder = new GameObject("Contains").transform;
             gridCase = new Case[columns, rows];
-            /*board = new int[,]
-                {
-                { 2 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 0 , 8 , 7 , 0 , 2 , 3 , 3 , 1 , 1 , 1 },
-                { 2 , 0 , 12, 11, 11, 11, 11, 11, 13, 9 , 6 , 5 , 3 , 4 , 2 , 1 , 1 , 2 },
-                { 2 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 9 , 7 , 4 , 2 , 3 , 2 , 2 , 1 , 2 },
-                { 2 , 3 , 4 , 4 , 5 , 6 , 7 , 0 , 10, 0 , 4 , 3 , 1 , 0 , 0 , 1 , 2 , 3 },
-                { 2 , 0 , 0 , 3 , 6 , 7 , 8 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 0 , 2 , 3 , 4 },
-                { 4 , 2 , 1 , 2 , 9 , 8 , 8 , 0 , 12, 11, 11, 11, 11, 13, 0 , 1 , 1 , 0 },
-                { 3 , 1 , 1 , 1 , 9 , 9 , 9 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 1 , 1 , 0 },
-                { 2 , 3 , 2 , 1 , 9 , 8 , 9 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 2 , 0 , 0 },
-                { 1 , 1 , 0 , 0 , 8 , 7 , 8 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 2 , 0 , 0 },
-                { 1 , 2 , 4 , 5 , 7 , 6 , 7 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 2 , 2 , 1 },
-                { 1 , 0 , 3 , 4 , 5 , 4 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 10, 0 , 3 , 3 , 2 },
-                { 0 , 0 , 1 , 5 , 4 , 3 , 0 , 0 , 0 , 15, 11, 11, 11, 14, 0 , 4 , 5 , 4 },
-                { 0 , 0 , 2 , 3 , 2 , 2 , 0 , 0 , 0 , 10, 0 , 0 , 0 , 0 , 0 , 5 , 6 , 7 }
-                };*/
             RandomBoard randomBoard = new RandomBoard(planet, columns, rows);
             board = randomBoard.RandomMat();
             PrintBoard();
@@ -132,7 +117,7 @@ namespace Assets.Scripts
                 string str = "{";
                 for (int j = 0; j < columns; ++j)
                     str += board[i, j] + ", ";
-                print(str +"}");
+                //print(str +"}");
             }    
         }
 
@@ -188,65 +173,67 @@ namespace Assets.Scripts
 
         public void setSelectionTurretMode(string name)
         {
-            switch (name)
+            if (BoardManager.Instance().timerIsRunning)
             {
-                case "STAR": //TOURELLE DE LA STAR
-                    isStar = !isStar;
-                    isSelectionTurretModeActivate = isStar;
-                    isGrena = false;
-                    isCryo = false;
-                    isEmpoi = false;
-                    isPyro = false;
-                    isSUrvol = false;
-                    break;
-                    
-                case "Grenadiere": //GRENADIERE
-                    isGrena = !isGrena;
-                    isSelectionTurretModeActivate = isGrena;
-                    isStar = false;
-                    isCryo = false;
-                    isEmpoi = false;
-                    isPyro = false;
-                    isSUrvol = false;
-                    break;
-                case "Cryomancienne": //CRYOMANCIENNE
-                    isCryo = !isCryo;
-                    isSelectionTurretModeActivate = isCryo;
-                    isGrena = false;
-                    isStar = false;
-                    isEmpoi = false;
-                    isPyro = false;
-                    isSUrvol = false;
-                    break;
-                case "Empoisonneuse": //EMPOISONNEUSE
-                    isEmpoi = !isEmpoi;
-                    isSelectionTurretModeActivate = isEmpoi;
-                    isGrena = false;
-                    isCryo = false;
-                    isStar = false;
-                    isPyro = false;
-                    isSUrvol = false;
-                    break;
-                case "Pyromancienne": //PYROMANCIENNE
-                    isPyro = !isPyro;
-                    isSelectionTurretModeActivate = isPyro;
-                    isGrena = false;
-                    isCryo = false;
-                    isEmpoi = false;
-                    isStar = false;
-                    isSUrvol = false;
-                    break;
-                case "Survolteuse": //SURVOLTEUSE
-                    isSUrvol = !isSUrvol;
-                    isSelectionTurretModeActivate = isSUrvol;
-                    isGrena = false;
-                    isCryo = false;
-                    isEmpoi = false;
-                    isPyro = false;
-                    isStar = false;
-                    break;
-            }        
-            Debug.Log(isSelectionTurretModeActivate);
+                switch (name)
+                {
+                    case "STAR": //TOURELLE DE LA STAR
+                        isStar = !isStar;
+                        isSelectionTurretModeActivate = isStar;
+                        isGrena = false;
+                        isCryo = false;
+                        isEmpoi = false;
+                        isPyro = false;
+                        isSUrvol = false;
+                        break;
+
+                    case "Grenadiere": //GRENADIERE
+                        isGrena = !isGrena;
+                        isSelectionTurretModeActivate = isGrena;
+                        isStar = false;
+                        isCryo = false;
+                        isEmpoi = false;
+                        isPyro = false;
+                        isSUrvol = false;
+                        break;
+                    case "Cryomancienne": //CRYOMANCIENNE
+                        isCryo = !isCryo;
+                        isSelectionTurretModeActivate = isCryo;
+                        isGrena = false;
+                        isStar = false;
+                        isEmpoi = false;
+                        isPyro = false;
+                        isSUrvol = false;
+                        break;
+                    case "Empoisonneuse": //EMPOISONNEUSE
+                        isEmpoi = !isEmpoi;
+                        isSelectionTurretModeActivate = isEmpoi;
+                        isGrena = false;
+                        isCryo = false;
+                        isStar = false;
+                        isPyro = false;
+                        isSUrvol = false;
+                        break;
+                    case "Pyromancienne": //PYROMANCIENNE
+                        isPyro = !isPyro;
+                        isSelectionTurretModeActivate = isPyro;
+                        isGrena = false;
+                        isCryo = false;
+                        isEmpoi = false;
+                        isStar = false;
+                        isSUrvol = false;
+                        break;
+                    case "Survolteuse": //SURVOLTEUSE
+                        isSUrvol = !isSUrvol;
+                        isSelectionTurretModeActivate = isSUrvol;
+                        isGrena = false;
+                        isCryo = false;
+                        isEmpoi = false;
+                        isPyro = false;
+                        isStar = false;
+                        break;
+                }
+            }
         }
 
 
@@ -268,7 +255,8 @@ namespace Assets.Scripts
                 {
                     for (int y = 0; y < rows; y++)
                     {
-                        if (!gridPositions2[y, x].Equals(Vector3.zero))
+                        //if (!gridPositions2[y, x].Equals(Vector3.zero))
+                        if(gridCase[x, y].IsClickable())
                         {
                             GameObject gO = Instantiate(test_vert, gridPositions2[y, x], Quaternion.identity);
                             gridPositions3.Add(gO);
@@ -317,17 +305,21 @@ namespace Assets.Scripts
                 case Planet.Biome.ice:
                     multiplicator = 1;
                     typeFoliage = 2;
+                    music = 1;
                     break;
                 case Planet.Biome.fire:
                     multiplicator = 2;
+                    music = 2;
                     break;
                 case Planet.Biome.desert:
                     multiplicator = 3;
                     typeFoliage = 4;
+                    music = 3;
                     break;
                 default:
                     multiplicator = 0;
                     typeFoliage = 0;
+                    music = 0;
                     break;
             }
         }
@@ -339,28 +331,40 @@ namespace Assets.Scripts
 
         public void SetStringTourelle(string text)
         {
-            this.textTurret = text;
+            if (BoardManager.Instance().timerIsRunning)
+            {
+                this.textTurret = text;
+            }
         }
 
+        public turretDisplay getTurretDisplay()
+        {
+            return turetDisp;
+        }
+
+        public int getMusic()
+        {
+            return music;
+        }
         
         public void DisplayTurret(float x, float y)
         {
-            if (textTurret != "")
+            if (BoardManager.Instance().timerIsRunning)
             {
-                Turret new_turret = turetDisp.GetTurret(textTurret);
-                int totalMoney = Money.Instance.GetCurrentMoney();
-                int cost = new_turret.cost;
-                if (totalMoney < cost)
+                if (textTurret != "")
                 {
-                    Debug.Log("Pas assez d'argent");
-                }
-                else
-                {
-                   for (int i = 0; i < columns; i++)
+                    Turret new_turret = turetDisp.GetTurret(textTurret);
+                    int totalMoney = Money.Instance.GetCurrentMoney();
+                    int cost = new_turret.cost;
+                    if (totalMoney < cost)
                     {
-                        for (int j = 0; j < rows; j++)
+                        Debug.Log("Pas assez d'argent");
+                    }
+                    else
+                    {
+                        for (int i = 0; i < columns; i++)
                         {
-                            if ((gridCase[i, j].GetX() == x) && (gridCase[i, j].GetY() == -y))
+                            for (int j = 0; j < rows; j++)
                             {
                                 gridCase[i, j].SetTurret(new_turret);
                                 GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
@@ -373,6 +377,9 @@ namespace Assets.Scripts
                                 Money.Instance.RemoveMoney(cost);
                                 SpecialEffectsHelper.Instance.buildOrUpgradeTower(obj.transform.position);
                                 soundEffectHelper.Instance.buildTower();
+				EndingPoseTurret();
+                                BeginningPoseTurret();
+
                             }
                         }
                     }

@@ -72,7 +72,7 @@ namespace Assets.Scripts
             }
             InitBoard((Planet)destination);
             InitTD(boardScript.GetBoard(), (Planet)destination);
-            print("Scene loaded");
+            //print("Scene loaded");
         }
 
         IEnumerator LoadChoice(SpaceObject destination)
@@ -105,6 +105,24 @@ namespace Assets.Scripts
             }
         }
 
+        IEnumerator LoadMenu()
+        {
+            asyncLoadLevel = SceneManager.LoadSceneAsync("MainMenu");
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }
+            Destroy(solarSystem.gameObject);
+            Base.Reset();
+            Player.Reset();
+            Spell.Reset();
+            Money.Reset();
+            MoneyForMerchant.Reset();
+            Destroy(gameObject);
+
+        }
+
+
         public void Victory(SpaceObject destination)
         {
 
@@ -127,6 +145,11 @@ namespace Assets.Scripts
             solarSystem.gameObject.SetActive(false);
             // For marchands (or other SpaceObject types) : Find the type of the SpaceObject and execute the right portion of code
             StartCoroutine("LoadPlateau", destination);
+        }
+
+        public void ReturnToMenu()
+        {
+            StartCoroutine("LoadMenu");
         }
     }
 }
