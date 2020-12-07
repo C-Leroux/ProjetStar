@@ -44,6 +44,7 @@ namespace Assets.Scripts
         //Called when Slider is moved
         void changeVolume(float sliderValue)
         {
+            Debug.Log("Slider Value" + sliderValue);
             audioSource.volume = sliderValue;
             SaveSlider.Instance.SetVolume(sliderValue);
         }

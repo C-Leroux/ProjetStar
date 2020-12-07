@@ -45,6 +45,7 @@ namespace Assets.Scripts
         {
             Debug.Log("Volume : " + music.GetComponent<AudioSource>().volume);
             music.GetComponent<AudioSource>().volume = SaveSlider.Instance.GetVolume();
+            AudioListener.volume = SaveSlider.Instance.GetVolume();
         }
 
     }
