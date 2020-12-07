@@ -54,7 +54,6 @@ namespace Assets.Scripts
             {
                 CleanReachablePlanets();
                 position = destination;
-                FindReachablePlanets();
                 traveling = true;
             }
         }
@@ -72,7 +71,7 @@ namespace Assets.Scripts
             ModifyReachablePlanets(false);
         }
 
-        private void FindReachablePlanets()
+        public void FindReachablePlanets()
         {
             ModifyReachablePlanets(true);
         }

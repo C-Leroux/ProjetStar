@@ -107,7 +107,8 @@ namespace Assets.Scripts
 
         public void Victory(SpaceObject destination)
         {
-
+            destination.SetVisited();
+            PlayerShip.Instance().FindReachablePlanets();
             StartCoroutine("LoadChoice", destination);
         }
 
