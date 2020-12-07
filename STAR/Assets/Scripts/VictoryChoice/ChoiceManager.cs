@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public Text[] m_tabText;
         public Text[] m_desciptText;
         public Image[] m_tabImage;
+        public Sprite[] turretSprites;
         //private string[] m_stringText;
         private ArrayList m_stringText;
         private ArrayList couts;
@@ -23,6 +24,7 @@ namespace Assets.Scripts
         private bool checkTurret;
         private string turretName;
         private ArrayList tirageAleatoire = new ArrayList();
+        private string currentBiome;
 
         public ChoiceManager()
         {
@@ -44,7 +46,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
-
+            currentBiome = "terre";
         }
 
         // Update is called once per frame
@@ -59,18 +61,27 @@ namespace Assets.Scripts
             {
                 Player.Instance.AddTurret("Cryomancienne");
             }
+            else if (Input.GetKeyDown("z"))
+            {
+                Player.Instance.AddTurret("Pyromancienne");
+            }
+            else if (Input.GetKeyDown("e"))
+            {
+                Player.Instance.AddTurret("Empoisonneuse");
+            }
+            else if (Input.GetKeyDown("r"))
+            {
+                Player.Instance.AddTurret("Survolteuse");
+            }
             if (isChoice)
             {
                 GameManager.Instance().Merchant();
             }
         }
 
+
         public void SetupChoice(Planet destination)
         {
-
-            /*if(VictoryChoice.Instance.GetChoix(3) == "AddNewTurret")
-            {*
-            */
                 checkTurret = true;
                 List<Turret> turrets = Player.Instance.GetTurrets();
                 turretName = "Empoisonneuse";
@@ -78,13 +89,16 @@ namespace Assets.Scripts
                 {
                     case Planet.Biome.fire:
                         turretName = "Pyromancienne";
+                         currentBiome = "fire";
                         break;
                     case Planet.Biome.ice:
                         turretName = "Cryomancienne";
+                         currentBiome = "ice";
                         break;
                     case Planet.Biome.desert:
                         turretName = "Survolteuse";
-                        break;
+                         currentBiome = "desert";
+                         break;
                 }
 
             for (int i = 0; i < turrets.Count; i++)
@@ -94,32 +108,6 @@ namespace Assets.Scripts
                     checkTurret = false;
                 }
             }
-            /*
-                bool verif = false;
-                Array<Turret> turrets = Player.Instance.GetTurrets();
-                for (int i=0; i < turrets.Count; i++)
-                {
-                    if(turrets[i].name == turretName)
-                    {
-                        verif = true;
-                    }
-                }
-                if (!verif)
-                {
-                    Player.Instance.AddTurret(turretName);
-                }
-                else
-                {
-                    VictoryChoice.Instance.GetChoix(2);
-                }
-            }*/
-            /*choice1 = VictoryChoice.Instance.GetChoix(0);
-            choice2 = VictoryChoice.Instance.GetChoix(1);
-            choice3 = VictoryChoice.Instance.GetChoix(2);
-            SetImage();
-            text1.text = "Augmentation du revenu par seconde";
-            text2.text = "Augmentation des LP de la base";
-            text3.text = "Augmentation de la limite d'argent";*/
             m_stringText = new ArrayList();
             m_stringText.Add("Augmentation des LP de la base");
             m_stringText.Add("Augmentation du revenu par seconde");
@@ -217,15 +205,26 @@ namespace Assets.Scripts
         {
             new_text.text = (string)m_stringText[indice];
             new_image.sprite = m_sprite[indice];
-        }
+            if (indice == 6)
+            {
+                switch (currentBiome) {
+                case "terre" :
+                     new_image.sprite = turretSprites[1];
+                     break;
+                case "fire" :
+                        new_image.sprite = turretSprites[2];
+                        break;
+                case "ice" :
+                        new_image.sprite = turretSprites[0];
+                        break;
+                case "desert":
+                        new_image.sprite = turretSprites[3];
+                        break;
+                }
 
-        public void SetImage()
-        {
-            m_tabImage[0].sprite = m_sprite[1];
-            m_tabImage[1].sprite = m_sprite[0];
-            m_tabImage[2].sprite = m_sprite[2];
         }
-
+            }
+        
         public void BaseLifeUp()
         {
             Base.Instance.AddMaxLp(500);

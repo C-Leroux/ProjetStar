@@ -25,7 +25,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public void init(Projectile projectile)
     {
         poisonnedTime = 4;//TIME EMPOISONNEUSE
-        explosionRange =1;//RANGE GRENADIERE EXPLOSION
+        explosionRange =2;//RANGE GRENADIERE EXPLOSION
         stunTime = 1f; //TIME STUN
         this.ennemi = projectile.ennemi;
         this.scale = projectile.scale;

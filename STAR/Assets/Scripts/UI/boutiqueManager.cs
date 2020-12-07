@@ -47,7 +47,7 @@ namespace Assets.Scripts
 
         private void updateGoldDisplay()
         {
-            goldDisplay.GetComponent<TMP_Text>().text = MoneyForMerchant.Instance.GetMoney().ToString() + " pieces d'or";
+            goldDisplay.GetComponent<TMP_Text>().text = MoneyForMerchant.Instance.GetMoney().ToString();
         }
 
         private void popUpLoadData(int index)

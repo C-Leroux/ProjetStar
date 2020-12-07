@@ -1018,6 +1018,11 @@ MonoBehaviour:
   - {fileID: 1443543831}
   - {fileID: 333742306}
   - {fileID: 1111942239}
+  turretSprites:
+  - {fileID: 21300000, guid: ef8e356ce254e484284f64c66fdb1d33, type: 3}
+  - {fileID: 21300000, guid: 27c148c9ec96c4b48bb5f4b45dd5806b, type: 3}
+  - {fileID: 21300000, guid: 9e7222bdf44c0a14fb8f3524cbc2c4b7, type: 3}
+  - {fileID: 21300000, guid: d7b77310780634e438d11d6f5bcc95b0, type: 3}
 --- !u!4 &1391814479
 Transform:
   m_ObjectHideFlags: 0
