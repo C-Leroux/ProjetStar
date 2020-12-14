@@ -287,6 +287,8 @@ namespace Assets.Scripts
             //Défaite
             else if(!Base.Instance.IsAlive() && isUpdate)
             {
+                timerIsRunning = false;
+                isUpdate = false;
                 background.enabled = true;
                 defeat.gameObject.SetActive(true);
             }
