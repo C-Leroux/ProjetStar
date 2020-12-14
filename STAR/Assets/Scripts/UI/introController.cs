@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class introController : MonoBehaviour
+namespace Assets.Scripts
 {
-
-    public float wait_time = 10f;
-
-    void Start()
+    public class introController : MonoBehaviour
     {
-        StartCoroutine(Wait());
-    }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(wait_time);
+        public float wait_time = 10f;
 
-        SceneManager.LoadScene("MainMenu");
+        void Start()
+        {
+            StartCoroutine(Wait());
+        }
+
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(wait_time);
+
+            //SceneManager.LoadScene("MainMenu");
+
+            GameManager.Instance().ReturnToMenu();
+        }
     }
 }

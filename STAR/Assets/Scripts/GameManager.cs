@@ -10,7 +10,7 @@ namespace Assets.Scripts
     {
         private static GameManager instance;
 
-        public SolarSystem solarSystem;
+        private SolarSystem solarSystem;
         private BoardManager boardScript;
         private ChoiceManager choiceScript;
         private TDManager tdManager;
@@ -32,7 +32,6 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            InitSolarSystem();
         }
 
         public static GameManager Instance()
@@ -98,7 +97,7 @@ namespace Assets.Scripts
         }
         
         
-        public IEnumerator LoadSolarSystem()
+        public IEnumerator ReloadSolarSystem()
         {
             /*asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
             while (!asyncLoadLevel.isDone)
@@ -112,6 +111,27 @@ namespace Assets.Scripts
             while (loader.IsLoading())
                 yield return null;
 
+            solarSystem.gameObject.SetActive(true);
+
+            StartCoroutine(loader.EndLoad());
+        }
+
+        public IEnumerator LoadSolarSystem()
+        {
+            /*asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }*/
+
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("SolarSystem"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
+                yield return null;
+
+            solarSystem = GameObject.Find("Solar System").GetComponent<SolarSystem>();
+            InitSolarSystem();
             solarSystem.gameObject.SetActive(true);
 
             StartCoroutine(loader.EndLoad());
@@ -132,21 +152,21 @@ namespace Assets.Scripts
                 yield return null;*/
         }
 
-        IEnumerator LoadMenu()
+        public IEnumerator LoadMenu()
         {
             LevelLoader loader = LevelLoader.Instance();
-            StartCoroutine(loader.LoadLevel("MainMenu"));
+            StartCoroutine(loader.LoadMenu());
             yield return new WaitForSeconds(1);
             while (loader.IsLoading())
                 yield return null;
 
-            Destroy(solarSystem.gameObject);
+            if (solarSystem != null)
+                Destroy(solarSystem.gameObject);
             Base.Reset();
             Player.Reset();
             Spell.Reset();
             Money.Reset();
             MoneyForMerchant.Reset();
-            Destroy(gameObject);
 
             StartCoroutine(loader.EndLoad());
         }
@@ -159,10 +179,15 @@ namespace Assets.Scripts
             StartCoroutine("LoadChoice", destination);
         }
 
+        public void GoToSolarSystem()
+        {
+            StartCoroutine(LoadSolarSystem());
+        }
+
         public void ReturnToSolarSystem()
         {
             solarSystem.gameObject.SetActive(true);
-            StartCoroutine("LoadSolarSystem");
+            StartCoroutine("ReloadSolarSystem");
         }
 
         public void Merchant()

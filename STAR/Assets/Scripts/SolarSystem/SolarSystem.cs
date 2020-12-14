@@ -89,6 +89,7 @@ namespace Assets.Scripts
             SetRanks();
             PlaceSpaceObjects();
             DrawAllLines();
+            PlaceSpaceShip();
         }
 
         private void SetRanks()
@@ -182,6 +183,13 @@ namespace Assets.Scripts
             lr.SetPosition(0, from.transform.position);
             lr.SetPosition(1, to.transform.position);
             lr.sortingLayerName = "Lines";
+        }
+
+        private void PlaceSpaceShip()
+        {
+            PlayerShip ps = PlayerShip.Instance();
+            ps.transform.localPosition = start_point.transform.localPosition;
+            ps.FindReachablePlanets();
         }
     }
 }

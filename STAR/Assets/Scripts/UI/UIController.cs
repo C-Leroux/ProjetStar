@@ -4,73 +4,66 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class UIController : MonoBehaviour
+
+namespace Assets.Scripts
 {
-    private string blueShipName = "BLUE STAR"; //NOM VAISSEAU
-    private string blueSpellName = "FREEZE"; //NOM SPELL
-    [SerializeField] private Sprite blueStarSpellSprite; //ICON SPELL  
-    [SerializeField] private Image backgroundCockpit;
-    [SerializeField] private float wait_time;
-
-    [SerializeField] private TMP_Text shipName;//UI text 
-    [SerializeField] private TMP_Text spellName; //UI text
-    [SerializeField] private Image spellIcon; //UI image
-    [SerializeField] private GameObject secondaryPlanet;
-    [SerializeField] private GameObject[] secondaryPlanets = new GameObject[4];
-
-    
-    // Start is called before the first frame update
-    void Start()
+    public class UIController : MonoBehaviour
     {
+        private string blueShipName = "BLUE STAR"; //NOM VAISSEAU
+        private string blueSpellName = "FREEZE"; //NOM SPELL
+        [SerializeField] private Sprite blueStarSpellSprite; //ICON SPELL  
+        [SerializeField] private Image backgroundCockpit;
+        [SerializeField] private float wait_time;
 
-    }
+        [SerializeField] private TMP_Text shipName;//UI text 
+        [SerializeField] private TMP_Text spellName; //UI text
+        [SerializeField] private Image spellIcon; //UI image
+        [SerializeField] private GameObject secondaryPlanet;
+        [SerializeField] private GameObject[] secondaryPlanets = new GameObject[4];
 
-    IEnumerator StartMission()
-    {
-        Assets.Scripts.LevelLoader loader = Assets.Scripts.LevelLoader.Instance();
-        StartCoroutine(loader.LoadLevel("SolarSystem"));
-        yield return new WaitForSeconds(1);
-        while (loader.IsLoading())
-            yield return null;
 
-        StartCoroutine(loader.EndLoad());
-    }
- 
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    public void loadMission()
-    {
-        SceneManager.LoadScene("SolarSystem");
-        //StartCoroutine(StartMission());
+        }
 
-        Debug.Log("chargement de la partie");
-    }
+        public void createMission()
+        {
+            //SceneManager.LoadScene("SolarSystem");
+            GameManager.Instance().GoToSolarSystem();
 
-    public void setShipCaract() //ship shipPicked
-        //Un seul vaisseau dans le prototype, pas besoin de condition
-    {
-        //if (ship == blue ship)
-        shipName.text = blueShipName;
-        spellName.text = blueSpellName;
-        spellIcon.sprite = blueStarSpellSprite;
-    }
-    public void createMission()
-    {
-        SceneManager.LoadScene("SolarSystem");
-        //StartCoroutine(StartMission());
+            Debug.Log("création de la partie");
+        }
 
-        Debug.Log("création de la partie");
-    }
-    
-    public void QuitGame()
-    {
-        Application.Quit();
-        //Debug.Log("Game quit");
-        //Just to make sure its working
-    }
+        public void loadMission()
+        {
+            GameManager.Instance().GoToSolarSystem();
+            //StartCoroutine(StartMission());
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            Debug.Log("chargement de la partie");
+        }
+
+        public void setShipCaract() //ship shipPicked
+                                    //Un seul vaisseau dans le prototype, pas besoin de condition
+        {
+            //if (ship == blue ship)
+            shipName.text = blueShipName;
+            spellName.text = blueSpellName;
+            spellIcon.sprite = blueStarSpellSprite;
+        }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+            //Debug.Log("Game quit");
+            //Just to make sure its working
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }

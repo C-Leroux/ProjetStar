@@ -44,9 +44,37 @@ namespace Assets.Scripts
             StartCoroutine(LoadAsyncOperation(sceneName));
         }
 
+        public IEnumerator LoadMenu()
+        {
+            isLoading = true;
+
+            // Play animation
+            transition.SetTrigger("Start");
+
+            // Wait
+            yield return new WaitForSeconds(transitionTime);
+
+            // Load scene
+            StartCoroutine(LoadAsyncMenu());
+        }
+
         private IEnumerator LoadAsyncOperation(string sceneName)
         {
             AsyncOperation gameLevel = SceneManager.LoadSceneAsync(sceneName);
+
+            while (gameLevel.progress < 1)
+            {
+                // Loading animation
+
+                yield return new WaitForEndOfFrame();
+            }
+
+            isLoading = false;
+        }
+
+        private IEnumerator LoadAsyncMenu()
+        {
+            AsyncOperation gameLevel = SceneManager.LoadSceneAsync("MainMenu");
 
             while (gameLevel.progress < 1)
             {
