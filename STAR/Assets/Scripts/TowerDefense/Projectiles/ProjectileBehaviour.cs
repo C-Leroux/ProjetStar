@@ -41,10 +41,10 @@ public class ProjectileBehaviour : MonoBehaviour
         {
            
             case "Grenadiere1": //GRENADIERE
-                this.damage = this.damage + 1;
+                this.damage = this.damage + 0.4f;
                 break;
             case "Grenadiere2": //GRENADIERE
-                this.damage = this.damage + 1;
+                this.damage = this.damage + 0.3f;
                 break;
             case "Pyromancienne2": //PYROMANCIENNE
                 this.damage = this.damage + 1;
@@ -127,7 +127,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         collision.GetComponent<Enemy>().TakeDamages(damage);
     }
-   
+    
     
     
     void Update()

@@ -77,6 +77,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5585671604984661020, guid: c8024b1c8dba5ac45ac354c95aaf3221,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585671604984661020, guid: c8024b1c8dba5ac45ac354c95aaf3221,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5585671604984661021, guid: c8024b1c8dba5ac45ac354c95aaf3221,
         type: 3}
       propertyPath: m_Name

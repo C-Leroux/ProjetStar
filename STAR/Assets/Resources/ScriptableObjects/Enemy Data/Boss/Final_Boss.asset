@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Boss
   sprite: {fileID: 6937182654523390969, guid: 5fed3a2fcf2bae248a0982cfcd523f71, type: 3}
-  maxHP: 1000
+  maxHP: 200
   speed: 2
   atkDamage: 4
   atkRange: 5

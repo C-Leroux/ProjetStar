@@ -318,7 +318,7 @@ namespace Assets.Scripts
 
         private void UpdateHealthBar()
         {
-            healthbar.SetHealth(hp);
+                       healthbar.SetHealth(hp);
         }
 
         public static void SetPath(List<Vector3> newpath)

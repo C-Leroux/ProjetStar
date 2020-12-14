@@ -22,6 +22,16 @@ PrefabInstance:
       propertyPath: scalingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8255215019295333936, guid: 139c09de669d89546999f577551dd885,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255215019295333936, guid: 139c09de669d89546999f577551dd885,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8255215019295333937, guid: 139c09de669d89546999f577551dd885,
         type: 3}
       propertyPath: m_Name

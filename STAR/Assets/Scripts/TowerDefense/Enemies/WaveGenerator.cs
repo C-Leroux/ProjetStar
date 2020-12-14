@@ -12,13 +12,16 @@ namespace Assets.Scripts
         private int nbWaves;
         private int currentWave = 0;
         private GameObject board;
-
+        private int currentPlanetRank;
         public WaveGenerator(Planet planet, Vector3 spawnPoint)
         {
+            currentPlanetRank = planet.Rank;
             SelectEnemies(planet);
             this.spawnPoint = spawnPoint;
-            nbEnemies = planet.Rank * 5;
             nbWaves = planet.Rank * 5;
+            nbEnemies = 3;
+            
+
             board = GameObject.Find("Board");
         }
 
@@ -63,15 +66,33 @@ namespace Assets.Scripts
         // Generate a wave using stored informations
         public Wave GenerateWave()
         {
+            EnemyData liche = (EnemyData)Resources.Load("ScriptableObjects/Enemy Data/Boss/Lich");
+            EnemyData finalBoss = (EnemyData)Resources.Load("ScriptableObjects/Enemy Data/Boss/Final_Boss");
             GameObject go = new GameObject("Wave");
             go.transform.parent = board.transform;
             Wave wave = go.AddComponent<Wave>();
             Queue<EnemyData> queue = new Queue<EnemyData>();
             System.Random random = new System.Random();
+            if (currentWave == 0)
+            {
+                nbEnemies = 3;
+            }
+            else
+            {
+                nbEnemies = nbEnemies + currentWave * currentPlanetRank;
+            }
             for (int i = 0; i < nbEnemies; ++i)
             {
                 int index = random.Next(possibleEnemies.Count);
                 queue.Enqueue(possibleEnemies[index]);
+            }
+            if (currentWave == 0)
+            {
+                queue.Enqueue(liche);
+                if (currentPlanetRank == 1)
+                {
+                    queue.Enqueue(finalBoss);
+                }
             }
             wave.Init(queue, spawnPoint);
             ++currentWave;

@@ -16,7 +16,7 @@ namespace Assets.Scripts
         public void SetSpriteMerchant()
         {
             string path = "Sprites/Solar_system/merchant";
-            float scale = 0.1f;
+            float scale = 0.0025f;
 
             SetSprite(path, scale);
         }

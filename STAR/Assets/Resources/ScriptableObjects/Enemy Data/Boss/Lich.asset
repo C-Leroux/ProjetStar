@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Lich
   sprite: {fileID: 0}
-  maxHP: 30
+  maxHP: 45
   speed: 4
   atkDamage: 5
   atkRange: 10
@@ -32,4 +32,3 @@ MonoBehaviour:
   - {fileID: -6760008137486966789, guid: e1130b09d8a93e1408809563515de744, type: 3}
   - {fileID: 2500869316234553539, guid: e1130b09d8a93e1408809563515de744, type: 3}
   droppedMoney: 100
-

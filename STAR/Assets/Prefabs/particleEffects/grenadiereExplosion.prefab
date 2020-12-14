@@ -112,6 +112,16 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8714244275622671899, guid: abf8d5b763621654486813c5c8af8234,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714244275622671899, guid: abf8d5b763621654486813c5c8af8234,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714244275622671901, guid: abf8d5b763621654486813c5c8af8234,
         type: 3}
       propertyPath: m_LocalPosition.x
