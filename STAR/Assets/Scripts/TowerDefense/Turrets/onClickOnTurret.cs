@@ -10,6 +10,13 @@ public class onClickOnTurret : MonoBehaviour
     private GameObject turret;
     [SerializeField]
     private Canvas turretUI;
+    [SerializeField]
+    private GameObject upgrade1;
+    [SerializeField]
+    private GameObject upgrade2;
+    [SerializeField]
+    private GameObject upgradeButton;
+
     private GameObject boardManager;
     private GameObject turretManager;
 
@@ -66,6 +73,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setNameForUpgrade("STAR1");
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.5f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("STAR1");
+                    upgrade1.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -83,6 +91,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setNameForUpgrade("STAR2");
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(2f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("STAR2");
+                    upgrade2.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -101,6 +110,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
                     turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Grenadiere1");
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Grenadiere1");
+                    upgrade1.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -117,6 +127,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setCostForUpgrade(upgradeCost);
                     turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Grenadiere2");
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Grenadiere2");
+                    upgrade2.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -138,6 +149,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1f);
                     turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Cryomancienne1");
+                    upgrade1.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -156,6 +168,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.2f);
                     turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Cryomancienne2");
+                    upgrade2.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -177,6 +190,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1.5f);
                     turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Empoisonneuse1");
+                    upgrade1.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -195,6 +209,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(2f);
                     turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Empoisonneuse2");
+                    upgrade2.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -216,6 +231,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(0.8f);
                     turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(6f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Pyromancienne1");
+                    upgrade1.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -234,6 +250,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(1f);
                     turret.GetComponent<TurretBehaviour>().setRangeForUpgrade(7f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Pyromancienne2");
+                    upgrade2.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -254,6 +271,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Survolteuse1");
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(8f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Survolteuse1");
+                    upgrade1.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -271,6 +289,7 @@ public class onClickOnTurret : MonoBehaviour
                     turret.GetComponent<TurretBehaviour>().setNameForUpgrade("Survolteuse2");
                     turret.GetComponent<TurretBehaviour>().setAttackSpeedForUpgrade(10f);
                     turret.GetComponent<TurretBehaviour>().setSpriteForUpgrade("Survolteuse2");
+                    upgrade2.SetActive(true);
                     SpecialEffectsHelper.Instance.buildOrUpgradeTower(turret.transform.position);
                     soundEffectHelper.Instance.upgradeTower();
                 }
@@ -292,6 +311,9 @@ public class onClickOnTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+     if(upgrade1.GetComponent<Image>().IsActive()  && upgrade2.GetComponent<Image>().IsActive())
+        {
+            upgradeButton.gameObject.SetActive(false);
+        }
     }
 }

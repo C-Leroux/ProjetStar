@@ -218,22 +218,34 @@ namespace Assets.Scripts
         {
             switch (this.name)
             {
-                case "STAR": //TOURELLE DE LA STAR
+                case "STAR" : //TOURELLE DE LA STAR
+                case "STAR1":
+                case "STAR2":
                     soundEffectHelper.Instance.starFire();
                     break;
-                case "Grenadiere": //GRENADIERE
+                case "Grenadiere":
+                case "Grenadiere1":
+                case "Grenadiere2" : //GRENADIERE
                     soundEffectHelper.Instance.grenadiereFire();
                     break;
-                case "Cryomancienne": //CRYOMANCIENNE
+                case "Cryomancienne":
+                case "Cryomancienne1":
+                case "Cryomancienne2"://CRYOMANCIENNE
                     soundEffectHelper.Instance.cryomancienneFire();
                     break;
-                case "Empoisonneuse": //EMPOISONNEUSE
+                case "Empoisonneuse":
+                case "Empoisonneuse1":
+                case "Empoisonneuse2"://EMPOISONNEUSE
                     soundEffectHelper.Instance.empoisonneuseFire();
                     break;
-                case "Pyromancienne": //PYROMANCIENN
+                case "Pyromancienne":
+                case "Pyromancienne1":
+                case "Pyromancienne2"://PYROMANCIENN
                     soundEffectHelper.Instance.pyromancienneFire();
                     break;
-                case "Survolteuse": //SURVOLTEUSE
+                case "Survolteuse":
+                case "Survolteuse1":
+                case "Survolteuse2"://SURVOLTEUSE
                     soundEffectHelper.Instance.survolteuseFire();
                     break;
             }
