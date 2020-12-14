@@ -34,6 +34,7 @@ namespace Assets.Scripts
         public Base m_base;
         public Image rToMenu;
         public Text rToMenuText;
+        public Text rToMenuMusicText;
         public Image rToMenuCache;
         public Slider volumeSlider;
         private float timePassing;
@@ -134,6 +135,7 @@ namespace Assets.Scripts
             rToMenu.enabled = false;
             rToMenuText.enabled = false;
             rToMenuCache.enabled = false;
+            rToMenuMusicText.enabled = false;
             volumeSlider.enabled = false;
             volumeSlider.gameObject.SetActive(false);
             Base.Instance.SetHealthbar(healthbar);
@@ -259,6 +261,7 @@ namespace Assets.Scripts
                     rToMenuText.enabled = true;
                     rToMenuCache.enabled = true;
                     volumeSlider.enabled = true;
+                    rToMenuMusicText.enabled = true;
                     volumeSlider.gameObject.SetActive(true);
                 }
                 else
@@ -269,6 +272,7 @@ namespace Assets.Scripts
                     rToMenuText.enabled = false;
                     rToMenuCache.enabled = false;
                     volumeSlider.enabled = false;
+                    rToMenuMusicText.enabled = false;
                     volumeSlider.gameObject.SetActive(false);
                 }
             }
