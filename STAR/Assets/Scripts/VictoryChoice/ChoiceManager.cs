@@ -109,7 +109,7 @@ namespace Assets.Scripts
                 }
             }
             m_stringText = new ArrayList();
-            m_stringText.Add("Augmentation des LP de la base");
+            m_stringText.Add("Augmentation des points de vie de la base");
             m_stringText.Add("Augmentation du revenu par seconde");
             m_stringText.Add("Augmentation de la limite d'argent");
             m_stringText.Add("Diminution du temps de récupération du pouvoir");
