@@ -10,7 +10,7 @@ namespace Assets.Scripts
     {
         private static GameManager instance;
 
-        public SolarSystem solarSystem;
+        private SolarSystem solarSystem;
         private BoardManager boardScript;
         private ChoiceManager choiceScript;
         private TDManager tdManager;
@@ -32,7 +32,6 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            InitSolarSystem();
         }
 
         public static GameManager Instance()
@@ -98,7 +97,7 @@ namespace Assets.Scripts
         }
         
         
-        public IEnumerator LoadSolarSystem()
+        public IEnumerator ReloadSolarSystem()
         {
             /*asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
             while (!asyncLoadLevel.isDone)
@@ -117,36 +116,59 @@ namespace Assets.Scripts
             StartCoroutine(loader.EndLoad());
         }
 
-        IEnumerator LoadMerchant()
+        public IEnumerator LoadSolarSystem()
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("VilleMarchande");
+            /*asyncLoadLevel = SceneManager.LoadSceneAsync("Empty");
             while (!asyncLoadLevel.isDone)
             {
                 yield return null;
-            }
+            }*/
 
-            /*LevelLoader loader = LevelLoader.Instance();
-            StartCoroutine(loader.LoadLevel("VilleMarchande"));
-            yield return new WaitForSeconds(1);
-            while (loader.IsLoading())
-                yield return null;*/
-        }
-
-        IEnumerator LoadMenu()
-        {
             LevelLoader loader = LevelLoader.Instance();
-            StartCoroutine(loader.LoadLevel("MainMenu"));
+            StartCoroutine(loader.LoadLevel("SolarSystem"));
             yield return new WaitForSeconds(1);
             while (loader.IsLoading())
                 yield return null;
 
-            Destroy(solarSystem.gameObject);
+            solarSystem = GameObject.Find("Solar System").GetComponent<SolarSystem>();
+            InitSolarSystem();
+            solarSystem.gameObject.SetActive(true);
+
+            StartCoroutine(loader.EndLoad());
+        }
+
+        IEnumerator LoadMerchant()
+        {
+            /*asyncLoadLevel = SceneManager.LoadSceneAsync("VilleMarchande");
+            while (!asyncLoadLevel.isDone)
+            {
+                yield return null;
+            }*/
+
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("VilleMarchande"));
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
+                yield return null;
+
+            StartCoroutine(loader.EndLoad());
+        }
+
+        public IEnumerator LoadMenu()
+        {
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadMenu());
+            yield return new WaitForSeconds(1);
+            while (loader.IsLoading())
+                yield return null;
+
+            if (solarSystem != null)
+                Destroy(solarSystem.gameObject);
             Base.Reset();
             Player.Reset();
             Spell.Reset();
             Money.Reset();
             MoneyForMerchant.Reset();
-            Destroy(gameObject);
 
             StartCoroutine(loader.EndLoad());
         }
@@ -154,26 +176,28 @@ namespace Assets.Scripts
 
         public void Victory(SpaceObject destination)
         {
-            destination.SetVisited();
-            PlayerShip.Instance().FindReachablePlanets();
             StartCoroutine("LoadChoice", destination);
+        }
+
+        public void GoToSolarSystem()
+        {
+            StartCoroutine(LoadSolarSystem());
         }
 
         public void ReturnToSolarSystem()
         {
+            PlayerShip.Instance().Clear();
             solarSystem.gameObject.SetActive(true);
-            StartCoroutine("LoadSolarSystem");
-        }
-
-        public void Merchant()
-        {
-            StartCoroutine("LoadMerchant");
+            StartCoroutine("ReloadSolarSystem");
         }
 
         public void TravelTo(SpaceObject destination)
         {
             // For marchands (or other SpaceObject types) : Find the type of the SpaceObject and execute the right portion of code
-            StartCoroutine("LoadPlateau", destination);
+            if (destination.GetType() == typeof(Merchant))
+                StartCoroutine("LoadMerchant");
+            else
+                StartCoroutine("LoadPlateau", destination);
         }
 
         public void ReturnToMenu()

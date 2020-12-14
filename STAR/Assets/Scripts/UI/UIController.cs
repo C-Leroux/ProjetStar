@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 namespace Assets.Scripts
 {
     public class UIController : MonoBehaviour
@@ -32,22 +33,18 @@ namespace Assets.Scripts
             soundEffectHelper.Instance.UIInteraction();
         }
 
-        IEnumerator StartMission()
+        public void createMission()
         {
-            Assets.Scripts.LevelLoader loader = Assets.Scripts.LevelLoader.Instance();
-            StartCoroutine(loader.LoadLevel("SolarSystem"));
-            yield return new WaitForSeconds(1);
-            while (loader.IsLoading())
-                yield return null;
+            //SceneManager.LoadScene("SolarSystem");
+            GameManager.Instance().GoToSolarSystem();
 
-            StartCoroutine(loader.EndLoad());
+            Debug.Log("création de la partie");
         }
-
 
         public void loadMission()
         {
-            SceneManager.LoadScene("SolarSystem");
-            //StartCoroutine(StartMission());
+            //SceneManager.LoadScene("SolarSystem");
+            GameManager.Instance().GoToSolarSystem();
             playSound();
             Debug.Log("chargement de la partie");
         }
@@ -60,13 +57,6 @@ namespace Assets.Scripts
             spellName.text = blueSpellName;
             spellIcon.sprite = blueStarSpellSprite;
         }
-        public void createMission()
-        {
-            SceneManager.LoadScene("SolarSystem");
-            //StartCoroutine(StartMission());
-
-            Debug.Log("création de la partie");
-        }
 
         public void QuitGame()
         {
@@ -74,12 +64,6 @@ namespace Assets.Scripts
             Application.Quit();
             //Debug.Log("Game quit");
             //Just to make sure its working
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

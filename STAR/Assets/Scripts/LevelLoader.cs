@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         public Animator transition;
         public float transitionTime;
+        public LoadingAnimator la;
         private bool isLoading = false;
         private static LevelLoader instance;
 
@@ -31,6 +32,7 @@ namespace Assets.Scripts
         public IEnumerator LoadLevel(string sceneName)
         {
             isLoading = true;
+            la.BeginLoad();
 
             // Play animation
             transition.SetTrigger("Start");
@@ -40,6 +42,20 @@ namespace Assets.Scripts
 
             // Load scene
             StartCoroutine(LoadAsyncOperation(sceneName));
+        }
+
+        public IEnumerator LoadMenu()
+        {
+            isLoading = true;
+
+            // Play animation
+            transition.SetTrigger("Start");
+
+            // Wait
+            yield return new WaitForSeconds(transitionTime);
+
+            // Load scene
+            StartCoroutine(LoadAsyncMenu());
         }
 
         private IEnumerator LoadAsyncOperation(string sceneName)
@@ -54,6 +70,21 @@ namespace Assets.Scripts
             }
 
             isLoading = false;
+        }
+
+        private IEnumerator LoadAsyncMenu()
+        {
+            AsyncOperation gameLevel = SceneManager.LoadSceneAsync("MainMenu");
+
+            while (gameLevel.progress < 1)
+            {
+                // Loading animation
+
+                yield return new WaitForEndOfFrame();
+            }
+
+            isLoading = false;
+            la.EndLoad();
         }
 
         public IEnumerator EndLoad()
