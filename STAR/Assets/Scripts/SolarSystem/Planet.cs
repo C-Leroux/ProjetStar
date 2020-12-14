@@ -29,12 +29,6 @@ namespace Assets.Scripts
         static private Array valuesSize  = Enum.GetValues(typeof(Size));
         static private System.Random random = new System.Random();
 
-
-        void Awake()
-        {
-            render = gameObject.AddComponent<SpriteRenderer>();
-        }
-
         public void Init(Biome b, Size s)
         {
             biome = b;
@@ -49,6 +43,7 @@ namespace Assets.Scripts
 
             return planet;
         }
+
         public static Planet CreateRandomPlanet()
         {
             Biome rbiome = (Biome)valuesBiome.GetValue(random.Next(valuesBiome.Length));
@@ -56,7 +51,7 @@ namespace Assets.Scripts
             return CreatePlanet(rbiome, rsize);
         }
 
-        public void SetSprite()
+        public void SetSpritePlanet()
         {
             // Load the correct sprite based on the biome
             string strbiome = "forest";
@@ -74,8 +69,6 @@ namespace Assets.Scripts
             }
 
             string path = "Sprites/Solar_system/planet_" + strbiome;
-            render.sprite = Resources.Load<Sprite>(path);
-            render.sortingLayerName = "Sprites";
 
             // Set the correct size
             float scale = 0.1f;
@@ -88,10 +81,8 @@ namespace Assets.Scripts
                     scale = 0.13f;
                     break;
             }
-            gameObject.transform.localScale = new Vector3(scale, scale, 0);
-            initialScale = transform.localScale;
-            hoverScale = transform.localScale * scaleMult;
-            gameObject.AddComponent<BoxCollider2D>();
+
+            SetSprite(path, scale);
         }
     }
 }

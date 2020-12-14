@@ -9,7 +9,7 @@ namespace Assets.Scripts
     {
         // List of all the planets in the solar system. The solar system is made up of 6 levels (from the start to the end), and each level of 1 to 4 planets.
         // Each planet is linked to one, two or three planets of the previous level, and of the next level.
-        private List<Planet> solar_system;
+        private List<SpaceObject> solar_system;
 
         // List of the number of planets in each rank. Starting point is rank 0, first reachable planets are rank 1, second are rank 2, etc.
         private List<int> rank_list;
@@ -20,7 +20,7 @@ namespace Assets.Scripts
         void Awake()
         {
             DontDestroyOnLoad(gameObject);
-            solar_system = new List<Planet>();
+            solar_system = new List<SpaceObject>();
             rank_list = new List<int>() { 0, 0, 0, 0, 0, 0, 0 };
         }
 
@@ -29,9 +29,17 @@ namespace Assets.Scripts
             // Here should be called the random generator for the planets of the solar system. For now, planets are created manually.
             // There are two generators : one for the solar system and its composition, and one for each planet individually.
 
+            int merch1 = UnityEngine.Random.Range(2, 13);
+            int merch2 = -1;
+            while (merch2 == -1 || merch2 == merch1)
+                merch2 = UnityEngine.Random.Range(2, 13);
+
             for (int i = 0; i < 15; ++i)
             {
-                AddRandomPlanet();
+                if (i == merch1 || i == merch2)
+                    AddMerchant();
+                else
+                    AddRandomPlanet();
             }
 
             AddPath(start_point, solar_system[0]);
@@ -67,13 +75,22 @@ namespace Assets.Scripts
             solar_system.Add(new_planet);
             new_planet.transform.parent = gameObject.transform;
             new_planet.transform.position = new Vector3(0, 0, 0);
-            new_planet.SetSprite();
+            new_planet.SetSpritePlanet();
         }
 
         // Generate a planet with a random biome and a random size
         private void AddRandomPlanet()
         {
             AddPlanet(Planet.CreateRandomPlanet());
+        }
+
+        private void AddMerchant()
+        {
+            Merchant new_merch = Merchant.CreateMerchant();
+            solar_system.Add(new_merch);
+            new_merch.transform.parent = gameObject.transform;
+            new_merch.transform.position = new Vector3(0, 0, 0);
+            new_merch.SetSpriteMerchant();
         }
 
         // Add a path from an object to another one

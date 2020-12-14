@@ -28,6 +28,11 @@ namespace Assets.Scripts
         static protected float speed = 3.0f;
         static protected float scaleMult = 1.3f;
 
+        void Awake()
+        {
+            render = gameObject.AddComponent<SpriteRenderer>();
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -91,6 +96,17 @@ namespace Assets.Scripts
             SpriteRenderer rend = complete.GetComponent<SpriteRenderer>();
             rend.sortingLayerName = "Sprites";
             rend.sortingOrder = 1;
+        }
+
+        public void SetSprite(string path, float scale)
+        {
+            render.sprite = Resources.Load<Sprite>(path);
+            render.sortingLayerName = "Sprites";
+
+            gameObject.transform.localScale = new Vector3(scale, scale, 0);
+            initialScale = transform.localScale;
+            hoverScale = transform.localScale * scaleMult;
+            gameObject.AddComponent<BoxCollider2D>();
         }
     }
 }

@@ -75,5 +75,11 @@ namespace Assets.Scripts
         {
             ModifyReachablePlanets(true);
         }
+
+        public void Clear()
+        {
+            position.SetVisited();
+            FindReachablePlanets();
+        }
     }
 }

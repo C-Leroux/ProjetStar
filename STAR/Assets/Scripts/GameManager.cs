@@ -139,17 +139,19 @@ namespace Assets.Scripts
 
         IEnumerator LoadMerchant()
         {
-            asyncLoadLevel = SceneManager.LoadSceneAsync("VilleMarchande");
+            /*asyncLoadLevel = SceneManager.LoadSceneAsync("VilleMarchande");
             while (!asyncLoadLevel.isDone)
             {
                 yield return null;
-            }
+            }*/
 
-            /*LevelLoader loader = LevelLoader.Instance();
+            LevelLoader loader = LevelLoader.Instance();
             StartCoroutine(loader.LoadLevel("VilleMarchande"));
             yield return new WaitForSeconds(1);
             while (loader.IsLoading())
-                yield return null;*/
+                yield return null;
+
+            StartCoroutine(loader.EndLoad());
         }
 
         public IEnumerator LoadMenu()
@@ -174,8 +176,6 @@ namespace Assets.Scripts
 
         public void Victory(SpaceObject destination)
         {
-            destination.SetVisited();
-            PlayerShip.Instance().FindReachablePlanets();
             StartCoroutine("LoadChoice", destination);
         }
 
@@ -186,19 +186,18 @@ namespace Assets.Scripts
 
         public void ReturnToSolarSystem()
         {
+            PlayerShip.Instance().Clear();
             solarSystem.gameObject.SetActive(true);
             StartCoroutine("ReloadSolarSystem");
-        }
-
-        public void Merchant()
-        {
-            StartCoroutine("LoadMerchant");
         }
 
         public void TravelTo(SpaceObject destination)
         {
             // For marchands (or other SpaceObject types) : Find the type of the SpaceObject and execute the right portion of code
-            StartCoroutine("LoadPlateau", destination);
+            if (destination.GetType() == typeof(Merchant))
+                StartCoroutine("LoadMerchant");
+            else
+                StartCoroutine("LoadPlateau", destination);
         }
 
         public void ReturnToMenu()
