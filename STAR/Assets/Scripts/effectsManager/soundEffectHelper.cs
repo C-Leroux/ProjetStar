@@ -9,7 +9,6 @@ namespace Assets.Scripts
         public static soundEffectHelper Instance;
 
         public AudioClip[] sounds;
-        public GameObject effectManager;
 
         void Awake()
         {
