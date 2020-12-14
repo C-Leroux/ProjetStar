@@ -86,10 +86,10 @@ namespace Assets.Scripts
                 int index = random.Next(possibleEnemies.Count);
                 queue.Enqueue(possibleEnemies[index]);
             }
-            if (currentWave == 0)
+            if (currentWave == nbWaves-1)
             {
                 queue.Enqueue(liche);
-                if (currentPlanetRank == 1)
+                if (currentPlanetRank == 6)
                 {
                     queue.Enqueue(finalBoss);
                 }
