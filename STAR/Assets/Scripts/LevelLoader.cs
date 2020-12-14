@@ -70,6 +70,7 @@ namespace Assets.Scripts
             }
 
             isLoading = false;
+            la.EndLoad();
         }
 
         private IEnumerator LoadAsyncMenu()

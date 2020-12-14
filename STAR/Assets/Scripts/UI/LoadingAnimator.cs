@@ -50,12 +50,12 @@ namespace Assets.Scripts
 
         public void EndLoad()
         {
-            gameObject.SetActive(false);
             isLoading = false;
             ++index;
             if (index == sprites.Count)
                 index = 0;
             loadingImage.sprite = sprites[index];
+            gameObject.SetActive(false);
         }
     }
 }
