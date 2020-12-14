@@ -8,7 +8,7 @@ namespace Assets.Scripts
     public class introController : MonoBehaviour
     {
 
-        public float wait_time = 10f;
+        public float wait_time = 8f;
 
         void Start()
         {

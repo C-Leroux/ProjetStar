@@ -63,7 +63,7 @@ namespace Assets.Scripts
             string objectName = items[index].transform.Find("Name/ObjectName").GetComponent<TMP_Text>().text;
             currentSelectedItemPrice = objectPrice[index];
             titrePopUp.GetComponent<TMP_Text>().text = "Achat de l'objet : " + objectName;
-            textPopUp.GetComponent<TMP_Text>().text = "L'OBJECT COUTE " + currentSelectedItemPrice + " PIECES D'OR";
+            textPopUp.GetComponent<TMP_Text>().text = "L'OBJET COUTE " + currentSelectedItemPrice + " PIECES D'OR";
             currentIndexItem = index;
         }
 
@@ -123,6 +123,7 @@ namespace Assets.Scripts
                 feedbackText.gameObject.SetActive(true);
                 feedbackText.text = "Vous avez acheté l'objet " + objectName[currentIndexItem];
                 StartCoroutine(Wait());
+                textPopUp.GetComponent<TMP_Text>().text = "L'OBJET COUTE " + currentSelectedItemPrice + " PIECES D'OR";
 
 
             }
