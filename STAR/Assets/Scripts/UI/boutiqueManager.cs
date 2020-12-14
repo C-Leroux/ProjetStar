@@ -133,7 +133,7 @@ namespace Assets.Scripts
         }
         IEnumerator Wait()
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(2f);
 
             feedbackText.gameObject.SetActive(false);
         }
