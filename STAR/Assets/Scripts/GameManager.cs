@@ -179,7 +179,10 @@ namespace Assets.Scripts
             StartCoroutine(loader.LoadLevel("Credits"));
             while (loader.IsLoading())
                 yield return null;
+
+            StartCoroutine(loader.EndLoad());
         }
+
             public void Victory(SpaceObject destination)
         {
             StartCoroutine("LoadChoice", destination);
