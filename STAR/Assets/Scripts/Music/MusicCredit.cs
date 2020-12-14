@@ -27,6 +27,9 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetKeyDown("escape")) { 
+                GameManager.Instance().ReturnToMenu();
+            }
             if (!audioSource.isPlaying && !end)
             {
                 end = true;
