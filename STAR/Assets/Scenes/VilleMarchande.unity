@@ -1397,10 +1397,10 @@ MonoBehaviour:
   objectSprite:
   - {fileID: 21300000, guid: d9039f08e9932f14a81b6057782457dd, type: 3}
   - {fileID: 21300000, guid: d9039f08e9932f14a81b6057782457dd, type: 3}
-  - {fileID: 21300000, guid: eec385930b187184d98cc7a106eb9527, type: 3}
-  - {fileID: 21300000, guid: eec385930b187184d98cc7a106eb9527, type: 3}
-  - {fileID: 21300000, guid: 45aa6c4cf9697674fa644a699e182aeb, type: 3}
-  - {fileID: 21300000, guid: 45aa6c4cf9697674fa644a699e182aeb, type: 3}
+  - {fileID: 21300000, guid: e9b9c593ad402a94783d77d55131c206, type: 3}
+  - {fileID: 21300000, guid: e9b9c593ad402a94783d77d55131c206, type: 3}
+  - {fileID: 21300000, guid: befc7ca14e2945548841b3ba4f7348f2, type: 3}
+  - {fileID: 21300000, guid: befc7ca14e2945548841b3ba4f7348f2, type: 3}
   objectDescription:
   - Augmentation des points de vie de la base
   - "R\xE9cup\xE9ration de la vie"
@@ -4592,8 +4592,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1525714309}
   m_HandleRect: {fileID: 1525714308}
   m_Direction: 0
-  m_Value: 0.000012813526
-  m_Size: 0.8019585
+  m_Value: 0.00001266623
+  m_Size: 0.80195826
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
