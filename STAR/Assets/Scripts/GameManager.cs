@@ -173,8 +173,14 @@ namespace Assets.Scripts
             StartCoroutine(loader.EndLoad());
         }
 
-
-        public void Victory(SpaceObject destination)
+        public IEnumerator LoadCredits()
+        {
+            LevelLoader loader = LevelLoader.Instance();
+            StartCoroutine(loader.LoadLevel("Credits"));
+            while (loader.IsLoading())
+                yield return null;
+        }
+            public void Victory(SpaceObject destination)
         {
             StartCoroutine("LoadChoice", destination);
         }
@@ -198,6 +204,11 @@ namespace Assets.Scripts
                 StartCoroutine("LoadMerchant");
             else
                 StartCoroutine("LoadPlateau", destination);
+        }
+
+        public void GoToCredits()
+        {
+            StartCoroutine("LoadCredits");
         }
 
         public void ReturnToMenu()

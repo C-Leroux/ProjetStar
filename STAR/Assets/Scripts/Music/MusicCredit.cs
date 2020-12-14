@@ -21,7 +21,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
-
+     
         }
 
         // Update is called once per frame
@@ -31,7 +31,6 @@ namespace Assets.Scripts
             {
                 end = true;
                 GameManager.Instance().ReturnToMenu();
-                //Retour au Menu
             }
         }
     }

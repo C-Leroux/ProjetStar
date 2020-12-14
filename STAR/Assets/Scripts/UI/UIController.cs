@@ -49,6 +49,11 @@ namespace Assets.Scripts
             Debug.Log("chargement de la partie");
         }
 
+        public void LoadCredits()
+        {
+            GameManager.Instance().GoToCredits();
+        }
+
         public void setShipCaract() //ship shipPicked
                                     //Un seul vaisseau dans le prototype, pas besoin de condition
         {
