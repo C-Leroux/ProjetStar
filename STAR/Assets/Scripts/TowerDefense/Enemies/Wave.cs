@@ -10,7 +10,7 @@ namespace Assets.Scripts
         private float delay;
         private float timer;
         private bool isActive = false;
-
+        private int currentWave;
         private int nbEnemies = 0; // Total of enemies in this wave
         private int nbSpawned = 0; // Number of spawned enemies
         private int nbKilled = 0;  // Number of enemies killed
@@ -18,22 +18,35 @@ namespace Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            delay = 1.0f;
+
             timer = 0f;
         }
 
+        public void setDelay (float delay)
+        {
+            this.delay = delay;
+        }
+        public void setCurrentWave(int currentwave)
+        {
+            this.currentWave = currentwave;
+        }
         // Update is called once per frame
         void Update()
         {
             if (isActive && nbSpawned < nbEnemies)
             {
                 timer += Time.deltaTime;
+                Debug.Log("voici le delay " +delay + " pour la vague " +currentWave);
                 if (timer > delay)
                 {
                     Spawn();
                     ++nbSpawned;
                     timer = 0;
                 }
+            }
+            if (GameObject.FindGameObjectsWithTag("Ennemi") == null)
+            {
+                GameObject.Destroy(this.gameObject);
             }
         }
 
@@ -51,10 +64,10 @@ namespace Assets.Scripts
             enemy_go.transform.parent = transform;
             enemy_go.transform.localPosition = spawnPoint;
             enemy_go.transform.localScale *= 5;
-            enemy.LoadData(enemies.Dequeue());
+            enemy.LoadData(enemies.Dequeue(), currentWave);
             enemy.SetWave(this);
         }
-
+  
         public void Despawn()
         {
             ++nbKilled;

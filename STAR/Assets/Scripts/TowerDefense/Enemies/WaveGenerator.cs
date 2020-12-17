@@ -34,7 +34,7 @@ namespace Assets.Scripts
             {
                 possibleEnemies.Add(enemy);
             }
-            switch(planet.biome)
+            switch (planet.biome)
             {
                 case Planet.Biome.forest:
                     foreach (EnemyData enemy in Resources.LoadAll(path + "Forest"))
@@ -88,13 +88,27 @@ namespace Assets.Scripts
             }
             if (currentWave == nbWaves-1)
             {
-                queue.Enqueue(liche);
-                if (currentPlanetRank == 6)
+                int i = 0;
+                while (i < currentPlanetRank)
+                {
+                    queue.Enqueue(liche);
+                    i++;
+                }
+                if (currentPlanetRank ==5 )
                 {
                     queue.Enqueue(finalBoss);
                 }
             }
             wave.Init(queue, spawnPoint);
+            if (currentWave ==0 || currentWave==1 )
+            {
+                wave.setDelay(2f);
+            }
+            else
+            {
+                wave.setDelay(2f / (currentWave / 2));
+            }
+            wave.setCurrentWave(currentWave);
             ++currentWave;
             return wave;
         }

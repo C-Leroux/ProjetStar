@@ -20,6 +20,7 @@ namespace Assets.Scripts
         private float movingSpeedWalkingAnimation;
         private float current_time;
         private float attack_speed;
+        private int currentWave;
 
         // Use this for initialization
         void Start()
@@ -33,6 +34,19 @@ namespace Assets.Scripts
             movingSpeedWalkingAnimation = 0.25f;
             current_time = 0f;
             attack_speed =1/0.9f; //Pour l'instant pareil pour tous les ennmis, à rajouter dans Ennemi_Data si on veut
+            if (currentWave <= 5)
+            {
+                enemyData.maxHP = enemyData.MaxHP + currentWave / 2;
+            }
+            if (currentWave >= 5)
+            {
+                enemyData.maxHP = enemyData.MaxHP + currentWave;
+            }
+        }
+
+        public void updateEnnemyHpWithWave(int currentWave)
+        {
+          
         }
 
         // Update is called once per frame
@@ -126,8 +140,9 @@ namespace Assets.Scripts
         }
 
 
-        public void LoadData(EnemyData data)
+        public void LoadData(EnemyData data, int currentWave)
         {
+
             enemyData = data;
             hp = data.MaxHP;
             SetHealthBar();

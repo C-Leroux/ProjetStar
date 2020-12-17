@@ -109,7 +109,7 @@ namespace Assets.Scripts
 
         public void setAttackSpeedForUpgrade(float attackSpeed)
         {
-            this.attack_speed = attackSpeed;
+            this.attack_speed = 1/attackSpeed;
         }
 
         public void setRangeForUpgrade(float range)

@@ -11,7 +11,7 @@ namespace Assets.Scripts
         [SerializeField]
         private Sprite sprite;
         [SerializeField]
-        private float maxHP;
+        public float maxHP;
         [SerializeField]
         private int speed;
         [SerializeField]
@@ -50,7 +50,7 @@ namespace Assets.Scripts
                 return maxHP;
             }
         }
-
+        
         public int Speed
         {
             get
