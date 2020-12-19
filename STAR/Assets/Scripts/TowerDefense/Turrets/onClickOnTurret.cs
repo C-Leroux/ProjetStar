@@ -50,6 +50,7 @@ public class onClickOnTurret : MonoBehaviour
                 break;
             case "sell":
                 int sellPrice = turret.GetComponent<TurretBehaviour>().getTurretSelectedCost() / 2;
+                turret.GetComponent<TurretBehaviour>().getCase().SetClickable();
                 Money.Instance.AddMoney(sellPrice);
                 soundEffectHelper.Instance.sellTower();
                 GameObject.Destroy(this.gameObject);

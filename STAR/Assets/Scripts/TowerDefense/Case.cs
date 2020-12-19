@@ -123,6 +123,11 @@ namespace Assets.Scripts
             return isClickable;
         }
 
+        public void SetClickable()
+        {
+            isClickable = true;
+            BoardManager.Instance().ResetPose();
+        }
         public bool IsDepart()
         {
             return isDepart;

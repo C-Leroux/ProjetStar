@@ -203,6 +203,11 @@ namespace Assets.Scripts
             GameManager.Instance().ReturnToMenu();
         }
 
+        public void ResetPose()
+        {
+            m_board.ResetPose();
+        }
+
         // Update is called once per frame
         void Update()
         {

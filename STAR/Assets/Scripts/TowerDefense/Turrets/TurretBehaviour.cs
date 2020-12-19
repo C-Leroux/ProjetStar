@@ -19,6 +19,7 @@ namespace Assets.Scripts
         private float readyTime;
         private float current_time;
         private Collider2D target;
+        private Case mcase;
 
 
 
@@ -45,7 +46,6 @@ namespace Assets.Scripts
             this.scale = turret.scale;
             this.GetComponent<SpriteRenderer>().sprite = turret.sprite;
             this.transform.localScale = new Vector3(scale, scale, scale);
-
         }
 
 
@@ -71,7 +71,15 @@ namespace Assets.Scripts
             return Vector3.Distance(point.position, transform.position) <= range;
         }
 
+        public void SetCase(Case new_case)
+        {
+            this.mcase = new_case;
+        }
 
+        public Case getCase()
+        {
+            return mcase;
+        }
 
 
         //GetSelectedTowerInfo

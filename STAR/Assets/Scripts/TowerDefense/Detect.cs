@@ -19,6 +19,7 @@ namespace Assets.Scripts
         {
             // Check for mouse input
             {
+
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 RaycastHit2D hitData = Physics2D.Raycast(new Vector2(worldPosition.x, worldPosition.y), Vector2.zero, 0);
                 {
@@ -26,7 +27,7 @@ namespace Assets.Scripts
                     {
                         selectedObject = hitData.transform.gameObject;
                         if (selectedObject.tag == "Place")
-                        {
+                        {                                  
                             Vector3 vec = selectedObject.transform.position;
                             board.DisplayTurret(vec.x, vec.y);
                         }

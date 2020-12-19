@@ -372,6 +372,7 @@ namespace Assets.Scripts
                                     GameObject obj = GameObject.Instantiate(turretTemplate.gameObject);
                                     obj.transform.position = new Vector3(gridCase[i, j].GetX(), -gridCase[i, j].GetY(), -1);
                                     TurretBehaviour behaviour = obj.GetComponentInChildren<TurretBehaviour>();
+                                    behaviour.SetCase(gridCase[i, j]);
                                     gridCase[i, j].SetTurretBehaviour(behaviour);
                                     behaviour = gridCase[i, j].GetTurretBehaviour();
                                     behaviour.init(new_turret);
@@ -394,6 +395,11 @@ namespace Assets.Scripts
             return board;
         }
 
+        public void ResetPose()
+        {
+            EndingPoseTurret();
+            BeginningPoseTurret();
+        }
 
         //Start is called before the first frame update
         void Start()
