@@ -992,7 +992,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CLIC HERE TO CONTINU
+  m_text: APPUYER POUR CONTINUER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18fbffad8098bb24ea4b17bc7ceaf73f, type: 2}
   m_sharedMaterial: {fileID: -7086542841431969869, guid: 18fbffad8098bb24ea4b17bc7ceaf73f,
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.15
+  m_fontSize: 22.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2382,7 +2382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Defeat
+  m_Text: Defaite
 --- !u!222 &879300303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3772,7 +3772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302b92e1429de084e931c50ef77c7440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solarSystem: {fileID: 0}
 --- !u!4 &1408111254
 Transform:
   m_ObjectHideFlags: 0
@@ -4030,7 +4029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1569953975
 RectTransform:
   m_ObjectHideFlags: 0
