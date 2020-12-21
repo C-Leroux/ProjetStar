@@ -36,7 +36,7 @@ namespace Assets.Scripts
             if (isActive && nbSpawned < nbEnemies)
             {
                 timer += Time.deltaTime;
-                Debug.Log("voici le delay " +delay + " pour la vague " +currentWave);
+                //Debug.Log("voici le delay " +delay + " pour la vague " +currentWave);
                 if (timer > delay)
                 {
                     Spawn();
@@ -71,11 +71,12 @@ namespace Assets.Scripts
         public void Despawn()
         {
             ++nbKilled;
+            //Debug.Log("NBKIlL " + nbKilled + "/" + nbEnemies);
         }
 
         public bool IsCleared()
         {
-            return nbEnemies == nbKilled;
+            return nbEnemies <= nbKilled;
         }
 
         public void AddEnemy(EnemyData enemy)
